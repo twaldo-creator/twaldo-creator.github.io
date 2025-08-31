@@ -25,6 +25,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #eee;
 }
 
 .nav-links {
@@ -46,9 +47,9 @@ a {
 
 /* Hero */
 .hero {
-  background: #0a0f1c;
+  background: #0a0f1c; /* Solid deep navy */
   color: #fff;
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
 .hero-grid {
@@ -56,20 +57,20 @@ a {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   max-width: 1100px;
   margin: auto;
 }
 
 .hero-left img {
-  max-width: 320px;
+  max-width: 340px;
   border-radius: 6px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .hero-right h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
 }
 
 .buy-links {
