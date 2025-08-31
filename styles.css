@@ -55,7 +55,7 @@ a {
 .hero-grid {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 60px;
   max-width: 1100px;
@@ -70,27 +70,28 @@ a {
 
 .hero-right h2 {
   font-size: 2.2rem;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-.buy-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
+.book-desc {
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.btn {
-  padding: 12px 15px;
-  border: 2px solid #fff;
-  color: #fff;
-  text-align: center;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn:hover {
+/* Preorder Button */
+.btn.preorder {
+  display: inline-block;
+  padding: 14px 28px;
   background: #e63973;
-  border-color: #e63973;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn.preorder:hover {
+  background: #c1275a;
 }
 
 /* About */
