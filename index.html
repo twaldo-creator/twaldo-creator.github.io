@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <!-- Social Preview -->
-<meta property="og:title" content="Every Light in Every Window, Every Tooth in Every Mouth">
-<meta property="og:description" content="A haunting debut novel of grief, time, and inheritance — Available October 7, 2025.">
-<meta property="og:image" content="https://tannerwaldo.com/social-preview.png">
-<meta property="og:url" content="https://tannerwaldo.com">
-<meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="Every Light in Every Window, Every Tooth in Every Mouth">
+  <meta property="og:description" content="A haunting debut novel of grief, time, and inheritance — Available October 7, 2025.">
+  <meta property="og:image" content="https://tannerwaldo.com/social-preview.png">
+  <meta property="og:url" content="https://tannerwaldo.com">
+  <meta name="twitter:card" content="summary_large_image">
+
   <title>Tanner Waldo | Author</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
@@ -24,7 +26,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#free-chapter" id="openModal">Free Chapter</a></li>
+        <li><a href="#" id="openModal">Free Chapter</a></li>
       </ul>
     </div>
   </nav>
@@ -88,46 +90,63 @@
   <footer>
     <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
   </footer>
-<!-- Modal -->
-<div id="chapterModal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeModal">&times;</span>
-    <h2>Get the First Chapter Free</h2>
-    <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
-    
-    <!-- MailerLite Embedded Form -->
- <form id="signupForm" 
-      action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
-      method="post" 
-      class="signup-form">
 
-  <input type="email" name="fields[email]" placeholder="Enter your email" required>
-  <button type="submit">Send Me the Chapter</button>
-</form>
+  <!-- Modal -->
+  <div id="chapterModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Get the First Chapter Free</h2>
+      <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+      
+      <!-- MailerLite Form -->
+      <form id="signupForm" 
+            action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
+            method="post" 
+            class="signup-form">
 
+        <input type="email" name="fields[email]" placeholder="Enter your email" required>
+        <button type="submit">Send Me the Chapter</button>
+      </form>
+    </div>
   </div>
-</div>
-<script>
-  const signupForm = document.getElementById("signupForm");
 
-  signupForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+  <!-- Scripts -->
+  <script>
+    // Modal open/close
+    const modal = document.getElementById("chapterModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
 
-    // Send data to MailerLite
-    fetch(signupForm.action, {
-      method: "POST",
-      body: new FormData(signupForm)
-    })
-    .then(() => {
-      // Replace form with success message
-      signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>";
-    })
-    .catch(() => {
-      signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>";
+    openModal.onclick = function(e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    }
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // Signup form submission
+    const signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      fetch(signupForm.action, {
+        method: "POST",
+        body: new FormData(signupForm)
+      })
+      .then(() => {
+        signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>";
+      })
+      .catch(() => {
+        signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>";
+      });
     });
-  });
-</script>
-
+  </script>
 
 </body>
 </html>
