@@ -1,40 +1,155 @@
-<p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-<!-- MailerLite Form -->
-    <form id="signupForm" 
-      action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
-      method="post" 
-      class="signup-form">
+  <!-- Social Preview -->
+  <meta property="og:title" content="Every Light in Every Window, Every Tooth in Every Mouth">
+  <meta property="og:description" content="A haunting debut novel of grief, time, and inheritance — Available October 7, 2025.">
+  <meta property="og:image" content="https://tannerwaldo.com/social-preview.png">
+  <meta property="og:url" content="https://tannerwaldo.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Tanner Waldo | Author</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Tanner Waldo</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" id="openModal">Free Chapter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-grid">
+      <!-- Book Cover -->
+      <div class="hero-left">
+        <img src="cover.png" alt="Book cover" class="book-cover">
+      </div>
+
+      <!-- Book Blurb -->
+      <div class="hero-right">
+        <h2>Available October 7, 2025</h2>
+        <p class="book-desc">
+          As winter sinks its teeth into Edmonton, time feels stalled and every street carries the echo of something lost. People move through it half-awake, tethered to memory, haunted by what might have been.
+        </p>
+        <p class="book-desc">
+          <strong>Every Light in Every Window, Every Tooth in Every Mouth</strong> is a novel of grief and inheritance, of how love lingers and fractures, of how the past bends the present in ways we can’t escape. It asks whether we are bound to repeat ourselves—or if change is ever truly possible.
+        </p>
+        <p class="book-desc">
+          Told in luminous fragments, it captures the ache of longing, the distortions of memory, and the quiet gravity of lives brushing against each other in a city that only pretends it’s awake.
+        </p>
+        <div class="cta">
+          <a href="https://www.amazon.ca/Every-Light-Window-Tooth-Mouth-ebook/dp/B0FC7YYZ1M" 
+             class="btn preorder" target="_blank">Pre-Order Now!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="author.png" alt="Author Tanner Waldo">
+      </div>
+      <div class="about-text">
+        <h2>About the Author</h2>
+        <p>
+          Tanner Waldo lives in Edmonton, Alberta, and was raised in Sylvan Lake, where long winters and quiet nights left space for reflection. His work explores memory, longing, and the quiet distortions of grief—writing toward the ache in things that are missing, shifting, or half-forgotten.
+        </p>
+        <p>
+          When he’s not writing, he volunteers at the Edmonton Folk Music Festival and is learning to kayak, though often in slow circles.
+        </p>
+        <p>
+          <em>Every Light in Every Window, Every Tooth in Every Mouth</em> is his first novel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section dark">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:publishing@tannerwaldo.com">publishing@tannerwaldo.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/tanner.writes" target="_blank">@tanner.writes</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="chapterModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Get the First Chapter Free</h2>
+      <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+      
+      <!-- MailerLite Form -->
       <form id="signupForm" 
             action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
             method="post" 
             class="signup-form">
 
-  <input type="email" name="fields[email]" placeholder="Enter your email" required>
-  <input type="hidden" name="ml-submit" value="1">
-  <input type="hidden" name="anticsrf" value="true">
-
-  <button type="submit">Send Me the Chapter</button>
-</form>
         <input type="email" name="fields[email]" placeholder="Enter your email" required>
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
 
         <button type="submit">Send Me the Chapter</button>
       </form>
-</div>
-</div>
+    </div>
+  </div>
 
-@@ -144,10 +143,10 @@ <h2>Get the First Chapter Free</h2>
-body: new FormData(signupForm)
-})
-.then(() => {
-        signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>";
+  <!-- Scripts -->
+  <script>
+    // Modal open/close
+    const modal = document.getElementById("chapterModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+
+    openModal.onclick = function(e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    }
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    // Signup form submission
+    const signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      fetch(signupForm.action, {
+        method: "POST",
+        body: new FormData(signupForm)
+      })
+      .then(() => {
         signupForm.innerHTML = "<p style='color:#fff; font-size:1.1rem;'>🎉 Thanks! Check your inbox for the free chapter.</p>";
-})
-.catch(() => {
-        signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>";
+      })
+      .catch(() => {
         signupForm.innerHTML = "<p style='color:#ff6b6b;'>⚠️ Oops, something went wrong. Please try again.</p>";
-});
-});
-</script>
+      });
+    });
+  </script>
+
+</body>
+</html>
