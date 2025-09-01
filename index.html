@@ -99,18 +99,17 @@
       <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
       
       <!-- MailerLite Form -->
-    <form id="signupForm" 
-      action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
-      method="post" 
-      class="signup-form">
+      <form id="signupForm" 
+            action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
+            method="post" 
+            class="signup-form">
 
-  <input type="email" name="fields[email]" placeholder="Enter your email" required>
-  <input type="hidden" name="ml-submit" value="1">
-  <input type="hidden" name="anticsrf" value="true">
+        <input type="email" name="fields[email]" placeholder="Enter your email" required>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
 
-  <button type="submit">Send Me the Chapter</button>
-</form>
-
+        <button type="submit">Send Me the Chapter</button>
+      </form>
     </div>
   </div>
 
@@ -144,10 +143,10 @@
         body: new FormData(signupForm)
       })
       .then(() => {
-        signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>";
+        signupForm.innerHTML = "<p style='color:#fff; font-size:1.1rem;'>🎉 Thanks! Check your inbox for the free chapter.</p>";
       })
       .catch(() => {
-        signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>";
+        signupForm.innerHTML = "<p style='color:#ff6b6b;'>⚠️ Oops, something went wrong. Please try again.</p>";
       });
     });
   </script>
