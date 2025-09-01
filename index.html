@@ -96,39 +96,38 @@
     <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
     
     <!-- MailerLite Embedded Form -->
-  <form action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
+ <form id="signupForm" 
+      action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
       method="post" 
-      target="_blank" 
       class="signup-form">
+
   <input type="email" name="fields[email]" placeholder="Enter your email" required>
   <button type="submit">Send Me the Chapter</button>
 </form>
+
   </div>
 </div>
 <script>
-  // Get elements
-  const modal = document.getElementById("chapterModal");
-  const openModal = document.getElementById("openModal");
-  const closeModal = document.getElementById("closeModal");
+  const signupForm = document.getElementById("signupForm");
 
-  // Open modal
-  openModal.onclick = function(e) {
-    e.preventDefault(); // stop the #free-chapter jump
-    modal.style.display = "block";
-  }
+  signupForm.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  // Close modal with the "X"
-  closeModal.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // Close modal when clicking outside modal content
-  window.onclick = function(event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  }
+    // Send data to MailerLite
+    fetch(signupForm.action, {
+      method: "POST",
+      body: new FormData(signupForm)
+    })
+    .then(() => {
+      // Replace form with success message
+      signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>";
+    })
+    .catch(() => {
+      signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>";
+    });
+  });
 </script>
+
 
 </body>
 </html>
