@@ -99,14 +99,18 @@
       <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
       
       <!-- MailerLite Form -->
-      <form id="signupForm" 
-            action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
-            method="post" 
-            class="signup-form">
+    <form id="signupForm" 
+      action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
+      method="post" 
+      class="signup-form">
 
-        <input type="email" name="fields[email]" placeholder="Enter your email" required>
-        <button type="submit">Send Me the Chapter</button>
-      </form>
+  <input type="email" name="fields[email]" placeholder="Enter your email" required>
+  <input type="hidden" name="ml-submit" value="1">
+  <input type="hidden" name="anticsrf" value="true">
+
+  <button type="submit">Send Me the Chapter</button>
+</form>
+
     </div>
   </div>
 
