@@ -49,6 +49,49 @@
   <footer>
     <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
   </footer>
+<!-- Free Chapter Modal -->
+<div id="chapterModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Get the First Chapter Free</h2>
+    <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+    
+    <!-- MailerLite Form -->
+    <form id="signupForm-store" 
+          action="https://assets.mailerlite.com/webforms/submit/164309175309960831"
+          method="post" 
+          target="_blank"
+          class="signup-form">
+
+      <input type="email" name="fields[email]" placeholder="Enter your email" required>
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+
+      <button type="submit">Send Me the Chapter</button>
+    </form>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+  // Modal open/close
+  const modalStore = document.getElementById("chapterModal");
+  const openModalStore = document.getElementById("openModal");
+  const closeModalStore = document.getElementById("closeModal");
+
+  openModalStore.onclick = function(e) {
+    e.preventDefault();
+    modalStore.style.display = "block";
+  }
+  closeModalStore.onclick = function() {
+    modalStore.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target === modalStore) {
+      modalStore.style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
