@@ -21,34 +21,30 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo">Tanner Waldo</div>
-<ul class="nav-links">
-  <li><a href="index.html#home">Home</a></li>
-  <li><a href="index.html#about">About</a></li>
-  <li><a href="index.html#contact">Contact</a></li>
-  <li><a href="#" id="openModal">Free Chapter</a></li>
-  <li><a href="store.html">Shop</a></li>
-</ul>
-
+      <div class="logo"><a href="index.html">TannerWaldo.com</a></div>
+      <ul class="nav-links">
+        <li><a href="store.html">Store</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" id="openModal">Free Chapter</a></li>
+        <li><a href="tarot.html">Free Tarot Reading</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-grid">
-      <!-- Book Cover -->
       <div class="hero-left">
         <img src="cover.png" alt="Book cover" class="book-cover">
       </div>
-
-      <!-- Book Blurb -->
       <div class="hero-right">
         <h2>Available October 7, 2025</h2>
         <p class="book-desc">
           As winter sinks its teeth into Edmonton, time feels stalled and every street carries the echo of something lost. People move through it half-awake, tethered to memory, haunted by what might have been.
         </p>
         <p class="book-desc">
-          <strong>Every Light in Every Window, Every Tooth in Every Mouth</strong> is a novel of grief and inheritance, of how love lingers and fractures, of how the past bends the present in ways we can’t escape. It asks whether we are bound to repeat ourselves—or if change is ever truly possible.
+          <strong>Every Light in Every Window, Every Tooth in Every Mouth</strong> is a novel of grief and inheritance, of how love lingers and fractures, of how the past bends the present in ways we can’t escape.
         </p>
         <p class="book-desc">
           Told in luminous fragments, it captures the ache of longing, the distortions of memory, and the quiet gravity of lives brushing against each other in a city that only pretends it’s awake.
@@ -92,23 +88,19 @@
     <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
   </footer>
 
-  <!-- Modal -->
+  <!-- Free Chapter Modal -->
   <div id="chapterModal" class="modal">
     <div class="modal-content">
       <span class="close" id="closeModal">&times;</span>
       <h2>Get the First Chapter Free</h2>
       <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
-      
-      <!-- MailerLite Form -->
       <form id="signupForm" 
             action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
             method="post" 
             class="signup-form">
-
         <input type="email" name="fields[email]" placeholder="Enter your email" required>
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
-
         <button type="submit">Send Me the Chapter</button>
       </form>
     </div>
@@ -116,41 +108,12 @@
 
   <!-- Scripts -->
   <script>
-    // Modal open/close
     const modal = document.getElementById("chapterModal");
     const openModal = document.getElementById("openModal");
     const closeModal = document.getElementById("closeModal");
-
-    openModal.onclick = function(e) {
-      e.preventDefault();
-      modal.style.display = "block";
-    }
-    closeModal.onclick = function() {
-      modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    }
-
-    // Signup form submission
-    const signupForm = document.getElementById("signupForm");
-    signupForm.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      fetch(signupForm.action, {
-        method: "POST",
-        body: new FormData(signupForm)
-      })
-      .then(() => {
-        signupForm.innerHTML = "<p style='color:#fff; font-size:1.1rem;'>🎉 Thanks! Check your inbox for the free chapter.</p>";
-      })
-      .catch(() => {
-        signupForm.innerHTML = "<p style='color:#ff6b6b;'>⚠️ Oops, something went wrong. Please try again.</p>";
-      });
-    });
+    openModal.onclick = function(e) { e.preventDefault(); modal.style.display = "block"; }
+    closeModal.onclick = function() { modal.style.display = "none"; }
+    window.onclick = function(event) { if (event.target === modal) modal.style.display = "none"; }
   </script>
-
 </body>
 </html>
