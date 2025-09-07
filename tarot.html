@@ -1,0 +1,22 @@
+<script>
+  document.getElementById("tarotForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = document.getElementById("question").value;
+    const readingDiv = document.getElementById("reading");
+    readingDiv.innerHTML = "<p>🔮 Shuffling the deck...</p>";
+
+    const res = await fetch("https://oracle.twaldo.workers.dev", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question })
+    });
+
+    const data = await res.json();
+    readingDiv.innerHTML = `
+      <h3>Your Cards:</h3>
+      <p>${data.cards.join(", ")}</p>
+      <h3>Reading:</h3>
+      <p>${data.reading}</p>
+    `;
+  });
+</script>
