@@ -64,7 +64,7 @@
   </div>
 
   <!-- Scripts -->
-  <script>
+<script>
   document.getElementById("tarotForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const question = document.getElementById("question").value;
@@ -78,16 +78,8 @@
         body: JSON.stringify({ question })
       });
 
-      // log for debugging
-      console.log("Status:", res.status);
-
-      if (!res.ok) {
-        const errText = await res.text();
-        throw new Error(`Bad response: ${res.status} ${errText}`);
-      }
-
+      if (!res.ok) throw new Error(`Bad response: ${res.status}`);
       const data = await res.json();
-      console.log("Data:", data);
 
       if (data.error) {
         readingDiv.innerHTML = `<p>⚠️ Error: ${data.error}</p>`;
@@ -97,11 +89,13 @@
       readingDiv.innerHTML = `
         <h3>Your Cards:</h3>
         <p>${data.cards.join(", ")}</p>
-        <h3>Reading:</h3>
-        <p>${data.reading}</p>
+        <h3>Card Meanings:</h3>
+        <p>${data.reading.split("\n").slice(0,3).join("<br>")}</p>
+        <h3>Your Reading:</h3>
+        <p>${data.reading.split("\n").slice(3).join("<br>")}</p>
+        <p style="margin-top:20px; font-size:0.9em; opacity:0.7;"><em>Disclaimer: This tarot reading is for entertainment purposes only.</em></p>
       `;
     } catch (err) {
-      console.error("Tarot fetch failed:", err);
       readingDiv.innerHTML = `<p>⚠️ Oops: ${err.message}</p>`;
     }
   });
