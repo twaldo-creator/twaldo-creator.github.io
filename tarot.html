@@ -86,20 +86,28 @@
         return;
       }
 
+      // Split sections
+      const parts = data.reading.split("Overall Reading:");
+      const meanings = parts[0].replace("Card Meanings:", "").trim();
+      const overall = parts[1] ? parts[1].trim() : "";
+
       readingDiv.innerHTML = `
         <h3>Your Cards:</h3>
         <p>${data.cards.join(", ")}</p>
         <h3>Card Meanings:</h3>
-        <p>${data.reading.split("\n").slice(0,3).join("<br>")}</p>
+        <p>${meanings.replace(/\n/g, "<br>")}</p>
         <h3>Your Reading:</h3>
-        <p>${data.reading.split("\n").slice(3).join("<br>")}</p>
-        <p style="margin-top:20px; font-size:0.9em; opacity:0.7;"><em>Disclaimer: This tarot reading is for entertainment purposes only.</em></p>
+        <p>${overall}</p>
+        <p style="margin-top:20px; font-size:0.9em; opacity:0.7;">
+          <em>Disclaimer: This tarot reading is for entertainment purposes only.</em>
+        </p>
       `;
     } catch (err) {
       readingDiv.innerHTML = `<p>⚠️ Oops: ${err.message}</p>`;
     }
   });
 </script>
+
 
 
 </body>
