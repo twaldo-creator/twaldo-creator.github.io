@@ -65,52 +65,48 @@
 
   <!-- Scripts -->
   <script>
-    // Modal open/close
-    const modal = document.getElementById("chapterModal");
-    const openModal = document.getElementById("openModal");
-    const closeModal = document.getElementById("closeModal");
+  document.getElementById("tarotForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const question = document.getElementById("question").value;
+    const readingDiv = document.getElementById("reading");
+    readingDiv.innerHTML = "<p>🔮 Shuffling the deck...</p>";
 
-    openModal.onclick = function(e) {
-      e.preventDefault();
-      modal.style.display = "block";
-    }
-    closeModal.onclick = function() {
-      modal.style.display = "none";
-    }
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
+    try {
+      const res = await fetch("https://oracle.twaldo.workers.dev", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question })
+      });
+
+      // log for debugging
+      console.log("Status:", res.status);
+
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(`Bad response: ${res.status} ${errText}`);
       }
-    }
 
-    // Tarot form submission
-    document.getElementById("tarotForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const question = document.getElementById("question").value;
-      const readingDiv = document.getElementById("reading");
-      readingDiv.innerHTML = "<p>🔮 Shuffling the deck...</p>";
+      const data = await res.json();
+      console.log("Data:", data);
 
-      try {
-        const res = await fetch("https://oracle.twaldo.workers.dev", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ question })
-        });
-
-        if (!res.ok) throw new Error("Network response was not ok");
-
-        const data = await res.json();
-        readingDiv.innerHTML = `
-          <h3>Your Cards:</h3>
-          <p>${data.cards.join(", ")}</p>
-          <h3>Reading:</h3>
-          <p>${data.reading}</p>
-        `;
-      } catch (err) {
-        readingDiv.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again later.</p>";
+      if (data.error) {
+        readingDiv.innerHTML = `<p>⚠️ Error: ${data.error}</p>`;
+        return;
       }
-    });
-  </script>
+
+      readingDiv.innerHTML = `
+        <h3>Your Cards:</h3>
+        <p>${data.cards.join(", ")}</p>
+        <h3>Reading:</h3>
+        <p>${data.reading}</p>
+      `;
+    } catch (err) {
+      console.error("Tarot fetch failed:", err);
+      readingDiv.innerHTML = `<p>⚠️ Oops: ${err.message}</p>`;
+    }
+  });
+</script>
+
 
 </body>
 </html>
