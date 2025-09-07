@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Free Tarot Reading | Tanner Waldo</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- Minimal fallback styles so modals don't accidentally block the page if styles.css changes -->
+  <style>
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;padding:20px}
+    .modal-content{max-width:560px;margin:10vh auto;background:#0e1117;color:#fff;border-radius:12px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    .close{float:right;font-size:26px;cursor:pointer}
+    .signup-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    .signup-form input[type="text"], .signup-form input[type="email"]{padding:10px;border-radius:6px;border:1px solid #444;min-width:260px;background:#fff;color:#111}
+    .signup-form button{padding:10px 16px;border-radius:6px;border:0;background:#d8ccb3;color:#111;font-weight:600;cursor:pointer}
+    .section.dark{background:#0e1117;color:#fff;padding:48px 24px}
+    .navbar{background:#fff}
+    .nav-container{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:10px 16px}
+    .nav-links{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+    .nav-links a{text-decoration:none;color:#111;font-weight:600}
+    .logo a, .logo{color:#111;text-decoration:none;font-weight:700}
+    footer{padding:40px 0;text-align:center;color:#888}
+  </style>
 </head>
 <body>
 
@@ -25,5 +42,169 @@
 
   <!-- Tarot Section -->
   <section class="section dark">
-    <h2>Free Tarot Reading</h2>
-    <p>Ask a question, and the cards will guide you. Powered by AI, this tarot reader draws from the full 78-card d
+    <div style="max-width:700px;margin:0 auto;text-align:center;">
+      <h2>Free Tarot Reading</h2>
+      <p>
+        Ask a question, and the cards will guide you. Powered by AI, this tarot reader draws from the full 78-card deck — including reversals — to give you a personalized reading.
+      </p>
+
+      <form id="tarotForm" class="signup-form" autocomplete="off">
+        <input type="text" id="question" name="question" placeholder="Enter your question…" required />
+        <button type="submit">Draw 3 Cards</button>
+      </form>
+
+      <div id="reading" style="margin-top:30px;text-align:left;max-width:600px;margin-left:auto;margin-right:auto;"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
+  </footer>
+
+  <!-- Offer Modal -->
+  <div id="offerModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h2 style="margin-top:0;">Tarot in the Story</h2>
+      <p>
+        Tarot readings aren’t just here on the site — they feature prominently in my debut novel,
+        <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.
+      </p>
+      <p>Would you like a free download of the tarot chapter from the book?</p>
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button id="offerYes">Yes, Send It to Me</button>
+        <button id="offerNo">No Thanks, Finish My Reading</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarot Chapter Modal -->
+  <div id="chapterModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" id="closeModal" aria-label="Close">&times;</span>
+      <h2 style="margin-top:0;">Get the Tarot Chapter Free</h2>
+      <p>Sign up below to receive the tarot chapter and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+
+      <!-- MailerLite Form (Tarot Chapter Subscribers) -->
+      <form id="signupForm-tarot"
+            action="https://assets.mailerlite.com/jsonp/1770375/forms/164904413107848952/subscribe"
+            method="post"
+            class="signup-form">
+        <input type="email" name="fields[email]" placeholder="Enter your email" required />
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
+        <button type="submit">Send Me the Tarot Chapter</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tarotForm = document.getElementById("tarotForm");
+    const readingDiv = document.getElementById("reading");
+    const offerModal = document.getElementById("offerModal");
+    const chapterModal = document.getElementById("chapterModal");
+    const offerYes = document.getElementById("offerYes");
+    const offerNo = document.getElementById("offerNo");
+    const closeModal = document.getElementById("closeModal");
+    const openNavModal = document.getElementById("openModal");
+    const signupFormTarot = document.getElementById("signupForm-tarot");
+
+    // Helpers
+    const show = el => { if (el) { el.style.display = "block"; el.setAttribute("aria-hidden","false"); } };
+    const hide = el => { if (el) { el.style.display = "none"; el.setAttribute("aria-hidden","true"); } };
+
+    // Open the “free chapter” modal from navbar
+    if (openNavModal) {
+      openNavModal.addEventListener("click", (e) => {
+        e.preventDefault();
+        show(chapterModal);
+      });
+    }
+
+    // Tarot form submit → show offer first
+    if (tarotForm) {
+      tarotForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        show(offerModal);
+      });
+    }
+
+    // Offer choices
+    if (offerYes) {
+      offerYes.addEventListener("click", () => {
+        hide(offerModal);
+        show(chapterModal);
+      });
+    }
+    if (offerNo) {
+      offerNo.addEventListener("click", async () => {
+        hide(offerModal);
+        const question = document.getElementById("question").value.trim();
+        if (!question) return;
+
+        readingDiv.innerHTML = "<p>🔮 Shuffling the deck...</p>";
+        try {
+          const res = await fetch("https://oracle.twaldo.workers.dev", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question })
+          });
+          if (!res.ok) throw new Error(`Bad response: ${res.status}`);
+          const data = await res.json();
+          if (data.error) {
+            readingDiv.innerHTML = `<p>⚠️ Error: ${data.error}</p>`;
+            return;
+          }
+
+          const parts = (data.reading || "").split("Overall Reading:");
+          const meanings = (parts[0] || "").replace("Card Meanings:", "").trim();
+          const overall = (parts[1] || "").trim();
+
+          // Build shareable text (optional)
+          const readingText = `Your Cards: ${data.cards.join(", ")}\n\n${overall}`;
+          const shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" +
+            encodeURIComponent("https://tannerwaldo.com/tarot?reading=" + encodeURIComponent(readingText));
+
+          readingDiv.innerHTML = `
+            <h3>Your Cards:</h3>
+            <p>${(data.cards || []).join(", ")}</p>
+            <h3>Card Meanings:</h3>
+            <p>${meanings.replace(/\n/g, "<br>")}</p>
+            <h3>Your Reading:</h3>
+            <p>${overall}</p>
+            <p style="margin-top:20px; font-size:0.9em; opacity:0.7;">
+              <em>Disclaimer: This tarot reading is for entertainment purposes only.</em>
+            </p>
+            <p style="margin-top:12px;">
+              <a href="${shareUrl}" target="_blank" rel="noopener noreferrer"
+                 style="background:#4267B2;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:600;">
+                Share to Facebook
+              </a>
+            </p>
+          `;
+        } catch (err) {
+          readingDiv.innerHTML = `<p>⚠️ Oops: ${err.message}</p>`;
+        }
+      });
+    }
+
+    // Close chapter modal
+    if (closeModal) closeModal.addEventListener("click", () => hide(chapterModal));
+    window.addEventListener("click", (evt) => {
+      if (evt.target === chapterModal) hide(chapterModal);
+      if (evt.target === offerModal) hide(offerModal);
+    });
+
+    // MailerLite submit (tarot chapter group)
+    if (signupFormTarot) {
+      signupFormTarot.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(signupFormTarot.action, { method: "POST", body: new FormData(signupFormTarot) })
+          .then(() => { signupFormTarot.innerHTML = "<p style='color:#fff;font-size:1.1rem;'>🎉 Thanks! Check your inbox for the tarot chapter.</p>"; })
+          .catch(() => { signupFormTarot.innerHTML = "<p style='color:#ff6b6b;'>⚠️ Oops, something went wrong. Please try again.</p>"; });
+      });
+    }
+  });
+  </script>
+</body>
+</html>
