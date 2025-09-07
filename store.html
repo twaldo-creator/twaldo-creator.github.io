@@ -11,14 +11,14 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
-      <div class="logo"><a href="index.html">Tanner Waldo</a></div>
-     <ul class="nav-links">
-  <li><a href="index.html#home">Home</a></li>
-  <li><a href="index.html#about">About</a></li>
-  <li><a href="index.html#contact">Contact</a></li>
-  <li><a href="#" id="openModal">Free Chapter</a></li>
-  <li><a href="store.html">Shop</a></li>
-</ul>
+      <div class="logo"><a href="index.html">TannerWaldo.com</a></div>
+      <ul class="nav-links">
+        <li><a href="store.html">Store</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#" id="openModal">Free Chapter</a></li>
+        <li><a href="tarot.html">Free Tarot Reading</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -28,7 +28,6 @@
     <p>Support the author directly by ordering below. Secure checkout provided by Stripe.</p>
 
     <div class="store-grid">
-      <!-- Hardcover -->
       <div class="product-card">
         <img src="cover.png" alt="Hardcover Book" class="product-img">
         <h3>Hardcover Edition</h3>
@@ -36,7 +35,6 @@
         <a href="https://buy.stripe.com/bJe9AT75gczl3yu3hz3gk00" target="_blank" class="btn preorder">Buy Hardcover</a>
       </div>
 
-      <!-- Paperback -->
       <div class="product-card">
         <img src="cover.png" alt="Paperback Book" class="product-img">
         <h3>Paperback Edition</h3>
@@ -49,49 +47,32 @@
   <footer>
     <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
   </footer>
-<!-- Free Chapter Modal -->
-<div id="chapterModal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeModal">&times;</span>
-    <h2>Get the First Chapter Free</h2>
-    <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
-    
-    <!-- MailerLite Form -->
-    <form id="signupForm-store" 
-          action="https://assets.mailerlite.com/webforms/submit/164309175309960831"
-          method="post" 
-          target="_blank"
-          class="signup-form">
 
-      <input type="email" name="fields[email]" placeholder="Enter your email" required>
-      <input type="hidden" name="ml-submit" value="1">
-      <input type="hidden" name="anticsrf" value="true">
-
-      <button type="submit">Send Me the Chapter</button>
-    </form>
+  <!-- Free Chapter Modal -->
+  <div id="chapterModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Get the First Chapter Free</h2>
+      <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+      <form id="signupForm-store" 
+            action="https://assets.mailerlite.com/webforms/submit/164309175309960831"
+            method="post" target="_blank" class="signup-form">
+        <input type="email" name="fields[email]" placeholder="Enter your email" required>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button type="submit">Send Me the Chapter</button>
+      </form>
+    </div>
   </div>
-</div>
 
-<!-- Scripts -->
-<script>
-  // Modal open/close
-  const modalStore = document.getElementById("chapterModal");
-  const openModalStore = document.getElementById("openModal");
-  const closeModalStore = document.getElementById("closeModal");
-
-  openModalStore.onclick = function(e) {
-    e.preventDefault();
-    modalStore.style.display = "block";
-  }
-  closeModalStore.onclick = function() {
-    modalStore.style.display = "none";
-  }
-  window.onclick = function(event) {
-    if (event.target === modalStore) {
-      modalStore.style.display = "none";
-    }
-  }
-</script>
-
+  <!-- Scripts -->
+  <script>
+    const modalStore = document.getElementById("chapterModal");
+    const openModalStore = document.getElementById("openModal");
+    const closeModalStore = document.getElementById("closeModal");
+    openModalStore.onclick = e => { e.preventDefault(); modalStore.style.display = "block"; }
+    closeModalStore.onclick = () => modalStore.style.display = "none";
+    window.onclick = e => { if (e.target === modalStore) modalStore.style.display = "none"; }
+  </script>
 </body>
 </html>
