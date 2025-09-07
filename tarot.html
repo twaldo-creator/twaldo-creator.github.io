@@ -98,113 +98,106 @@
   </div>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const tarotForm = document.getElementById("tarotForm");
-    const readingDiv = document.getElementById("reading");
-    const offerModal = document.getElementById("offerModal");
-    const chapterModal = document.getElementById("chapterModal");
-    const offerYes = document.getElementById("offerYes");
-    const offerNo = document.getElementById("offerNo");
-    const closeModal = document.getElementById("closeModal");
-    const openNavModal = document.getElementById("openModal");
-    const signupFormTarot = document.getElementById("signupForm-tarot");
+document.addEventListener("DOMContentLoaded", () => {
+  const tarotForm = document.getElementById("tarotForm");
+  const readingDiv = document.getElementById("reading");
+  const offerModal = document.getElementById("offerModal");
+  const chapterModal = document.getElementById("chapterModal");
+  const offerYes = document.getElementById("offerYes");
+  const offerNo = document.getElementById("offerNo");
+  const closeModal = document.getElementById("closeModal");
+  const signupFormTarot = document.getElementById("signupForm-tarot");
 
-    // Helpers
-    const show = el => { if (el) { el.style.display = "block"; el.setAttribute("aria-hidden","false"); } };
-    const hide = el => { if (el) { el.style.display = "none"; el.setAttribute("aria-hidden","true"); } };
+  let currentQuestion = "";
 
-    // Open the “free chapter” modal from navbar
-    if (openNavModal) {
-      openNavModal.addEventListener("click", (e) => {
-        e.preventDefault();
-        show(chapterModal);
+  const show = el => { el.style.display = "block"; };
+  const hide = el => { el.style.display = "none"; };
+
+  // Fetch tarot reading
+  async function loadReading(question) {
+    readingDiv.innerHTML = "<p>🔮 Shuffling the deck...</p>";
+    try {
+      const res = await fetch("https://oracle.twaldo.workers.dev", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question })
       });
+      if (!res.ok) throw new Error(`Bad response: ${res.status}`);
+      const data = await res.json();
+      if (data.error) {
+        readingDiv.innerHTML = `<p>⚠️ Error: ${data.error}</p>`;
+        return;
+      }
+      const parts = (data.reading || "").split("Overall Reading:");
+      const meanings = (parts[0] || "").replace("Card Meanings:", "").trim();
+      const overall = (parts[1] || "").trim();
+
+      readingDiv.innerHTML = `
+        <h3>Your Cards:</h3>
+        <p>${(data.cards || []).join(", ")}</p>
+        <h3>Card Meanings:</h3>
+        <p>${meanings.replace(/\n/g, "<br>")}</p>
+        <h3>Your Reading:</h3>
+        <p>${overall}</p>
+        <p style="margin-top:20px; font-size:0.9em; opacity:0.7;">
+          <em>Disclaimer: This tarot reading is for entertainment purposes only.</em>
+        </p>
+      `;
+    } catch (err) {
+      readingDiv.innerHTML = `<p>⚠️ Oops: ${err.message}</p>`;
     }
+  }
 
-    // Tarot form submit → show offer first
-    if (tarotForm) {
-      tarotForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        show(offerModal);
-      });
-    }
+  // Tarot form submit
+  tarotForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    currentQuestion = document.getElementById("question").value.trim();
 
-    // Offer choices
-    if (offerYes) {
-      offerYes.addEventListener("click", () => {
-        hide(offerModal);
-        show(chapterModal);
-      });
-    }
-    if (offerNo) {
-      offerNo.addEventListener("click", async () => {
-        hide(offerModal);
-        const question = document.getElementById("question").value.trim();
-        if (!question) return;
-
-        readingDiv.innerHTML = "<p>🔮 Shuffling the deck...</p>";
-        try {
-          const res = await fetch("https://oracle.twaldo.workers.dev", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ question })
-          });
-          if (!res.ok) throw new Error(`Bad response: ${res.status}`);
-          const data = await res.json();
-          if (data.error) {
-            readingDiv.innerHTML = `<p>⚠️ Error: ${data.error}</p>`;
-            return;
-          }
-
-          const parts = (data.reading || "").split("Overall Reading:");
-          const meanings = (parts[0] || "").replace("Card Meanings:", "").trim();
-          const overall = (parts[1] || "").trim();
-
-          // Build shareable text (optional)
-          const readingText = `Your Cards: ${data.cards.join(", ")}\n\n${overall}`;
-          const shareUrl = "https://www.facebook.com/sharer/sharer.php?u=" +
-            encodeURIComponent("https://tannerwaldo.com/tarot?reading=" + encodeURIComponent(readingText));
-
-          readingDiv.innerHTML = `
-            <h3>Your Cards:</h3>
-            <p>${(data.cards || []).join(", ")}</p>
-            <h3>Card Meanings:</h3>
-            <p>${meanings.replace(/\n/g, "<br>")}</p>
-            <h3>Your Reading:</h3>
-            <p>${overall}</p>
-            <p style="margin-top:20px; font-size:0.9em; opacity:0.7;">
-              <em>Disclaimer: This tarot reading is for entertainment purposes only.</em>
-            </p>
-            <p style="margin-top:12px;">
-              <a href="${shareUrl}" target="_blank" rel="noopener noreferrer"
-                 style="background:#4267B2;color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:600;">
-                Share to Facebook
-              </a>
-            </p>
-          `;
-        } catch (err) {
-          readingDiv.innerHTML = `<p>⚠️ Oops: ${err.message}</p>`;
-        }
-      });
-    }
-
-    // Close chapter modal
-    if (closeModal) closeModal.addEventListener("click", () => hide(chapterModal));
-    window.addEventListener("click", (evt) => {
-      if (evt.target === chapterModal) hide(chapterModal);
-      if (evt.target === offerModal) hide(offerModal);
-    });
-
-    // MailerLite submit (tarot chapter group)
-    if (signupFormTarot) {
-      signupFormTarot.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(signupFormTarot.action, { method: "POST", body: new FormData(signupFormTarot) })
-          .then(() => { signupFormTarot.innerHTML = "<p style='color:#fff;font-size:1.1rem;'>🎉 Thanks! Check your inbox for the tarot chapter.</p>"; })
-          .catch(() => { signupFormTarot.innerHTML = "<p style='color:#ff6b6b;'>⚠️ Oops, something went wrong. Please try again.</p>"; });
-      });
+    if (localStorage.getItem("tarotSubscribed") === "true") {
+      // Skip modal if already subscribed/declined
+      loadReading(currentQuestion);
+    } else {
+      show(offerModal);
     }
   });
+
+  // Offer modal buttons
+  offerYes.addEventListener("click", () => {
+    hide(offerModal);
+    show(chapterModal);
+  });
+
+  offerNo.addEventListener("click", () => {
+    hide(offerModal);
+    localStorage.setItem("tarotSubscribed", "true"); // don’t ask again
+    loadReading(currentQuestion);
+  });
+
+  // Close chapter modal
+  closeModal.addEventListener("click", () => hide(chapterModal));
+  window.addEventListener("click", (evt) => {
+    if (evt.target === chapterModal) hide(chapterModal);
+    if (evt.target === offerModal) hide(offerModal);
+  });
+
+  // Signup form submit
+  signupFormTarot.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch(signupFormTarot.action, {
+      method: "POST",
+      body: new FormData(signupFormTarot)
+    })
+    .then(() => {
+      localStorage.setItem("tarotSubscribed", "true");
+      hide(chapterModal);
+      loadReading(currentQuestion);
+    })
+    .catch(() => {
+      signupFormTarot.innerHTML = "<p style='color:#ff6b6b;'>⚠️ Oops, something went wrong. Please try again.</p>";
+    });
+  });
+});
+
   </script>
 </body>
 </html>
