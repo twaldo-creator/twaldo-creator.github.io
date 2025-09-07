@@ -43,7 +43,142 @@
     <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
   </footer>
 
-  <!-- Existing modals and scripts from your tarot flow remain here -->
+  <!-- Offer Modal -->
+  <div id="offerModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <h2 style="margin-top:0;">Tarot in the Story</h2>
+      <p>
+        Tarot readings aren’t just here on the site — they feature prominently in my debut novel,
+        <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.
+      </p>
+      <p>Would you like a free download of the tarot chapter from the book?</p>
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button id="offerYes">Yes, Send It to Me</button>
+        <button id="offerNo">No Thanks, Finish My Reading</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Tarot Chapter Modal -->
+  <div id="chapterModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" id="closeModal" aria-label="Close">&times;</span>
+      <h2 style="margin-top:0;">Get the Tarot Chapter Free</h2>
+      <p>Sign up below to receive the tarot chapter and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+
+      <!-- MailerLite Form (Tarot Chapter Subscribers) -->
+      <form id="signupForm-tarot"
+            action="https://assets.mailerlite.com/jsonp/1770375/forms/164904413107848952/subscribe"
+            method="post"
+            class="signup-form">
+        <input type="email" name="fields[email]" placeholder="Enter your email" required />
+        <input type="hidden" name="ml-submit" value="1" />
+        <input type="hidden" name="anticsrf" value="true" />
+        <button type="submit">Send Me the Tarot Chapter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tarotForm = document.getElementById("tarotForm");
+    const readingDiv = document.getElementById("reading");
+    const offerModal = document.getElementById("offerModal");
+    const chapterModal = document.getElementById("chapterModal");
+    const offerYes = document.getElementById("offerYes");
+    const offerNo = document.getElementById("offerNo");
+    const closeModal = document.getElementById("closeModal");
+    const signupFormTarot = document.getElementById("signupForm-tarot");
+
+    let currentQuestion = "";
+
+    const show = el => { el.style.display = "block"; };
+    const hide = el => { el.style.display = "none"; };
+
+    // Fetch tarot reading
+    async function loadReading(question) {
+      readingDiv.innerHTML = "<p>🔮 Shuffling the deck...</p>";
+      try {
+        const res = await fetch("https://oracle.twaldo.workers.dev", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question })
+        });
+        if (!res.ok) throw new Error(`Bad response: ${res.status}`);
+        const data = await res.json();
+        if (data.error) {
+          readingDiv.innerHTML = `<p>⚠️ Error: ${data.error}</p>`;
+          return;
+        }
+        const parts = (data.reading || "").split("Overall Reading:");
+        const meanings = (parts[0] || "").replace("Card Meanings:", "").trim();
+        const overall = (parts[1] || "").trim();
+
+        readingDiv.innerHTML = `
+          <h3>Your Cards:</h3>
+          <p>${(data.cards || []).join(", ")}</p>
+          <h3>Card Meanings:</h3>
+          <p>${meanings.replace(/\\n/g, "<br>")}</p>
+          <h3>Your Reading:</h3>
+          <p>${overall}</p>
+          <p style="margin-top:20px; font-size:0.9em; opacity:0.7;">
+            <em>Disclaimer: This tarot reading is for entertainment purposes only.</em>
+          </p>
+        `;
+      } catch (err) {
+        readingDiv.innerHTML = `<p>⚠️ Oops: ${err.message}</p>`;
+      }
+    }
+
+    // Tarot form submit
+    tarotForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      currentQuestion = document.getElementById("question").value.trim();
+
+      if (localStorage.getItem("tarotSubscribed") === "true") {
+        loadReading(currentQuestion);
+      } else {
+        show(offerModal);
+      }
+    });
+
+    // Offer modal buttons
+    offerYes.addEventListener("click", () => {
+      hide(offerModal);
+      show(chapterModal);
+    });
+
+    offerNo.addEventListener("click", () => {
+      hide(offerModal);
+      localStorage.setItem("tarotSubscribed", "true"); 
+      loadReading(currentQuestion);
+    });
+
+    // Close chapter modal
+    closeModal.addEventListener("click", () => hide(chapterModal));
+    window.addEventListener("click", (evt) => {
+      if (evt.target === chapterModal) hide(chapterModal);
+      if (evt.target === offerModal) hide(offerModal);
+    });
+
+    // Signup form submit
+    signupFormTarot.addEventListener("submit", (e) => {
+      e.preventDefault();
+      fetch(signupFormTarot.action, {
+        method: "POST",
+        body: new FormData(signupFormTarot)
+      })
+      .then(() => {
+        localStorage.setItem("tarotSubscribed", "true");
+        hide(chapterModal);
+        loadReading(currentQuestion);
+      })
+      .catch(() => {
+        signupFormTarot.innerHTML = "<p style='color:#ff6b6b;'>⚠️ Oops, something went wrong. Please try again.</p>";
+      });
+    });
+  });
+  </script>
 </body>
 </html>
