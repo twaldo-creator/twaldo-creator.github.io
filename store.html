@@ -20,7 +20,7 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 24px;
-      align-items: stretch; /* ensures equal heights */
+      align-items: stretch;
     }
 
     /* Product cards */
@@ -47,10 +47,9 @@
 
     .price { margin:6px 0 8px; color:#263247; font-size:0.95rem; }
     .btn-row { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
-
     a.payhip-add-to-cart-button.btn { text-decoration:none; }
 
-    /* Pink underline hover for eBook store links */
+    /* eBook link underline effect */
     .underline-pink {
       position: relative;
       text-decoration: none;
@@ -64,19 +63,25 @@
     .underline-pink:hover::after,
     .underline-pink:focus-visible::after { transform: scaleX(1); }
 
-    /* eBook link styling */
     .store-links { display:flex; flex-direction:column; gap:8px; margin-top:8px; align-items:center; }
     .store-links a.btn.secondary {
-      background: transparent;
-      border: none;
-      padding: 0;
-      font-weight: 700;
-      font-family: 'Poppins', sans-serif;
+      background: transparent; border: none; padding: 0;
+      font-weight: 700; font-family: 'Poppins', sans-serif;
       color: #1a2b6b;
     }
     .store-links a.btn.secondary:hover { background: transparent; }
 
-    /* Keep card heights consistent on smaller screens */
+    /* Support banner */
+    .support-banner {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
     @media (max-width: 520px){
       .product-img { max-height: 360px; }
       .product-card { padding:16px; }
@@ -85,6 +90,12 @@
 </head>
 <body>
 
+  <!-- Support banner -->
+  <div class="support-banner">
+    Support the author by ordering directly
+  </div>
+
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">Tanner Waldo</div>
@@ -93,11 +104,11 @@
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#contact">Contact</a></li>
         <li><a href="#" id="openModal">Free Chapter</a></li>
-        <li><a href="tarot.html">Free Tarot Reading</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Store section -->
   <section id="store" class="section">
     <div class="store-wrap">
       <h2>Buy the Book</h2>
