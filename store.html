@@ -8,28 +8,63 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
 
-  <!-- Payhip embed (once per page) -->
-  <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
-  <script type="text/javascript">
-    // Turn on the floating cart so multiple items can be added
-    var PayhipConfig = { enableCart: true };
-  </script>
+  <!-- Payhip embed -->
+  <script>var PayhipConfig = { enableCart: true };</script>
+  <script defer src="https://payhip.com/payhip.js"></script>
 
-  <!-- (Optional) small local tweaks for this page -->
   <style>
-    .store-grid { display:flex; flex-wrap:wrap; gap:40px; justify-content:center; margin-top:40px; }
-    .product-card { background:#fff; border:1px solid #e9edf5; border-radius:12px; box-shadow:0 6px 20px rgba(10,22,50,0.06); padding:22px; text-align:center; width:290px; }
-    .product-img { max-width:100%; border-radius:8px; margin-bottom:14px; }
-    .btn-row { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
-    .note { font-size:0.9rem; opacity:0.75; margin-top:8px; }
-    .badge { display:inline-block; font-size:0.8rem; padding:4px 10px; border-radius:999px; background:#10223a; color:#fff; margin-top:8px; }
-    /* Let Payhip buttons inherit your site button look */
+    /* Compact product layout */
+    .store-wrap { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 24px;
+      align-items: start;
+    }
+    .product-card {
+      background:#fff; border:1px solid #e9edf5; border-radius:12px;
+      box-shadow:0 6px 20px rgba(10,22,50,0.06);
+      padding:16px; text-align:center;
+    }
+    .product-card h3 { margin:10px 0 6px; }
+    .product-img {
+      width:100%; height: auto; max-height: 300px; object-fit: cover;
+      border-radius:8px; margin-bottom:10px;
+    }
+    .price { margin:6px 0 8px; color:#263247; font-size:0.95rem; }
+    .btn-row { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
     a.payhip-add-to-cart-button.btn { text-decoration:none; }
+
+    /* Pink underline hover for eBook store links (match navbar) */
+    .underline-pink {
+      position: relative;
+      text-decoration: none;
+    }
+    .underline-pink::after {
+      content:""; position:absolute; left:0; right:0; bottom:-2px; height:3px;
+      background: var(--accent); border-radius:2px; transform: scaleX(0); transform-origin:left;
+      transition: transform .18s ease-out;
+    }
+    .underline-pink:hover::after,
+    .underline-pink:focus-visible::after { transform: scaleX(1); }
+
+    /* Make the eBook buttons look more like links if desired */
+    .store-links { display:flex; flex-direction:column; gap:8px; margin-top:8px; align-items:center; }
+    .store-links a.btn.secondary {
+      background: transparent; border: none; padding: 0;
+      font-weight: 700; font-family: 'Poppins', sans-serif;
+      color: #1a2b6b; /* same as your secondary button text */
+    }
+    .store-links a.btn.secondary:hover { background: transparent; }
+
+    @media (max-width: 520px){
+      .product-img { max-height: 260px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">Tanner Waldo</div>
@@ -43,62 +78,54 @@
     </div>
   </nav>
 
-  <!-- Store -->
   <section id="store" class="section">
-    <h2>Get the Book</h2>
-    <p>Support the author directly with secure checkout by Payhip.</p>
+    <div class="store-wrap">
+      <h2>Buy the Book</h2>
 
-    <div class="store-grid">
-
-      <!-- Hardcover (Payhip) -->
-      <div class="product-card">
-        <img src="cover.png" alt="Hardcover Edition" class="product-img">
-        <h3>Hardcover</h3>
-        <p class="price">)</p>
-        <div class="btn-row">
-          <!-- Your product ID: TzEZJ -->
-          <a href="https://payhip.com/b/TzEZJ"
-             class="payhip-add-to-cart-button btn preorder"
-             data-theme="none"
-             data-product="TzEZJ">Add Hardcover to Cart</a>
+      <div class="store-grid">
+        <!-- Hardcover -->
+        <div class="product-card">
+          <img src="cover.png" alt="Hardcover Edition" class="product-img" width="600" height="900" loading="lazy">
+          <h3>Hardcover</h3>
+          <p class="price">Premium jacketed hardcover</p>
+          <div class="btn-row">
+            <a href="https://payhip.com/b/TzEZJ"
+               class="payhip-add-to-cart-button btn preorder"
+               data-theme="none"
+               data-product="TzEZJ">Add Hardcover to Cart</a>
+          </div>
+          <noscript><p><a href="https://payhip.com/b/TzEZJ" target="_blank" rel="noopener noreferrer">Buy Hardcover</a></p></noscript>
         </div>
-      
-        <p class="note"></p>
-        <noscript><p><a href="https://payhip.com/b/TzEZJ" target="_blank" rel="noopener">Buy Hardcover</a></p></noscript>
-      </div>
 
-      <!-- Paperback (Payhip) -->
-      <div class="product-card">
-        <img src="cover.png" alt="Paperback Edition" class="product-img">
-        <h3>Paperback</h3>
-        <p class="price"></p>
-        <div class="btn-row">
-          <!-- Your product ID: tB0b5 -->
-          <a href="https://payhip.com/b/tB0b5"
-             class="payhip-add-to-cart-button btn preorder"
-             data-theme="none"
-             data-product="tB0b5">Add Paperback to Cart</a>
+        <!-- Paperback -->
+        <div class="product-card">
+          <img src="cover.png" alt="Paperback Edition" class="product-img" width="600" height="900" loading="lazy">
+          <h3>Paperback</h3>
+          <p class="price">Trade paperback</p>
+          <div class="btn-row">
+            <a href="https://payhip.com/b/tB0b5"
+               class="payhip-add-to-cart-button btn preorder"
+               data-theme="none"
+               data-product="tB0b5">Add Paperback to Cart</a>
+          </div>
+          <noscript><p><a href="https://payhip.com/b/tB0b5" target="_blank" rel="noopener noreferrer">Buy Paperback</a></p></noscript>
         </div>
-    
-        <p class="note"></p>
-        <noscript><p><a href="https://payhip.com/b/tB0b5" target="_blank" rel="noopener">Buy Paperback</a></p></noscript>
-      </div>
 
-      <!-- eBook links (store links, not Payhip) -->
-      <div class="product-card">
-        <img src="cover.png" alt="eBook Edition" class="product-img">
-        <h3>eBook</h3>
-        <p class="price">Choose your store</p>
-        <div class="btn-row">
-          <a class="btn secondary" target="_blank" rel="noopener"
-             href="https://books.apple.com/ca/book/every-light-in-every-window-every-tooth-in-every-mouth/id6746823660">Apple Books</a>
-          <a class="btn secondary" target="_blank" rel="noopener"
-             href="https://www.amazon.ca/Every-Light-Window-Tooth-Mouth-ebook/dp/B0FC7YYZ1M">Kindle</a>
-          <a class="btn secondary" target="_blank" rel="noopener"
-             href="https://www.kobo.com/ca/en/ebook/every-light-in-every-window-every-tooth-in-every-mouth">Kobo</a>
+        <!-- eBook store links -->
+        <div class="product-card">
+          <img src="cover.png" alt="eBook Edition" class="product-img" width="600" height="900" loading="lazy">
+          <h3>eBook</h3>
+          <p class="price">Choose your store</p>
+          <div class="store-links">
+            <a class="btn secondary underline-pink" target="_blank" rel="noopener noreferrer"
+               href="https://www.kobo.com/ca/en/ebook/every-light-in-every-window-every-tooth-in-every-mouth">Kobo</a>
+            <a class="btn secondary underline-pink" target="_blank" rel="noopener noreferrer"
+               href="https://www.amazon.ca/Every-Light-Window-Tooth-Mouth-ebook/dp/B0FC7YYZ1M">Kindle</a>
+            <a class="btn secondary underline-pink" target="_blank" rel="noopener noreferrer"
+               href="https://books.apple.com/ca/book/every-light-in-every-window-every-tooth-in-every-mouth/id6746823660">Apple&nbsp;Books</a>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -106,31 +133,39 @@
     <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
   </footer>
 
-  <!-- Free Chapter Modal (MailerLite) -->
-  <div id="chapterModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Get the First Chapter Free</h2>
+  <!-- Free Chapter Modal -->
+  <div id="chapterModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content" tabindex="-1">
+      <button class="close" id="closeModal" aria-label="Close">&times;</button>
+      <h2 id="modalTitle">Get the First Chapter Free</h2>
       <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
       <form id="signupForm"
             action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe"
             method="post" class="signup-form">
-        <input type="email" name="fields[email]" placeholder="Enter your email" required>
+        <input type="email" name="fields[email]" placeholder="Enter your email" required />
         <button type="submit">Send Me the Chapter</button>
       </form>
+      <noscript><p><a href="https://assets.mailerlite.com/webforms/submit/1770375/164309175309960831" rel="noopener noreferrer">Subscribe here</a></p></noscript>
     </div>
   </div>
 
-  <!-- Modal + MailerLite JS -->
   <script>
+    // Modal wiring with basic a11y
     const modal = document.getElementById("chapterModal");
     const openModal = document.getElementById("openModal");
     const closeModal = document.getElementById("closeModal");
+    const modalContent = modal?.querySelector(".modal-content");
+    let lastFocused;
 
-    if (openModal) openModal.addEventListener("click", (e) => { e.preventDefault(); modal.style.display = "flex"; });
-    if (closeModal) closeModal.addEventListener("click", () => modal.style.display = "none");
-    window.addEventListener("click", (e) => { if (e.target === modal) modal.style.display = "none"; });
+    function openM(e){ if(e) e.preventDefault(); lastFocused = document.activeElement; modal.style.display="flex"; modal.setAttribute("aria-hidden","false"); modalContent?.focus(); }
+    function closeM(){ modal.style.display="none"; modal.setAttribute("aria-hidden","true"); lastFocused?.focus(); }
 
+    openModal?.addEventListener("click", openM);
+    closeModal?.addEventListener("click", closeM);
+    window.addEventListener("click", (e) => { if (e.target === modal) closeM(); });
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.style.display === "flex") closeM(); });
+
+    // MailerLite (modal form)
     const signupForm = document.getElementById("signupForm");
     if (signupForm) {
       signupForm.addEventListener("submit", function(e) {
