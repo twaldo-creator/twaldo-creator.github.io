@@ -13,31 +13,16 @@
   <script defer src="https://payhip.com/payhip.js"></script>
 
   <style>
-    /* Layout */
-    .store-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 30px 20px 60px; /* reduced top padding */
-    }
+    /* Tighten top spacing just on this page */
+    #store.section { padding-top: 16px; padding-bottom: 40px; }
+    .store-wrap { max-width: 1100px; margin: 0 auto; padding: 12px 20px 48px; }
+
     .store-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 24px;
-      align-items: stretch;
-    }
-
-    /* Support note under H2 */
-    .support-note {
-      margin-top: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      color: var(--navy-2);
-      background: #eef3fb;
-      border: 1px solid #e0e8f7;
-      padding: 10px 14px;
-      border-radius: 10px;
-      display: inline-block;
+      align-items: stretch; /* equal heights */
     }
 
     /* Product cards */
@@ -56,7 +41,7 @@
     .product-card h3 { margin:10px 0 6px; }
     .product-img {
       width:100%;
-      height:auto;
+      height:auto;            /* no cropping */
       border-radius:8px;
       margin-bottom:10px;
       display:block;
@@ -66,10 +51,23 @@
     .btn-row { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
     a.payhip-add-to-cart-button.btn { text-decoration:none; }
 
-    /* eBook link underline effect */
+    /* Support note under H2 */
+    .support-note {
+      margin-top: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--navy-2);
+      background: #eef3fb;
+      border: 1px solid #e0e8f7;
+      padding: 10px 14px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    /* eBook link underline effect (match navbar) */
     .underline-pink {
       position: relative;
-      display: inline-block;
+      display: inline-block; /* ensures ::after renders */
       text-decoration: none;
     }
     .underline-pink::after {
@@ -81,19 +79,10 @@
     .underline-pink:hover::after,
     .underline-pink:focus-visible::after { transform: scaleX(1); }
 
-    .store-links {
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-top:8px;
-      align-items:center;
-    }
+    .store-links { display:flex; flex-direction:column; gap:8px; margin-top:8px; align-items:center; }
     .store-links a.btn.secondary {
-      background: transparent;
-      border: none;
-      padding: 0;
-      font-weight: 700;
-      font-family: 'Poppins', sans-serif;
+      background: transparent; border: none; padding: 0;
+      font-weight: 700; font-family: 'Poppins', sans-serif;
       color: #1a2b6b;
     }
     .store-links a.btn.secondary:hover { background: transparent; }
@@ -106,7 +95,124 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Navbar (Tarot removed here) -->
   <nav class="navbar">
     <div class="nav-container">
-      <
+      <div class="logo">Tanner Waldo</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#" id="openModal">Free Chapter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Store section -->
+  <section id="store" class="section">
+    <div class="store-wrap">
+      <h2>Buy the Book</h2>
+      <div class="support-note">Support the author by ordering directly</div>
+
+      <div class="store-grid">
+        <!-- Hardcover -->
+        <div class="product-card">
+          <div>
+            <img src="cover.png" alt="Hardcover Edition" class="product-img" width="600" height="900" loading="lazy">
+            <h3>Hardcover</h3>
+            <p class="price">Premium jacketed hardcover</p>
+          </div>
+          <div class="btn-row">
+            <a href="https://payhip.com/b/TzEZJ"
+               class="payhip-add-to-cart-button btn preorder"
+               data-theme="none"
+               data-product="TzEZJ">Add Hardcover to Cart</a>
+          </div>
+          <noscript><p><a href="https://payhip.com/b/TzEZJ" target="_blank" rel="noopener noreferrer">Buy Hardcover</a></p></noscript>
+        </div>
+
+        <!-- Paperback -->
+        <div class="product-card">
+          <div>
+            <img src="cover.png" alt="Paperback Edition" class="product-img" width="600" height="900" loading="lazy">
+            <h3>Paperback</h3>
+            <p class="price">Trade paperback</p>
+          </div>
+          <div class="btn-row">
+            <a href="https://payhip.com/b/tB0b5"
+               class="payhip-add-to-cart-button btn preorder"
+               data-theme="none"
+               data-product="tB0b5">Add Paperback to Cart</a>
+          </div>
+          <noscript><p><a href="https://payhip.com/b/tB0b5" target="_blank" rel="noopener noreferrer">Buy Paperback</a></p></noscript>
+        </div>
+
+        <!-- eBook store links -->
+        <div class="product-card">
+          <div>
+            <img src="cover.png" alt="eBook Edition" class="product-img" width="600" height="900" loading="lazy">
+            <h3>eBook</h3>
+            <p class="price">Choose your store</p>
+          </div>
+          <div class="store-links">
+            <a class="btn secondary underline-pink" target="_blank" rel="noopener noreferrer"
+               href="https://www.kobo.com/ca/en/ebook/every-light-in-every-window-every-tooth-in-every-mouth">Kobo</a>
+            <a class="btn secondary underline-pink" target="_blank" rel="noopener noreferrer"
+               href="https://www.amazon.ca/Every-Light-Window-Tooth-Mouth-ebook/dp/B0FC7YYZ1M">Kindle</a>
+            <a class="btn secondary underline-pink" target="_blank" rel="noopener noreferrer"
+               href="https://books.apple.com/ca/book/every-light-in-every-window-every-tooth-in-every-mouth/id6746823660">Apple&nbsp;Books</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
+  </footer>
+
+  <!-- Free Chapter Modal -->
+  <div id="chapterModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content" tabindex="-1">
+      <button class="close" id="closeModal" aria-label="Close">&times;</button>
+      <h2 id="modalTitle">Get the First Chapter Free</h2>
+      <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+      <form id="signupForm"
+            action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe"
+            method="post" class="signup-form">
+        <input type="email" name="fields[email]" placeholder="Enter your email" required />
+        <button type="submit">Send Me the Chapter</button>
+      </form>
+      <noscript><p><a href="https://assets.mailerlite.com/webforms/submit/1770375/164309175309960831" rel="noopener noreferrer">Subscribe here</a></p></noscript>
+    </div>
+  </div>
+
+  <script>
+    // Modal wiring
+    const modal = document.getElementById("chapterModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const modalContent = modal?.querySelector(".modal-content");
+    let lastFocused;
+
+    function openM(e){ if(e) e.preventDefault(); lastFocused = document.activeElement; modal.style.display="flex"; modal.setAttribute("aria-hidden","false"); modalContent?.focus(); }
+    function closeM(){ modal.style.display="none"; modal.setAttribute("aria-hidden","true"); lastFocused?.focus(); }
+
+    openModal?.addEventListener("click", openM);
+    closeModal?.addEventListener("click", closeM);
+    window.addEventListener("click", (e) => { if (e.target === modal) closeM(); });
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.style.display === "flex") closeM(); });
+
+    // MailerLite (modal form)
+    const signupForm = document.getElementById("signupForm");
+    if (signupForm) {
+      signupForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        fetch(signupForm.action, { method: "POST", body: new FormData(signupForm) })
+          .then(() => { signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>"; })
+          .catch(() => { signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>"; });
+      });
+    }
+  </script>
+</body>
+</html>
