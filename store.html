@@ -3,49 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store | Tanner Waldo</title>
+  <title>Shop | Tanner Waldo</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Navigation -->
-<!-- Navigation -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo"><a href="index.html">TannerWaldo.com</a></div>
-    <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="#" id="openModal">Free Chapter</a></li>
-      <li><a href="tarot.html">Free Tarot Reading</a></li>
-      <li><a href="store.html" class="btn preorder">Buy the Book</a></li>
-    </ul>
-  </div>
-</nav>
-
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Tanner Waldo</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#free-chapter" id="openModal">Free Chapter</a></li>
+        <li><a href="tarot.html">Free Tarot Reading</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Store Section -->
   <section id="store" class="section">
-    <h2>Pre-Order Direct</h2>
-    <p>Support the author directly by ordering below. Secure checkout provided by Stripe.</p>
+    <h2>Buy the Book</h2>
+    <p>Available now in hardcover, paperback, and ebook editions.</p>
 
     <div class="store-grid">
+
+      <!-- Hardcover -->
       <div class="product-card">
-        <img src="cover.png" alt="Hardcover Book" class="product-img">
-        <h3>Hardcover Edition</h3>
-        <p>$44.99 CAD</p>
-        <a href="https://buy.stripe.com/bJe9AT75gczl3yu3hz3gk00" target="_blank" class="btn preorder">Buy Hardcover</a>
+        <img src="cover.png" alt="Hardcover Edition" class="product-img">
+        <h3>Hardcover</h3>
+        <p class="price">Available via Amazon</p>
+        <a href="https://www.amazon.ca/Every-Light-Window-Tooth-Mouth/dp/1069525227/"
+           target="_blank" rel="noopener" class="btn preorder">Buy Hardcover on Amazon</a>
       </div>
 
+      <!-- Paperback -->
       <div class="product-card">
-        <img src="cover.png" alt="Paperback Book" class="product-img">
-        <h3>Paperback Edition</h3>
-        <p>$26.50 CAD</p>
-        <a href="https://buy.stripe.com/dRmfZh1KWbvh6KG05n3gk01" target="_blank" class="btn preorder">Buy Paperback</a>
+        <img src="cover.png" alt="Paperback Edition" class="product-img">
+        <h3>Paperback</h3>
+        <p class="price">Available via Amazon</p>
+        <a href="https://www.amazon.ca/Every-Light-Window-Tooth-Mouth/dp/1069525200/"
+           target="_blank" rel="noopener" class="btn preorder">Buy Paperback on Amazon</a>
       </div>
+
+      <!-- Kobo -->
+      <div class="product-card">
+        <img src="cover.png" alt="Kobo eBook" class="product-img">
+        <h3>eBook (Kobo)</h3>
+        <p class="price">Available worldwide</p>
+        <a href="https://www.kobo.com/ca/en/ebook/every-light-in-every-window-every-tooth-in-every-mouth"
+           target="_blank" rel="noopener" class="btn preorder">Buy on Kobo</a>
+      </div>
+
     </div>
   </section>
 
+  <!-- Contact Footer -->
   <footer>
     <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
   </footer>
@@ -56,25 +72,57 @@
       <span class="close" id="closeModal">&times;</span>
       <h2>Get the First Chapter Free</h2>
       <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
-      <form id="signupForm-store" 
-            action="https://assets.mailerlite.com/webforms/submit/164309175309960831"
-            method="post" target="_blank" class="signup-form">
+      
+      <!-- MailerLite Embedded Form -->
+      <form id="signupForm" 
+            action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe" 
+            method="post" 
+            class="signup-form">
         <input type="email" name="fields[email]" placeholder="Enter your email" required>
-        <input type="hidden" name="ml-submit" value="1">
-        <input type="hidden" name="anticsrf" value="true">
         <button type="submit">Send Me the Chapter</button>
       </form>
     </div>
   </div>
 
-  <!-- Scripts -->
+  <!-- Modal Script -->
   <script>
-    const modalStore = document.getElementById("chapterModal");
-    const openModalStore = document.getElementById("openModal");
-    const closeModalStore = document.getElementById("closeModal");
-    openModalStore.onclick = e => { e.preventDefault(); modalStore.style.display = "block"; }
-    closeModalStore.onclick = () => modalStore.style.display = "none";
-    window.onclick = e => { if (e.target === modalStore) modalStore.style.display = "none"; }
+    const modal = document.getElementById("chapterModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+
+    if (openModal) {
+      openModal.addEventListener("click", (e) => {
+        e.preventDefault();
+        modal.style.display = "flex";
+      });
+    }
+
+    if (closeModal) {
+      closeModal.addEventListener("click", () => modal.style.display = "none");
+    }
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+
+    // MailerLite submission
+    const signupForm = document.getElementById("signupForm");
+    if (signupForm) {
+      signupForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        fetch(signupForm.action, {
+          method: "POST",
+          body: new FormData(signupForm)
+        })
+        .then(() => {
+          signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>";
+        })
+        .catch(() => {
+          signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>";
+        });
+      });
+    }
   </script>
+
 </body>
 </html>
