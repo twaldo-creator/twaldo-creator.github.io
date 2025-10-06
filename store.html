@@ -8,21 +8,33 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
 
-  <!-- Payhip embed -->
-  <script>var PayhipConfig = { enableCart: true };</script>
-  <script defer src="https://payhip.com/payhip.js"></script>
-
   <style>
-    /* Tighten top spacing just on this page */
+    /* Layout */
+    .store-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px 48px;
+    }
     #store.section { padding-top: 16px; padding-bottom: 40px; }
-    .store-wrap { max-width: 1100px; margin: 0 auto; padding: 12px 20px 48px; }
-
     .store-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 24px;
-      align-items: stretch; /* equal heights */
+      align-items: stretch;
+    }
+
+    /* Support note under H2 */
+    .support-note {
+      margin-top: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--navy-2);
+      background: #eef3fb;
+      border: 1px solid #e0e8f7;
+      padding: 10px 14px;
+      border-radius: 10px;
+      display: inline-block;
     }
 
     /* Product cards */
@@ -41,7 +53,7 @@
     .product-card h3 { margin:10px 0 6px; }
     .product-img {
       width:100%;
-      height:auto;            /* no cropping */
+      height:auto;
       border-radius:8px;
       margin-bottom:10px;
       display:block;
@@ -49,25 +61,11 @@
 
     .price { margin:6px 0 8px; color:#263247; font-size:0.95rem; }
     .btn-row { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
-    a.payhip-add-to-cart-button.btn { text-decoration:none; }
 
-    /* Support note under H2 */
-    .support-note {
-      margin-top: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      color: var(--navy-2);
-      background: #eef3fb;
-      border: 1px solid #e0e8f7;
-      padding: 10px 14px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-
-    /* eBook link underline effect (match navbar) */
+    /* eBook link underline effect */
     .underline-pink {
       position: relative;
-      display: inline-block; /* ensures ::after renders */
+      display: inline-block;
       text-decoration: none;
     }
     .underline-pink::after {
@@ -79,10 +77,19 @@
     .underline-pink:hover::after,
     .underline-pink:focus-visible::after { transform: scaleX(1); }
 
-    .store-links { display:flex; flex-direction:column; gap:8px; margin-top:8px; align-items:center; }
+    .store-links {
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:8px;
+      align-items:center;
+    }
     .store-links a.btn.secondary {
-      background: transparent; border: none; padding: 0;
-      font-weight: 700; font-family: 'Poppins', sans-serif;
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
       color: #1a2b6b;
     }
     .store-links a.btn.secondary:hover { background: transparent; }
@@ -95,7 +102,7 @@
 </head>
 <body>
 
-  <!-- Navbar (Tarot removed here) -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">Tanner Waldo</div>
@@ -123,12 +130,10 @@
             <p class="price">Premium jacketed hardcover</p>
           </div>
           <div class="btn-row">
-            <a href="https://payhip.com/b/TzEZJ"
-               class="payhip-add-to-cart-button btn preorder"
-               data-theme="none"
-               data-product="TzEZJ">Pre-Order CAD $45.00</a>
+            <a href="https://buy.stripe.com/bJe9AT75gczl3yu3hz3gk00" class="btn preorder" target="_blank" rel="noopener noreferrer">
+              Buy Hardcover
+            </a>
           </div>
-          <noscript><p><a href="https://payhip.com/b/TzEZJ" target="_blank" rel="noopener noreferrer">Buy Hardcover</a></p></noscript>
         </div>
 
         <!-- Paperback -->
@@ -139,12 +144,10 @@
             <p class="price">Trade paperback</p>
           </div>
           <div class="btn-row">
-            <a href="https://payhip.com/b/tB0b5"
-               class="payhip-add-to-cart-button btn preorder"
-               data-theme="none"
-               data-product="tB0b5">CAD $25.00</a>
+            <a href="https://buy.stripe.com/dRmfZh1KWbvh6KG05n3gk01" class="btn preorder" target="_blank" rel="noopener noreferrer">
+              Buy Paperback
+            </a>
           </div>
-          <noscript><p><a href="https://payhip.com/b/tB0b5" target="_blank" rel="noopener noreferrer">Buy Paperback</a></p></noscript>
         </div>
 
         <!-- eBook store links -->
@@ -168,7 +171,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Tanner Waldo · TannerWaldo.com</p>
+    <p>&copy; 2025 Tanner Waldo · Rysavy Press · TannerWaldo.com</p>
   </footer>
 
   <!-- Free Chapter Modal -->
