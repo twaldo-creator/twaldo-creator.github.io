@@ -19,8 +19,51 @@
     #hero-buttons { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .btn-primary { background: #0a6f9c; color: #fff; border-radius: 999px; padding: 0.55rem 1.4rem; font-size: 0.95rem; border: none; text-decoration: none; display: inline-block; }
     .btn-secondary { color: #0a6f9c; text-decoration: none; font-size: 0.95rem; }
-    .hero-photo { width: 160px; height: 160px; border-radius: 50%; background: #dde7ee; margin-bottom: 0.5rem; }
     .hero-right { text-align: center; }
+    .hero-photo {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 0.5rem;
+      background: #dde7ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .location-pin {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #0a6f9c;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .location-pin::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      margin-top: -2px;
+      margin-left: -2px;
+      border-radius: 50%;
+      background: #0a6f9c;
+    }
     .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
     .pillar-card { border: 1px solid #eee; border-radius: 0.6rem; padding: 1rem; background: #fafafa; }
     footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.9rem; color: #666; }
@@ -65,13 +108,15 @@
         <a class="btn-secondary" href="Tanner_Waldo_Resume.pdf">Download resume (PDF)</a>
       </div>
     </div>
-   <div class="hero-right">
-  <div class="hero-photo">
-    <img src="profile.jpg" alt="Photo of Tanner Waldo" />
-  </div>
-  <div>Edmonton, AB · Open to remote/hybrid roles in Canada</div>
-</div>
-
+    <div class="hero-right">
+      <div class="hero-photo">
+        <img src="profile.jpg" alt="Photo of Tanner Waldo" />
+      </div>
+      <div class="location">
+        <span class="location-pin"></span>
+        <span>Edmonton, AB (Relocatable)</span>
+      </div>
+    </div>
   </section>
 
   <!-- About -->
@@ -85,86 +130,4 @@
     <div class="pillars">
       <div class="pillar-card">
         <h3>Data-driven HR</h3>
-        <p>I use HR and operations data to spot patterns in turnover, scheduling, and engagement, and to support better decisions about people.</p>
-      </div>
-      <div class="pillar-card">
-        <h3>Operational leadership</h3>
-        <p>I work closely with managers and field leaders to design processes that are realistic for busy frontline teams.</p>
-      </div>
-      <div class="pillar-card">
-        <h3>Employee experience</h3>
-        <p>I care about how compensation, communication, and day-to-day practices shape how people feel about their jobs.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects placeholder (for next week) -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>
-      Detailed case studies are coming soon, including a simulated compensation review for a fictional retail organization
-      and my Google Data Analytics capstone project.
-    </p>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience">
-    <h2>Experience</h2>
-    <p>Rough content for now; you can paste in bullets from your resume and refine later.</p>
-    <h3>Most recent role – Company</h3>
-    <ul>
-      <li>Analyzed HR and operations data to identify trends in turnover and employee experience.</li>
-      <li>Conducted employee relations investigations by phone and in person, recommending fair, consistent outcomes.</li>
-      <li>Visited stores to speak with team members and managers, grounding decisions in real frontline conditions.</li>
-    </ul>
-    <!-- Add earlier roles here -->
-  </section>
-
-  <!-- Education -->
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Degree / Program</strong> – Institution, Year</li>
-    </ul>
-  </section>
-
-  <!-- Certificates & Courses -->
-  <section id="certificates">
-    <h2>Certificates &amp; longer courses</h2>
-    <ul>
-      <li><strong>Google Data Analytics Professional Certificate</strong> – Coursera (in progress)</li>
-      <li><strong>[Example specialization]</strong> – Provider, Year</li>
-    </ul>
-  </section>
-
-  <!-- Professional Development -->
-  <section id="development">
-    <h2>Professional development</h2>
-    <p>Shorter seminars, webinars, and internal trainings.</p>
-    <ul>
-      <li>Employee relations &amp; investigations workshops</li>
-      <li>Manager coaching / feedback skills sessions</li>
-      <li>Diversity, equity, and inclusion learning events</li>
-    </ul>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      Open to HR Business Partner/HR Manager, People/HR Analyst, and HR Operations roles supporting frontline teams.
-    </p>
-    <p>
-      Email: <a href="mailto:youremail@example.com">youremail@example.com</a><br />
-      LinkedIn: <a href="https://www.linkedin.com/in/tannerw">linkedin.com/in/tannerw</a>
-    </p>
-  </section>
-
-</main>
-<>
-<footer>
-  &copy; 2026 Tanner Waldo
-</footer>
-
-</body>
-</html>
+        <p>I use HR and operations data to spot patterns in turnover, scheduling, and engagement, and to support better decisions
