@@ -11,32 +11,18 @@
     .brand { font-weight: 600; letter-spacing: 0.03em; }
     nav a { margin-left: 1rem; text-decoration: none; color: #444; font-size: 0.95rem; }
     nav a:hover { color: #0a6f9c; }
-    main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-    section { padding: 2.5rem 0 1.5rem; border-bottom: 1px solid #f1f1f1; }
-    h1, h2, h3 { margin-top: 0; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.4rem; margin-bottom: 0.25rem; }
-    h3 { font-size: 1.1rem; margin-top: 1.25rem; }
-    .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: #0a6f9c; margin-bottom: 0.5rem; }
-    .subtle { color: #666; font-size: 0.95rem; }
-    .taglist { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-    .tag { font-size: 0.78rem; padding: 0.2rem 0.55rem; border-radius: 999px; border: 1px solid #dde5ec; background: #f7fafc; color: #355068; }
-    .btn-row { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    main { max-width: 720px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+    section { padding: 1.5rem 0; }
+    h1 { margin-top: 0; font-size: 1.8rem; }
+    .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: #0a6f9c; margin-bottom: 0.4rem; }
+    .subtle { color: #555; font-size: 0.95rem; }
+    .taglist { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.8rem 0 0.4rem; }
+    .tag { font-size: 0.78rem; padding: 0.18rem 0.55rem; border-radius: 999px; border: 1px solid #dde5ec; background: #f7fafc; color: #355068; }
+    .btn-row { margin-top: 1.1rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .btn-primary { background: #0a6f9c; color: #fff; border-radius: 999px; padding: 0.55rem 1.4rem; font-size: 0.95rem; border: none; text-decoration: none; display: inline-block; }
     .btn-secondary { color: #0a6f9c; text-decoration: none; font-size: 0.95rem; }
-    .two-column { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 2rem; align-items: flex-start; }
-    @media (max-width: 720px) {
-      .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      nav a { margin-left: 0; margin-right: 1rem; }
-      .two-column { grid-template-columns: 1fr; }
-    }
-    .pill { display: inline-block; border-radius: 999px; padding: 0.18rem 0.7rem; font-size: 0.78rem; background: #f2f7fb; color: #355068; border: 1px solid #dde5ec; }
-    .callout { border-left: 3px solid #0a6f9c; padding-left: 0.9rem; margin: 0.75rem 0 1.25rem; font-size: 0.95rem; color: #444; }
-    .list-tight li { margin-bottom: 0.25rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 0.75rem; }
-    .card { border: 1px solid #eee; border-radius: 0.6rem; padding: 1rem; background: #fafafa; }
-    .metric { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #666; margin-bottom: 0.25rem; }
-    .metric-value { font-size: 1.2rem; font-weight: 600; }
+    ul { padding-left: 1.1rem; margin: 0.6rem 0 0; }
+    li { margin-bottom: 0.25rem; }
     footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.9rem; color: #666; }
   </style>
 </head>
@@ -59,197 +45,48 @@
 
 <main>
 
-  <!-- Hero / overview -->
-  <section id="overview">
-    <div class="eyebrow">Portfolio project · Compensation & People Analytics</div>
-    <h1>The Bear’s Den: Compensation structure and pay equity review</h1>
+  <section aria-labelledby="proj-title">
+    <div class="eyebrow">Portfolio project · Compensation analysis</div>
+    <h1 id="proj-title">The Bear’s Den compensation & pay equity review</h1>
+
     <p class="subtle">
-      A capstone-style compensation project based on ADP’s Entry‑Level Compensation and Benefits Analyst certificate,
-      built around a fictional non‑profit recreation facility in Alberta’s Rocky Mountains.
+      A simulated compensation analyst project for a fictional non‑profit recreation facility in Alberta,
+      focused on building an Excel‑driven pay structure, market benchmarking, and pay equity analysis.
     </p>
 
     <div class="taglist">
       <span class="tag">Excel modelling</span>
-      <span class="tag">Compensation structure</span>
+      <span class="tag">Pay structures</span>
+      <span class="tag">Compa‑ratio & ranges</span>
       <span class="tag">Market benchmarking</span>
-      <span class="tag">Pay equity</span>
-      <span class="tag">Data visualization</span>
-      <span class="tag">Board‑level reporting</span>
+      <span class="tag">Board‑ready reporting</span>
     </div>
 
     <div class="btn-row">
-      <!-- replace href values with your real file names/paths -->
+      <!-- Update these filenames to match your actual artifacts -->
       <a class="btn-primary" href="Bears-Den-Compensation-Analysis-2026.xlsx">Download Excel workbook</a>
       <a class="btn-secondary" href="Bears-Den-Board-Report.pdf">View board report (PDF)</a>
-      <a class="btn-secondary" href="Bears-Den-Board-Slides.pdf">View slide deck (PDF)</a>
+      <a class="btn-secondary" href="Bears-Den-Board-Slides.pdf">View slides (PDF)</a>
     </div>
   </section>
 
-  <!-- Context & objectives -->
-  <section id="context">
-    <div class="two-column">
-      <div>
-        <h2>Context</h2>
-        <p>
-          The Bear’s Den is a fictional non‑profit recreation facility serving a small town in Alberta’s Rocky Mountains.
-          As a new Compensation Analyst, I was asked to review the organization’s pay practices for competitiveness,
-          internal equity, and alignment with a sustainable non‑profit budget.
-        </p>
-        <p>
-          I used a synthetic employee dataset of hourly and salaried roles (front desk, concessions, aquatics, fitness, maintenance,
-          housekeeping, administration, and leadership) to design a full compensation review that mirrors real‑world practice.
-        </p>
-      </div>
-      <div>
-        <h2>Project goals</h2>
-        <ul class="list-tight">
-          <li>Define a clear compensation philosophy tailored to a small, mission‑driven non‑profit.</li>
-          <li>Evaluate jobs and build a grade‑based salary structure tied to external market data.</li>
-          <li>Use Excel to calculate key compensation metrics and identify compression and equity issues.</li>
-          <li>Develop budgeted recommendations and a board‑ready narrative for implementation.</li>
-        </ul>
-        <p class="callout">
-          This project is intentionally Excel‑heavy: the workbook shows the underlying math, while the board report
-          focuses on plain‑language findings and recommendations.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Assignment / structure -->
-  <section id="assignment">
-    <h2>Assignment structure</h2>
-    <p>
-      The project is organized like a capstone assignment for a junior compensation analyst. The core deliverable is an Excel model,
-      supported by a written report to the Board and optional presentation slides.
-    </p>
-
-    <h3>1. Define compensation philosophy & strategy</h3>
-    <ul class="list-tight">
-      <li>Draft a compensation philosophy that balances mission, market competitiveness, and fiscal responsibility.</li>
-      <li>Set target market positioning (e.g., 50th percentile for support roles, 60th for safety‑critical roles).</li>
-      <li>Outline governance: who approves structures, exceptions, and periodic reviews.</li>
-    </ul>
-
-    <h3>2. Job analysis & evaluation</h3>
-    <ul class="list-tight">
-      <li>Group roles into job families (Guest Services, Aquatics, Fitness, Maintenance, Housekeeping, Concessions, Admin, Leadership).</li>
-      <li>Use a point‑factor method with defined compensable factors (knowledge, problem solving, accountability, working conditions).</li>
-      <li>Score a representative set of jobs and translate total points into a job hierarchy.</li>
-    </ul>
-
-    <h3>3. Market benchmarking</h3>
-    <ul class="list-tight">
-      <li>Research Alberta recreation and non‑profit market data for key roles (e.g., lifeguards, recreation supervisors, managers).</li>
-      <li>Select peer sources and define how to use P25 / P50 / P75 data for Bear’s Den.</li>
-      <li>Build a market data tab in Excel and link benchmark values into the pay structure.</li>
-    </ul>
-
-    <h3>4. Build grade structure & pay ranges</h3>
-    <ul class="list-tight">
-      <li>Create 8–10 salary grades with midpoint progressions and range spreads by level.</li>
-      <li>Calculate minimum, midpoint, and maximum for each grade using consistent formulas.</li>
-      <li>Assign jobs to grades based on evaluation and market data.</li>
-    </ul>
-
-    <h3>5. Calculate compensation metrics</h3>
-    <ul class="list-tight">
-      <li>Convert hourly rates to annualized pay where needed and attach each employee to a grade.</li>
-      <li>Compute compa‑ratio, range penetration, and market ratio for each employee.</li>
-      <li>Identify pay structure outliers (below minimum, above maximum) and instances of pay compression.</li>
-      <li>Slice results by department, tenure, and demographic fields to surface equity issues.</li>
-    </ul>
-
-    <h3>6. Budget & implementation planning</h3>
-    <ul class="list-tight">
-      <li>Model the cost of bringing all employees to at least range minimum.</li>
-      <li>Estimate additional investment for key market and compression adjustments.</li>
-      <li>Propose phased implementation options aligned with a non‑profit budget.</li>
-    </ul>
-
-    <h3>7. Board‑level communication</h3>
-    <ul class="list-tight">
-      <li>Summarize current‑state risks and opportunities in a concise executive summary.</li>
-      <li>Translate Excel findings into clear charts and tables suitable for a Board package.</li>
-      <li>Outline recommendations, risk trade‑offs, and a maintenance plan for the structure.</li>
+  <section aria-label="Quick details">
+    <h2 style="font-size:1.1rem; margin-bottom:0.2rem;">In one glance</h2>
+    <ul>
+      <li>Designed a 10‑tab Excel model with job grades, pay ranges, and market pricing.</li>
+      <li>Calculated compa‑ratio, range penetration, market ratio, and flagged pay outliers.</li>
+      <li>Identified compression and basic pay equity issues, with costed remediation options.</li>
+      <li>Summarized findings and recommendations in a concise, board‑style report.</li>
     </ul>
   </section>
 
-  <!-- Excel focus -->
-  <section id="excel">
-    <h2>Excel model: key components</h2>
-    <p>
-      The workbook is designed to be auditable and reusable. Each tab has a clear purpose, and complex calculations are broken out
-      into helper columns so another analyst or leader can follow the logic.
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="metric">Core tabs</div>
-        <div class="metric-value">10</div>
-        <p class="subtle">
-          Instructions, employee master, job inventory, market data, job evaluation,
-          pay structure, metrics dashboard, outliers, budget modelling, and visuals.
-        </p>
-      </div>
-      <div class="card">
-        <div class="metric">Key formulas</div>
-        <p class="subtle">
-          Compa‑ratio, range penetration, market ratio, salary differentials, red/green circle flags,
-          and summary KPIs by department and job family.
-        </p>
-      </div>
-      <div class="card">
-        <div class="metric">Visuals</div>
-        <p class="subtle">
-          Grade structures, compa‑ratio distributions, equity views, and budget impact charts
-          designed for direct export into a Board report.
-        </p>
-      </div>
-    </div>
-
-    <h3>Examples of analysis built in Excel</h3>
-    <ul class="list-tight">
-      <li>Conditional formatting to highlight employees below minimum or above maximum.</li>
-      <li>Department‑level dashboards showing average compa‑ratio and market ratio.</li>
-      <li>Comparisons of supervisor pay vs direct reports to spot compression.</li>
-      <li>Simple equity checks by sex within grades using summary tables and visuals.</li>
+  <section aria-label="My role">
+    <h2 style="font-size:1.1rem; margin-bottom:0.2rem;">What this shows about my work</h2>
+    <ul>
+      <li>Comfort building and auditing compensation models in Excel for mixed hourly/salaried teams.</li>
+      <li>Ability to connect market data and internal equity metrics to practical pay decisions.</li>
+      <li>Experience turning technical analysis into clear, plain‑language recommendations.</li>
     </ul>
-
-    <p class="callout">
-      If you open the workbook, you can trace each recommendation in the Board report back to
-      a specific tab, calculation, or visualization in Excel.
-    </p>
-  </section>
-
-  <!-- Outcomes & skills -->
-  <section id="outcomes">
-    <h2>Outcomes and skills demonstrated</h2>
-    <p>
-      While this project is based on simulated data, the structure and tools mirror real work I’d perform in a field HR or
-      compensation analyst role supporting frontline teams.
-    </p>
-
-    <h3>Outcomes</h3>
-    <ul class="list-tight">
-      <li>A documented compensation philosophy suited to a community recreation non‑profit.</li>
-      <li>An evaluated job architecture and grade‑based pay structure tied to local market data.</li>
-      <li>A full set of compensation metrics highlighting market gaps, compression, and equity signals.</li>
-      <li>A costed implementation plan that balances fairness, competitiveness, and budget constraints.</li>
-    </ul>
-
-    <h3>Skills</h3>
-    <ul class="list-tight">
-      <li>Excel modelling and data cleaning with multi‑tab, formula‑driven analysis.</li>
-      <li>Job evaluation and salary structure design for mixed hourly/salaried workforces.</li>
-      <li>Compensation analytics (compa‑ratio, range penetration, market ratio, and equity checks).</li>
-      <li>Board‑level storytelling: turning technical analysis into clear, practical recommendations.</li>
-    </ul>
-
-    <p>
-      I’d be happy to walk through the workbook or Board report live to show how I’d adapt this approach
-      to a real organization’s data and constraints.
-    </p>
   </section>
 
 </main>
