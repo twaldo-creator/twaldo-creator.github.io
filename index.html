@@ -1,102 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Tanner Waldo – HR & People Analytics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; color: #222; }
-    header { position: sticky; top: 0; z-index: 10; background: #ffffffee; backdrop-filter: blur(6px); border-bottom: 1px solid #eee; }
-    .nav-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; }
-    .brand { font-weight: 600; letter-spacing: 0.03em; }
-    nav a { margin-left: 1rem; text-decoration: none; color: #444; font-size: 0.95rem; }
-    nav a:hover { color: #0a6f9c; }
-    main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-    section { padding: 3rem 0 1rem; border-bottom: 1px solid #f1f1f1; }
-    h1, h2 { margin-top: 0; }
-    #hero { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr); gap: 2rem; align-items: center; padding-top: 2.5rem; }
-    #hero-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: #0a6f9c; margin-bottom: 0.5rem; }
-    #hero-buttons { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
-    .btn-primary { background: #0a6f9c; color: #fff; border-radius: 999px; padding: 0.55rem 1.4rem; font-size: 0.95rem; border: none; text-decoration: none; display: inline-block; }
-    .btn-secondary { color: #0a6f9c; text-decoration: none; font-size: 0.95rem; }
-    .hero-right { text-align: center; }
-    .hero-photo {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 0.5rem;
-      background: #dde7ee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .location {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-    .location-pin {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 2px solid #0a6f9c;
-      position: relative;
-      box-sizing: border-box;
-    }
-    .location-pin::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 4px;
-      height: 4px;
-      margin-top: -2px;
-      margin-left: -2px;
-      border-radius: 50%;
-      background: #0a6f9c;
-    }
-    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-    .pillar-card { border: 1px solid #eee; border-radius: 0.6rem; padding: 1rem; background: #fafafa; }
-    footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.9rem; color: #666; }
-    @media (max-width: 720px) {
-      #hero { grid-template-columns: 1fr; }
-      .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-      nav a { margin-left: 0; margin-right: 1rem; }
-    }
-    .cert-icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.15em;
-      margin-right: 0.35rem;
-      color: #0a6f9c;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>Tanner Waldo – HR Business Partnership & Employee Relations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; color: #222; }
+header { position: sticky; top: 0; z-index: 10; background: #ffffffee; backdrop-filter: blur(6px); border-bottom: 1px solid #eee; }
+.nav-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; }
+.brand { font-weight: 600; letter-spacing: 0.03em; }
+nav a { margin-left: 1rem; text-decoration: none; color: #444; font-size: 0.95rem; }
+nav a:hover { color: #0a6f9c; }
+main { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+section { padding: 3rem 0 1rem; border-bottom: 1px solid #f1f1f1; }
+h1, h2 { margin-top: 0; }
+#hero { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr); gap: 2rem; align-items: center; padding-top: 2.5rem; }
+#hero-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: #0a6f9c; margin-bottom: 0.5rem; }
+#hero-buttons { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn-primary { background: #0a6f9c; color: #fff; border-radius: 999px; padding: 0.55rem 1.4rem; font-size: 0.95rem; border: none; text-decoration: none; display: inline-block; }
+.btn-secondary { color: #0a6f9c; text-decoration: none; font-size: 0.95rem; }
+.hero-right { text-align: center; }
+.hero-photo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 0.5rem;
+  background: #dde7ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+.location-pin {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #0a6f9c;
+  position: relative;
+  box-sizing: border-box;
+}
+.location-pin::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: #0a6f9c;
+}
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.pillar-card { border: 1px solid #eee; border-radius: 0.6rem; padding: 1rem; background: #fafafa; }
+footer { max-width: 960px; margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.9rem; color: #666; }
+@media (max-width: 720px) {
+  #hero { grid-template-columns: 1fr; }
+  .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  nav a { margin-left: 0; margin-right: 1rem; }
+}
+.cert-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  margin-right: 0.35rem;
+  color: #0a6f9c;
+}
+</style>
 </head>
 <body>
-
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <symbol id="icon-certificate" viewBox="0 0 24 24">
-    <rect x="3" y="3" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="7" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-    <line x1="7" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-    <circle cx="9" cy="17.5" r="2" fill="currentColor"/>
-    <path d="M9 19.5 7.8 21 6.8 18.7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <path d="M9 19.5 10.2 21 11.2 18.7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-  </symbol>
+<symbol id="icon-certificate" viewBox="0 0 24 24">
+  <rect x="3" y="3" width="18" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  <line x1="7" y1="8" x2="17" y2="8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="7" y1="11" x2="14" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  <circle cx="9" cy="17.5" r="2" fill="currentColor"/>
+  <path d="M9 19.5 7.8 21 6.8 18.7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M9 19.5 10.2 21 11.2 18.7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+</symbol>
 </svg>
 
 <header>
   <div class="nav-inner">
-    <div class="brand">Tanner Waldo</div>
+    <div class="brand">Tanner Waldo · HR advisory & employee relations</div>
     <nav>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
@@ -104,196 +103,211 @@
       <a href="#certificates">Certificates &amp; Courses</a>
       <a href="#development">Professional Development</a>
       <a href="#projects">Projects</a>
+      <a href="#articles">Articles</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
+<!-- Hero / banner -->
+<section id="hero">
+  <div>
+    <div id="hero-label">HR partnership · Operations leadership · Employee experience</div>
+    <h1>Field HR specialist focused on practical, evidence-based HR advice.</h1>
+    <p>
+      I’m an HR professional with more than a decade of leadership experience in large retail stores and field HR support
+      across 130 locations. I focus on helping managers navigate employee relations, performance, leaves and accommodations,
+      and policy interpretation in a way that is fair, compliant, and workable for frontline teams. I’m working toward the
+      CPHR designation and am registered to write the National Knowledge Exam in November 2026.
+    </p>
+    <div id="hero-buttons">
+      <a class="btn-primary" href="#projects">View my projects</a>
+      <a class="btn-secondary" href="Tanner_Waldo_Resume.pdf">Download resume (PDF)</a>
+      <a class="btn-secondary" href="https://www.linkedin.com/in/tannerw/recent-activity/articles/">Read my articles</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo">
+      <img src="profile.jpg" alt="Photo of Tanner Waldo" />
+    </div>
+    <div class="location">
+      <span class="location-pin"></span>
+      <span>Edmonton, AB (Relocatable)</span>
+    </div>
+  </div>
+</section>
 
-  <!-- Hero / banner -->
-  <section id="hero">
-    <div>
-      <div id="hero-label">Data-driven HR · Operational leadership · Employee experience</div>
-      <h1>Field HR specialist guided by data and the employee experience.</h1>
+<!-- About -->
+<section id="about">
+  <h2>About me</h2>
+  <p>
+    I’m building a career in HR that balances grounded, evidence-based advice with an understanding of what it’s like to run
+    busy frontline operations. I’ve managed my own teams, overseen multi-million dollar sales volumes, and then moved into
+    field HR where my job was to help other leaders do the same thing with their people and their numbers.
+  </p>
+
+  <div class="pillars">
+    <div class="pillar-card">
+      <h3>HR partnership</h3>
       <p>
-        I’m an HR professional who sits at the intersection of HR business partnership and people analytics, and am especially interested in environments with frontline teams like retail, hospitality, and manufacturing. I enjoy using data, judgment, and conversations with managers and team members to improve policies, programs, and everyday employee experience. In pursuit of the CPHR designation, I am registered to write the National Knowledge Exam in November 2026.
+        I prefer to slow down long enough to understand the issue, compare it to best practices and past cases, and decide how
+        we’ll measure results before we act. My approach to HR partnership is evidence-based: I draw on policy, prior outcomes,
+        and available data so that managers can make informed decisions they can stand behind later.
       </p>
-      <div id="hero-buttons">
-        <a class="btn-primary" href="#projects">View my projects</a>
-        <a class="btn-secondary" href="Tanner_Waldo_Resume.pdf">Download resume (PDF)</a>
-      </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-photo">
-        <img src="profile.jpg" alt="Photo of Tanner Waldo" />
-      </div>
-      <div class="location">
-        <span class="location-pin"></span>
-        <span>Edmonton, AB (Relocatable)</span>
-      </div>
+
+    <div class="pillar-card">
+      <h3>Operations leadership</h3>
+      <p>
+        I’ve led large retail teams and owned results for multi-million dollar stores, chasing KPIs around sales, labor, shrink,
+        and customer experience. I know how much fun retail can be, and how challenging. That background gives me the language
+        and credibility to guide managers through performance, staffing, and change in a way that respects both the numbers and
+        the people behind them.
+      </p>
     </div>
-  </section>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About me</h2>
-    <p>
-      I’m building a career in HR that balances data analysis with hands-on partnership.
-      In my last role I moved between reporting, employee relations investigations, and in-store conversations
-      with team members, and I discovered I’m at my best when I can connect numbers to what’s happening on the floor.
-    </p>
-    <div class="pillars">
-      <div class="pillar-card">
-        <h3>Data-driven HR</h3>
-        <p>
-          I use HR and operations data to spot patterns in turnover, scheduling, and engagement, and to support better decisions
-          about staffing, compensation, and team member experience. I’m currently expanding my analytics toolkit through the
-          Google Data Analytics Professional Certificate and a compensation review portfolio project.
-        </p>
-      </div>
-      <div class="pillar-card">
-        <h3>Field partnership</h3>
-        <p>
-          I’ve supported multi-site leaders as a field HR partner, advising on performance, policy, and day-to-day people decisions
-          for more than 100 stores. I enjoy building trust with managers, listening to what’s happening on the floor, and turning
-          that into practical actions they can take with their teams.
-        </p>
-      </div>
-      <div class="pillar-card">
-        <h3>Employee experience</h3>
-        <p>
-          I care about how policies and programs land in real workplaces. Whether it’s running HR tours focused on team member
-          experience, supporting complex leaves and accommodations, or coaching leaders on recognition and communication,
-          I look for ways to make work more humane and sustainable for frontline teams.
-        </p>
-      </div>
+    <div class="pillar-card">
+      <h3>Employee experience</h3>
+      <p>
+        I care about how policies and programs actually feel in the break room and on the sales floor. Whether I’m supporting
+        complex leaves and accommodations, working through a sensitive investigation, or coaching on recognition and feedback,
+        I try to improve the everyday experience of work for frontline employees while still meeting organizational needs.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Experience -->
-  <section id="experience">
-    <h2>Experience</h2>
+<!-- Experience -->
+<section id="experience">
+  <h2>Experience</h2>
+  <p>
+    Most of my career has been spent in large, busy retail stores before moving into field HR support for those same
+    environments. I’ve run high‑volume locations myself, stepped into struggling stores that needed a reset, and then moved
+    into a role where my job was to help other leaders do the same thing with their own teams.
+  </p>
+  <p>
+    As a Store Manager at Michaels, I worked in a high‑pressure environment while maintaining a positive team member
+    experience and using coaching and development to achieve results through my people. My district recognized my firm stance
+    on execution without leaning on fear or pressure, and that I could coach team members in a way that actually changed
+    behavior. Within a few months I became the district’s training manager, hosting new hourly and salaried leaders for one to
+    four weeks at a time.
+  </p>
+  <p>
+    Those years in operations are what shaped my approach to HR. I’ve seen what happens when policies and programs are
+    disconnected from the realities of a frontline team, and I’ve also seen how much impact you can have when you get the
+    basics right: scheduling, clear expectations, solid onboarding, and consistent feedback.
+  </p>
+  <p>
+    In 2024 I moved into a Field Human Resources Specialist role supporting eight district managers and roughly 130 stores
+    across Canada. Instead of owning one P&amp;L, I was partnering with dozens of leaders on performance, employee relations,
+    and day‑to‑day people decisions. I spent my time on investigations, coaching conversations, leave and accommodation cases,
+    and HR “pulse checks” in stores—looking at everything from break rooms and communication boards to staffing data in
+    Workday.
+  </p>
+  <p>
+    In that role I carried a portfolio of employee relations cases, led and supported workplace investigations, and managed a
+    national caseload of 30–50 open leaves and accommodations at any time. I often found myself explaining policy and the
+    undue hardship threshold, pushing back when proposals didn’t align with our obligations or with solid documentation, and
+    helping leaders land on actions that were both practical and defensible.
+  </p>
+  <p>
+    Today, I’m looking for roles where I can keep working at that intersection of HR partnership and operations: helping
+    frontline organizations make better people decisions while staying close enough to the work that I don’t lose sight of the
+    employee experience behind the numbers.
+  </p>
+</section>
 
-    <p>
-      Most of my career has been spent in large, busy retail stores before moving into field HR support for those same environments.
-      I’ve run high‑volume locations myself, stepped into struggling stores that needed a reset, and then moved into a role where my
-      job was to help other leaders do the same thing with their own teams.
-    </p>
+<!-- Education -->
+<section id="education">
+  <h2>Education</h2>
+  <ul>
+    <li><strong>Bachelor of Human Resources and Labour Relations</strong> – Athabasca University</li>
+    <li><strong>Business Administration</strong> – Red Deer Polytechnic</li>
+  </ul>
+</section>
 
-    <p>
-      As a Store Manager at Michaels, I worked in a high‑pressure environment while maintaining a positive team member experience
-      and using coaching and development to achieve results through my people. My district recognized my firm stance on execution
-      without leaning on fear or pressure, and that I could coach team members in a way that actually changed behavior. Within a
-      few months I became the district’s training manager, hosting new hourly and salaried leaders for one to four weeks at a time.
-    </p>
+<!-- Certificates & Courses -->
+<section id="certificates">
+  <h2>Certificates &amp; Courses</h2>
+  <ul>
+    <li>
+      <strong>ADP Entry‑Level Compensation and Benefits Analyst</strong> – ADP Learning Academy (2026)
+      <a href="https://coursera.org/share/28e6591297c942d5d3882d6426095795">
+        <svg class="cert-icon" aria-hidden="true">
+          <use href="#icon-certificate"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <strong>Data Analytics Professional Certificate</strong> – Google (in progress)
+    </li>
+  </ul>
+</section>
 
-    <p>
-      Those years in operations are what shaped my approach to HR. I’ve seen what happens when policies and programs are disconnected
-      from the realities of a frontline team, and I’ve also seen how much impact you can have when you get the basics right:
-      scheduling, clear expectations, solid onboarding, and consistent feedback.
-    </p>
+<!-- Professional Development -->
+<section id="development">
+  <h2>Professional Development</h2>
+  <ul>
+    <li>
+      Manage Abrasive Workplace Behavior with Backbone – University of Colorado, Boulder (March 2026)
+      <a href="https://coursera.org/share/38295f7d3f64826e72f073a7ccdd0e19">
+        <svg class="cert-icon" aria-hidden="true">
+          <use href="#icon-certificate"></use>
+        </svg>
+      </a>
+    </li>
+    <li>Roundtable: Leadership Lessons – CPHR Alberta (Mar 2026)</li>
+    <li>Workplace Investigations: Getting it Right – Citation Canada (Mar 2026)</li>
+    <li>Roundtable: HR Trends and Priorities – CPHR Alberta (Feb 2026)</li>
+  </ul>
+</section>
 
-    <p>
-      In 2024 I moved into a Field Human Resources Specialist role supporting eight District Managers and roughly 130 stores across
-      Canada. Instead of owning one P&amp;L, I was partnering with dozens of leaders on performance, employee relations, and day‑to‑day
-      people decisions. I spent my time on investigations, coaching conversations, leave and accommodation cases, and HR “pulse
-      checks” in stores—looking at everything from break rooms and communication boards to staffing data in Workday.
-    </p>
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+  <p>
+    I’m building a small portfolio of HR work samples to show how I think through people decisions and policies. These projects
+    are based on simulated data and scenarios and are part of my ongoing development, not a claim to advanced analytics
+    expertise. I’m always happy to talk through how I’ve applied similar thinking in real roles to support leaders and
+    frontline teams.
+  </p>
+  <ul>
+    <li>
+      <strong>Compensation review &amp; internal equity case study</strong> (in progress) – A sample exercise reviewing a pay
+      structure for internal equity, compression, and alignment with policy, with recommendations a field HR partner could
+      bring to leaders.
+    </li>
+    <li>
+      <strong>Google Data Analytics capstone</strong> (upcoming) – A data analysis project focused on HR or staffing patterns,
+      completed as part of the Google Data Analytics certificate.
+    </li>
+  </ul>
+</section>
 
-    <p>
-      That role pulled together the pieces I care about most: using data to see patterns across a large field organization, listening
-      to what’s really going on in teams, and helping leaders translate policy into practical steps. Some days that meant cleaning up
-      messy HRIS data so payroll and T4s were right or analyzing engagement data for correlations and opportunities. Other days were
-      spent coaching store managers who were nervous about a performance conversation and walking them through how to do it in a way
-      that was firm, fair, and respectful.
-    </p>
+<!-- Articles -->
+<section id="articles">
+  <h2>Articles</h2>
+  <p>
+    I occasionally write about HR, leadership, and frontline work. You can find a selection of my recent posts on LinkedIn.
+  </p>
+  <p>
+    <a href="https://www.linkedin.com/in/tannerw/recent-activity/articles/">View my articles on LinkedIn</a>
+  </p>
+</section>
 
-    <p>
-      Today, I’m looking for roles where I can keep working at that intersection of HR business partnership and data: helping
-      frontline organizations make better people decisions, while staying close enough to the work that I don’t lose sight of the
-      employee experience behind the numbers.
-    </p>
-  </section>
-
-  <!-- Education -->
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Bachelor of Human Resources and Labour Relations</strong> – Athabasca University</li>
-      <li><strong>Business Administration</strong> – Red Deer Polytechnic</li>
-    </ul>
-  </section>
-
-  <!-- Certificates & Courses -->
-  <section id="certificates">
-    <h2>Certificates &amp; Courses</h2>
-    <ul>
-      <li>
-        <strong>ADP Entry‑Level Compensation and Benefits Analyst</strong> – ADP Learning Academy (2026)
-         <a href="https://coursera.org/share/28e6591297c942d5d3882d6426095795">
-          <svg class="cert-icon" aria-hidden="true">
-            <use href="#icon-certificate"></use>
-          </svg></a>
-      </li>
-      <li>
-        <strong>Data Analytics Professional Certificate</strong> – Google (in progress)
-        
-      </li>
-    </ul>
-  </section>
-
-  <!-- Professional Development -->
-  <section id="development">
-    <h2>Professional Development</h2>
-    <ul>
-      <li>
-        Manage Abrasive Workplace Behavior with Backbone – University of Colorado, Boulder (March 2026)
-        <a href="https://coursera.org/share/38295f7d3f64826e72f073a7ccdd0e19">
-          <svg class="cert-icon" aria-hidden="true">
-            <use href="#icon-certificate"></use>
-          </svg>
-        </a>
-      </li>
-      <li>Roundtable: Leadership Lessons – CPHR Alberta (Mar 2026)</li>
-      <li>Workplace Investigations: Getting it Right – Citation Canada (Mar 2026)</li>
-      <li>Roundtable: HR Trends and Priorities – CPHR Alberta (Feb 2026)</li>
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>
-      I’m building a portfolio of HR and analytics‑focused work to showcase how I think about people decisions.
-      These projects are based on simulated data and are in progress. For now, I’m happy to talk through how I’ve used data and reporting
-      in past roles to support leaders and frontline teams.
-    </p>
-    <ul>
-      <li>
-        <strong>Compensation review &amp; internal equity analysis</strong> (in progress) – A portfolio project reviewing a sample pay
-        structure for compression, internal equity, and market alignment, with recommendations and visualizations.
-      </li>
-      <li>
-        <strong>Google Data Analytics capstone</strong> (upcoming) – A data analysis project focused on HR or staffing patterns,
-        completed as part of the Google Data Analytics certificate.
-      </li>
-    </ul>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      If you’d like to talk about HR, people analytics, or roles that support frontline teams, you can reach me here:
-    </p>
-    <ul>
-      <li>Email: <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a></li>
-      <li>Phone: <a href="tel:+16043000760">(604) 300‑0760</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/tannerw">linkedin.com/in/tannerw</a></li>
-    </ul>
-  </section>
-
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>
+    If you’d like to talk about HR, people leadership, or roles that support frontline teams, you can reach me here:
+  </p>
+  <ul>
+    <li>Email: <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a></li>
+    <li>Phone: <a href="tel:+16043000760">(604) 300‑0760</a></li>
+    <li>LinkedIn: <a href="https://linkedin.com/in/tannerw">linkedin.com/in/tannerw</a></li>
+  </ul>
+</section>
 </main>
 
 <footer>
@@ -301,8 +315,7 @@
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
