@@ -720,7 +720,8 @@
     </div>
   </div>
 
-  <div class="hero-right">
+   <div class="hero-right">
+    <!-- Profile card -->
     <div class="profile-card">
       <div class="profile-photo">
         <img src="profile.jpg" alt="Profile photo of Tanner Waldo">
@@ -735,6 +736,21 @@
         </div>
       </div>
     </div>
+
+    <!-- Compact resume card -->
+    <div class="articles-widget">
+      <div class="articles-widget-inner">
+        <h3>Resume</h3>
+        <p style="margin-bottom:0.6rem;">
+          Prefer a concise, printable overview? You can download my resume as a PDF.
+        </p>
+        <a class="btn btn-secondary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+
+    <!-- Recent writing widget -->
     <div class="articles-widget">
       <div class="articles-widget-inner">
         <h3>Recent Writing</h3>
@@ -745,6 +761,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
   <!-- Who I am / What I do -->
