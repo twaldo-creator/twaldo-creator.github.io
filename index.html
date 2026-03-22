@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tanner Waldo | HR Advisor for Frontline Organizations</title>
+  <title>Tanner Waldo | People & Culture Advisor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HR Advisor-level professional focused on employee relations, performance management, and practical, evidence-based HR for frontline organizations.">
+  <meta name="description" content="People & Culture Advisor focused on employee relations, performance, and practical, evidence-based support for frontline organizations.">
   <style>
     :root {
       --bg: #f7f7f9;
@@ -22,9 +22,7 @@
       --max-width: 1040px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -38,10 +36,7 @@
       color: var(--primary);
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    a:hover { text-decoration: underline; }
 
     header {
       position: sticky;
@@ -88,13 +83,8 @@
       background: var(--primary);
       opacity: 0.25;
     }
-
-    .nav-dot:nth-child(2) {
-      opacity: 0.5;
-    }
-    .nav-dot:nth-child(3) {
-      opacity: 0.8;
-    }
+    .nav-dot:nth-child(2) { opacity: 0.5; }
+    .nav-dot:nth-child(3) { opacity: 0.8; }
 
     nav ul {
       list-style: none;
@@ -111,7 +101,6 @@
       padding: 0.3rem 0.75rem;
       border-radius: var(--radius-pill);
       color: var(--text-muted);
-      text-decoration: none;
       border: 1px solid transparent;
     }
 
@@ -127,9 +116,7 @@
       padding: 1.25rem 1.25rem 3rem;
     }
 
-    section {
-      margin-bottom: 2.75rem;
-    }
+    section { margin-bottom: 2.75rem; }
 
     h1, h2, h3 {
       margin: 0 0 0.3rem;
@@ -137,19 +124,9 @@
       letter-spacing: 0.01em;
     }
 
-    h1 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-    }
-
-    h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0.8rem;
-    }
-
-    h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-    }
+    h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+    h2 { font-size: 1.35rem; margin-bottom: 0.8rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
 
     .section-kicker {
       font-size: 0.78rem;
@@ -315,8 +292,6 @@
       font-size: 0.9rem;
     }
 
-    /* Reused card style for resume + articles on right */
-
     .articles-widget {
       background: var(--bg-alt);
       border-radius: var(--radius-lg);
@@ -343,7 +318,31 @@
       margin-right: auto;
     }
 
-    /* Generic section card */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(23, 70, 124, 0.35);
+    }
+    .btn-primary:hover {
+      background: #184777;
+      text-decoration: none;
+    }
+
+    /* Sections */
 
     .section-card {
       background: var(--bg-alt);
@@ -447,9 +446,7 @@
       background: var(--primary);
     }
 
-    .timeline-role {
-      font-weight: 600;
-    }
+    .timeline-role { font-weight: 600; }
 
     .scenario-grid {
       display: grid;
@@ -501,9 +498,7 @@
       margin: 0.1rem 0 0.25rem;
     }
 
-    .scenario-list li {
-      margin-bottom: 0.12rem;
-    }
+    .scenario-list li { margin-bottom: 0.12rem; }
 
     .edu-grid {
       display: grid;
@@ -512,13 +507,9 @@
       font-size: 0.88rem;
     }
 
-    .edu-item {
-      margin-bottom: 0.5rem;
-    }
+    .edu-item { margin-bottom: 0.5rem; }
 
-    .edu-title {
-      font-weight: 600;
-    }
+    .edu-title { font-weight: 600; }
 
     .tag-row {
       display: flex;
@@ -550,9 +541,7 @@
       margin: 0.4rem 0 0;
     }
 
-    .contact-list li {
-      margin-bottom: 0.25rem;
-    }
+    .contact-list li { margin-bottom: 0.25rem; }
 
     footer {
       max-width: var(--max-width);
@@ -567,46 +556,23 @@
     }
 
     @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-right {
-        order: -1;
-      }
-      .hero-left {
-        padding: 1.1rem 1.1rem;
-      }
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-right { order: -1; }
+      .hero-left { padding: 1.1rem 1.1rem; }
     }
 
     @media (max-width: 720px) {
-      .nav-inner {
-        padding-inline: 0.75rem;
-      }
-      main {
-        padding-inline: 0.75rem;
-      }
-      .quick-summary-list {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .experience-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .edu-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .nav-inner { padding-inline: 0.75rem; }
+      main { padding-inline: 0.75rem; }
+      .quick-summary-list { grid-template-columns: minmax(0, 1fr); }
+      .experience-layout { grid-template-columns: minmax(0, 1fr); }
+      .edu-grid { grid-template-columns: minmax(0, 1fr); }
+      .contact-grid { grid-template-columns: minmax(0, 1fr); }
     }
 
     @media (max-width: 520px) {
-      nav ul {
-        justify-content: flex-start;
-      }
-      .btn {
-        width: 100%;
-        justify-content: center;
-      }
+      nav ul { justify-content: flex-start; }
+      .btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -619,7 +585,7 @@
         <span class="nav-dot"></span>
         <span class="nav-dot"></span>
       </div>
-      <span><strong>Tanner Waldo</strong> · HR Advisor</span>
+      <span><strong>Tanner Waldo</strong> · People &amp; Culture Advisor</span>
     </div>
     <nav>
       <ul>
@@ -640,31 +606,30 @@
     <div class="hero-left">
       <div class="hero-pill">
         <span class="hero-pill-dot"></span>
-        <span>HR Advisor for frontline organizations</span>
+        <span>People &amp; Culture Advisor for frontline organizations</span>
       </div>
-      <h1>Employee relations, performance, and practical, evidence‑based HR.</h1>
+      <h1>Employee relations, performance, and practical, evidence‑based people &amp; culture support.</h1>
       <p class="hero-subtitle">
-        HR professional with a Bachelor of Human Resources and Labour Relations, supporting a 130‑store national retail operation and advising leaders on employee relations, investigations, leaves and accommodations, performance, and policy interpretation.
+        People &amp; Culture professional with a Bachelor of Human Resources and Labour Relations, supporting a 130‑store national retail operation and advising leaders on employee relations, investigations, leaves and accommodations, performance, and policy interpretation.
       </p>
       <p class="hero-body">
-        I bring two years in a field HR specialist role on top of a BHRLR degree and over a decade in frontline retail leadership, so my advice balances employment standards, human rights obligations, and internal policy with what actually works in busy workplaces.
+        I bring two years in a field people &amp; culture / HR specialist role on top of a BHRLR degree and over a decade in frontline retail leadership, so my advice balances employment standards, human rights obligations, and internal policy with what actually works in busy workplaces.
       </p>
       <div class="hero-meta">
-        <span class="hero-tag">HR Advisor / Generalist / Employee Relations</span>
+        <span class="hero-tag">People &amp; Culture / HR Advisor</span>
+        <span class="hero-tag">Employee Relations &amp; Performance</span>
         <span class="hero-tag">Edmonton, AB · Relocatable</span>
-        <span class="hero-tag">BHRLR degree + frontline leadership</span>
       </div>
 
       <div class="key-points">
         <div class="section-kicker">Snapshot</div>
         <strong>Who I am in 20 seconds</strong>
         <ul>
-          <li>HR specialist supporting 8 District Directors and ~130 Store Managers across ~3,000 employees in a national retail chain.</li>
-          <li>Portfolio of ER investigations, complex accommodations, disability management, and policy interpretation, including sensitive harassment and safety cases.</li>
+          <li>People &amp; Culture specialist supporting 8 District Directors and ~130 Store Managers across ~3,000 employees in a national retail chain.</li>
+          <li>Portfolio of investigations, complex accommodations, disability management, and policy interpretation, including sensitive harassment and safety cases.</li>
           <li>Over a decade leading frontline retail teams as Assistant Store Manager and Store Manager, owning KPIs, staffing, and performance.</li>
-          <li>Strengthened by a Bachelor of Human Resources and Labour Relations with deep labour law and employment law coursework, so my advice reflects both practice and doctrine.</li>
-          <li>Comfortable working with incomplete information, surfacing key risks, and proposing options so leaders can choose a path that fits their context.</li>
-          <li>Known for translating policy and legal concepts into plain language for frontline leaders, and for framing decisions in terms of impact on people, risk, and operations.</li>
+          <li>Strengthened by a Bachelor of Human Resources and Labour Relations with deep labour and employment law coursework, so my advice reflects both practice and doctrine.</li>
+          <li>Known for translating policy and legal concepts into plain language for frontline leaders and framing decisions in terms of impact on people, risk, and operations.</li>
           <li>Practical, evidence‑based advisor who grounds recommendations in policy, internal precedents, and the realities of frontline work.</li>
         </ul>
       </div>
@@ -678,7 +643,7 @@
         </div>
         <div class="profile-meta">
           <strong>Tanner Waldo</strong>
-          <div>HR Advisor–level professional with a BHRLR degree, focused on employee relations, performance management, and frontline teams.</div>
+          <div>People &amp; Culture Advisor with a BHRLR degree, focused on employee relations, performance, and frontline teams.</div>
           <div class="profile-meta-row">
             <span class="pill">Employee Relations</span>
             <span class="pill">Leaves &amp; Accommodations</span>
@@ -687,12 +652,12 @@
         </div>
       </div>
 
-      <!-- Compact resume card -->
+      <!-- Resume card -->
       <div class="articles-widget">
         <div class="articles-widget-inner">
           <h3>Resume</h3>
           <p style="margin-bottom:0.6rem;">
-            For a concise overview of my HR work, education, and frontline operations background, you can download my resume as a PDF.
+            For a concise overview of my people &amp; culture work, education, and frontline operations background, you can download my resume as a PDF.
           </p>
           <a class="btn btn-primary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
             Download Resume (PDF)
@@ -705,7 +670,7 @@
         <div class="articles-widget-inner">
           <h3>Recent Writing</h3>
           <p>
-            Selected posts and articles from LinkedIn where I break down HR issues for leaders in clear, practical language.
+            Selected posts and articles from LinkedIn where I break down people &amp; culture and employee relations issues for leaders in clear, practical language.
           </p>
           <script src="https://elfsightcdn.com/platform.js" async></script>
           <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
@@ -714,13 +679,13 @@
     </div>
   </section>
 
-  <!-- Who I am / What I do -->
+  <!-- Profile -->
   <section id="who-i-am">
     <div class="section-card">
       <div class="section-kicker">Profile</div>
       <h2>Who I Am &amp; What I Do</h2>
       <p>
-        I operate at an HR Advisor / HR Generalist level, partnering with leaders on employee relations, investigations, performance, leaves and accommodations, and day‑to‑day policy and compliance questions.
+        I operate at a People &amp; Culture / HR Advisor level, partnering with leaders on employee relations, investigations, performance, leaves and accommodations, and day‑to‑day policy and compliance questions.
       </p>
       <p>
         My Bachelor of Human Resources and Labour Relations gives me a strong grounding in labour law, employment standards, and human rights, while my frontline leadership experience keeps my recommendations practical and implementable.
@@ -730,7 +695,7 @@
         <li>Manage concurrent leave and accommodation files nationally, coordinating with LOA administrators, insurers, payroll, and benefits toward return‑to‑work or separation.</li>
         <li>Bring operational credibility from running high‑volume stores with teams of up to ~50, so I understand the pressures on frontline leaders.</li>
         <li>Identify and correct compliance gaps—for example, uncovering a misapplied leave cap and realigning practice with written LOA policy across 130 locations.</li>
-        <li>Use practical, evidence‑based HR: reviewing policy, internal precedents, and employment standards before recommending clear, defensible paths forward.</li>
+        <li>Use practical, evidence‑based people &amp; culture work: reviewing policy, internal precedents, and employment standards before recommending clear, defensible paths forward.</li>
       </ul>
     </div>
   </section>
@@ -744,7 +709,7 @@
         <div class="skill-cluster">
           <div class="skill-label">Employee Relations &amp; Investigations</div>
           <p>
-            Handle a portfolio of ER cases involving conduct, harassment, safety violations, falsified records, and complex accommodations, from intake through recommendation of outcomes up to termination.
+            Handle a portfolio of people &amp; culture cases involving conduct, harassment, safety violations, falsified records, and complex accommodations, from intake through recommendation of outcomes up to termination.
           </p>
           <div class="skill-chip-row">
             <span class="skill-chip">Case intake</span>
@@ -753,9 +718,9 @@
           </div>
         </div>
         <div class="skill-cluster">
-          <div class="skill-label">Performance Management &amp; Coaching</div>
+          <div class="skill-label">Performance &amp; Coaching</div>
           <p>
-            Coach leaders on performance documentation, PIPs, and progressive discipline, pushing back on weak cases and ensuring fair, consistent, and well‑supported decisions.
+            Coach leaders on performance documentation, PIPs, and progressive discipline, pushing back on weak cases and ensuring fair, consistent, and well‑supported people decisions.
           </p>
           <div class="skill-chip-row">
             <span class="skill-chip">PIPs</span>
@@ -775,7 +740,7 @@
           </div>
         </div>
         <div class="skill-cluster">
-          <div class="skill-label">Policy Interpretation &amp; Compliance</div>
+          <div class="skill-label">Policy, Culture &amp; Compliance</div>
           <p>
             Interpret written policies, compare them to actual practice, and work with stakeholders to close gaps—for example, correcting misapplied leave entitlements and addressing undocumented co‑op placements.
           </p>
@@ -788,7 +753,7 @@
         <div class="skill-cluster">
           <div class="skill-label">Frontline Leadership &amp; Change</div>
           <p>
-            Draw on years as Assistant Store Manager and Store Manager to design HR guidance that frontline teams can actually implement, including training new leaders and supporting change through district‑level partners.
+            Draw on years as Assistant Store Manager and Store Manager to design people &amp; culture guidance that frontline teams can actually implement, including training new leaders and supporting change through district‑level partners.
           </p>
           <div class="skill-chip-row">
             <span class="skill-chip">Store leadership</span>
@@ -797,14 +762,14 @@
           </div>
         </div>
         <div class="skill-cluster">
-          <div class="skill-label">Compensation &amp; Data‑Informed HR</div>
+          <div class="skill-label">Compensation &amp; Data‑Informed P&amp;C</div>
           <p>
-            Growing interest in using HR data and compensation fundamentals to inform decisions, supported by an ADP compensation and benefits certificate and a Google Data Analytics program in progress.
+            Growing interest in using people data and compensation fundamentals to inform decisions, supported by an ADP compensation and benefits certificate and a Google Data Analytics program in progress.
           </p>
           <div class="skill-chip-row">
             <span class="skill-chip">Comp basics</span>
-            <span class="skill-chip">HR data literacy</span>
-            <span class="skill-chip">Evidence‑based HR</span>
+            <span class="skill-chip">People data literacy</span>
+            <span class="skill-chip">Evidence‑based P&amp;C</span>
           </div>
         </div>
       </div>
@@ -819,10 +784,10 @@
       <div class="experience-layout">
         <div>
           <p>
-            My HR practice is grounded in frontline experience. I spent over a decade in store‑level leadership roles at Michaels, including Assistant Store Manager and Store Manager in high‑volume locations, where I owned staffing, scheduling, KPIs, performance, and health and safety.
+            My people &amp; culture practice is grounded in frontline experience. I spent over a decade in store‑level leadership roles at Michaels, including Assistant Store Manager and Store Manager in high‑volume locations, where I owned staffing, scheduling, KPIs, performance, and health and safety.
           </p>
           <p>
-            I then moved into a Field HR Specialist role, providing comprehensive HR support to 8 District Directors and approximately 130 Store Managers across Canada, with a focus on employee relations, investigations, leaves and accommodations, and policy interpretation.
+            I then moved into a Field HR / People &amp; Culture Specialist role, providing comprehensive support to 8 District Directors and approximately 130 Store Managers across Canada, with a focus on employee relations, investigations, leaves and accommodations, and policy interpretation.
           </p>
           <p>
             Combined with my BHRLR degree, that experience means I can sit with a district leader or store manager, understand their operational reality in detail, and still give clear, defensible advice rooted in employment standards, human rights, and internal policy.
@@ -831,9 +796,9 @@
         <div>
           <ul class="timeline">
             <li class="timeline-item">
-              <div class="timeline-role">HR Specialist, Field (Canada)</div>
+              <div class="timeline-role">Field HR / People &amp; Culture Specialist (Canada)</div>
               <div>Michaels Stores, Inc. · Remote</div>
-              <div>Advised 8 District Directors and ~130 Store Managers on ER, leaves, accommodations, investigations, and policy.</div>
+              <div>Advised 8 District Directors and ~130 Store Managers on employee relations, leaves, accommodations, investigations, and policy.</div>
             </li>
             <li class="timeline-item">
               <div class="timeline-role">Store Manager</div>
@@ -855,7 +820,7 @@
   <section id="approach">
     <div class="section-card">
       <div class="section-kicker">Approach</div>
-      <h2>How I Approach HR Problems</h2>
+      <h2>How I Approach People &amp; Culture Problems</h2>
       <p>
         My starting point in any situation is to understand what is actually happening on the ground, then layer in policy, legislation, and internal precedents before recommending a path forward.
       </p>
@@ -879,7 +844,7 @@
           </ul>
           <div class="scenario-sub">Advisory stance</div>
           <ul class="scenario-list">
-            <li>I would review applicable policy and internal precedents before recommending a path forward.</li>
+            <li>Review applicable policy and internal precedents before recommending a path forward.</li>
             <li>Likely recommend structured coaching or a clear PIP with documented expectations and timelines, while flagging risks of jumping straight to termination.</li>
           </ul>
         </div>
@@ -898,7 +863,7 @@
           </ul>
           <div class="scenario-sub">Policy &amp; framework</div>
           <ul class="scenario-list">
-            <li>I would consider local employment standards, human rights obligations, and any accommodation duties, alongside operational needs.</li>
+            <li>Consider local employment standards, human rights obligations, and any accommodation duties, alongside operational needs.</li>
             <li>Review leave and accommodation policy, disability management practices, and past accommodations in similar roles.</li>
           </ul>
           <div class="scenario-sub">Advisory stance</div>
@@ -923,7 +888,7 @@
           <div class="scenario-sub">Policy &amp; framework</div>
           <ul class="scenario-list">
             <li>Review the written leave policy, employment standards, and any legal guidance related to the entitlement in question.</li>
-            <li>Consult Benefits and HR leadership to confirm the correct interpretation and any historical decisions.</li>
+            <li>Consult Benefits and P&amp;C / HR leadership to confirm the correct interpretation and any historical decisions.</li>
           </ul>
           <div class="scenario-sub">Advisory stance</div>
           <ul class="scenario-list">
@@ -955,11 +920,11 @@
         <div>
           <div class="edu-item">
             <div class="edu-title">ADP Entry‑Level Compensation and Benefits Analyst Certificate</div>
-            <div>Introduced core concepts in compensation and benefits, supporting a growing interest in data‑informed HR decision‑making.</div>
+            <div>Introduced core concepts in compensation and benefits, supporting a growing interest in data‑informed people &amp; culture decision‑making.</div>
           </div>
           <div class="edu-item">
             <div class="edu-title">Google Data Analytics Professional Certificate (in progress)</div>
-            <div>Building comfort with data analysis, spreadsheets, and evidence‑based problem‑solving that can be applied to HR questions.</div>
+            <div>Building comfort with data analysis, spreadsheets, and evidence‑based problem‑solving that can be applied to people &amp; culture questions.</div>
           </div>
           <div class="edu-item">
             <div class="edu-title">Selected professional development</div>
@@ -973,7 +938,7 @@
         </div>
       </div>
       <p style="margin-top:0.8rem;font-size:0.88rem;">
-        Ongoing learning keeps my advice current and grounded in modern HR and labour relations practice, while my frontline background keeps it practical and implementable.
+        Ongoing learning keeps my advice current and grounded in modern people &amp; culture and labour relations practice, while my frontline background keeps it practical and implementable.
       </p>
     </div>
   </section>
@@ -986,7 +951,7 @@
       <div class="contact-grid">
         <div>
           <p>
-            I’m open to HR Advisor, HR Generalist, Employee Relations, and HR Business Partner–style roles, especially those supporting frontline teams in retail, hospitality, health care, and other customer‑facing environments.
+            I’m open to People &amp; Culture Advisor, HR Advisor, HR Generalist, Employee Relations, and HR Business Partner–style roles, especially those supporting frontline teams in retail, hospitality, health care, and other customer‑facing environments.
           </p>
           <ul class="contact-list">
             <li><strong>Email:</strong> <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a></li>
@@ -996,7 +961,7 @@
         </div>
         <div>
           <p>
-            If you’re hiring for an HR Advisor‑level role and need someone who understands both policy and the realities of frontline operations, I’d be happy to connect and compare notes on what you’re building.
+            If you’re hiring for a people &amp; culture–focused role and need someone who understands both policy and the realities of frontline operations, I’d be happy to connect and compare notes on what you’re building.
           </p>
         </div>
       </div>
