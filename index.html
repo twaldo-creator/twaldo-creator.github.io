@@ -35,6 +35,11 @@ Here’s the full updated `index.html` with the four examples, each opening a fu
       line-height: 1.6;
     }
 
+        .case-modal-overlay[hidden] {
+      display: none !important;
+    }
+
+
     a {
       color: var(--primary);
       text-decoration: none;
@@ -1012,12 +1017,13 @@ Here’s the full updated `index.html` with the four examples, each opening a fu
   </section>
 
   <!-- Modal overlay + templates for full cases -->
-  <div id="case-modal-overlay" class="case-modal-overlay" hidden>
-    <div class="case-modal">
-      <button type="button" class="case-modal-close" aria-label="Close case">&times;</button>
-      <div id="case-modal-content"></div>
-    </div>
+<div id="case-modal-overlay" class="case-modal-overlay" hidden>
+  <div class="case-modal">
+    <button type="button" class="case-modal-close" aria-label="Close case">&times;</button>
+    <div id="case-modal-content"></div>
   </div>
+</div>
+
 
   <template id="coop-modal">
     <h2>Turning an undocumented co‑op placement into a simple tracking system</h2>
@@ -1106,18 +1112,18 @@ Here’s the full updated `index.html` with the four examples, each opening a fu
       yearEl.textContent = new Date().getFullYear();
     }
 
-    // Scenario modals
     var overlay = document.getElementById('case-modal-overlay');
     var contentBox = document.getElementById('case-modal-content');
     var closeBtn = overlay ? overlay.querySelector('.case-modal-close') : null;
 
+    // If modal elements don't exist, do nothing
     if (!overlay || !contentBox || !closeBtn) {
-      return; // fail safe: don't attach handlers if elements aren't there
+      return;
     }
 
     function openCaseModal(templateId) {
       var tpl = document.getElementById(templateId);
-      if (!tpl) return;
+      if (!tpl || !tpl.content) return;
       contentBox.innerHTML = '';
       contentBox.appendChild(tpl.content.cloneNode(true));
       overlay.removeAttribute('hidden');
@@ -1130,13 +1136,16 @@ Here’s the full updated `index.html` with the four examples, each opening a fu
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.scenario-open').forEach(function (link) {
+    // Wire up “Read the full case” links
+    var links = document.querySelectorAll('.scenario-open');
+    links.forEach(function (link) {
       link.addEventListener('click', function () {
-        var id = this.getAttribute('data-modal');
+        var id = link.getAttribute('data-modal');
         openCaseModal(id);
       });
     });
 
+    // Close actions
     closeBtn.addEventListener('click', closeCaseModal);
 
     overlay.addEventListener('click', function (e) {
@@ -1152,6 +1161,7 @@ Here’s the full updated `index.html` with the four examples, each opening a fu
     });
   });
 </script>
+
 
 </body>
 </html>
