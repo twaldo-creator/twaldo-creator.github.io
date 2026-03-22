@@ -165,7 +165,7 @@
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
       gap: 1.75rem;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .hero-left {
@@ -286,16 +286,17 @@
       width: 76px;
       height: 76px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #e1e8f5, #f8f4ff);
+      overflow: hidden;
       border: 2px solid #ffffff;
       box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .profile-meta {
@@ -350,6 +351,32 @@
       top: 0;
       color: var(--primary);
       font-size: 0.9rem;
+    }
+
+    .articles-widget {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 0.9rem 0.9rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.85rem;
+    }
+
+    .articles-widget h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .articles-widget p {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .articles-widget-inner {
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-card {
@@ -543,24 +570,6 @@
       color: var(--text-muted);
     }
 
-    .articles-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr);
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .articles-widget {
-      max-width: 400px;
-      margin-left: auto;
-    }
-
-    .articles-note {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-    }
-
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -622,13 +631,6 @@
       .contact-grid {
         grid-template-columns: minmax(0, 1fr);
       }
-      .articles-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .articles-widget {
-        max-width: 100%;
-        margin-left: 0;
-      }
     }
 
     @media (max-width: 520px) {
@@ -660,11 +662,11 @@
     <nav>
       <ul>
         <li><a href="#who-i-am">Profile</a></li>
-        <li><a href="#skills">Focus areas</a></li>
+        <li><a href="#skills">Core Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#approach">Approach</a></li>
         <li><a href="#learning">Learning</a></li>
-        <li><a href="#articles">Articles</a></li>
+        <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -688,10 +690,10 @@
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
-          <span>Download resume</span>
+          <span>Download Resume (PDF)</span>
         </a>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/tannerw/recent-activity/articles/" target="_blank" rel="noopener">
-          <span>View LinkedIn articles</span>
+          <span>View LinkedIn Articles</span>
         </a>
       </div>
       <div class="hero-meta">
@@ -703,8 +705,7 @@
     <div class="hero-right">
       <div class="profile-card">
         <div class="profile-photo">
-          <!-- Replace with actual image if desired -->
-          Profile<br>photo
+          <img src="profile.jpg" alt="Profile photo of Tanner Waldo">
         </div>
         <div class="profile-meta">
           <strong>Tanner Waldo</strong>
@@ -727,6 +728,15 @@
           <li>Practical, evidence‑based advisor who grounds recommendations in policy, internal precedents, and the realities of frontline work.</li>
         </ul>
       </div>
+      <div class="articles-widget">
+        <div class="articles-widget-inner">
+          <h3>Recent Writing</h3>
+          <p>Selected posts and articles from LinkedIn relevant to HR, employee relations, and frontline leadership.</p>
+          <!-- Elfsight LinkedIn Feed | Articles sidebar -->
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -734,7 +744,7 @@
   <section id="who-i-am">
     <div class="section-card">
       <div class="section-kicker">Profile</div>
-      <h2>Who I am &amp; what I do</h2>
+      <h2>Who I Am &amp; What I Do</h2>
       <p>
         I operate at an HR Advisor / HR Generalist level, partnering with leaders on employee relations, investigations, performance, leaves and accommodations, and day‑to‑day policy and compliance questions.
       </p>
@@ -748,11 +758,11 @@
     </div>
   </section>
 
-  <!-- Skills / Focus areas -->
+  <!-- Core Skills -->
   <section id="skills">
     <div class="section-card">
-      <div class="section-kicker">Focus areas</div>
-      <h2>Top HR skills &amp; focus areas</h2>
+      <div class="section-kicker">Core Skills</div>
+      <h2>Core Skills</h2>
       <div class="skills-grid">
         <div class="skill-cluster">
           <div class="skill-label">Employee Relations &amp; Investigations</div>
@@ -828,7 +838,7 @@
   <section id="experience">
     <div class="section-card">
       <div class="section-kicker">Experience</div>
-      <h2>How my experience fits HR Advisor‑level work</h2>
+      <h2>Experience</h2>
       <div class="experience-layout">
         <div>
           <p>
@@ -868,7 +878,7 @@
   <section id="approach">
     <div class="section-card">
       <div class="section-kicker">Approach</div>
-      <h2>How I approach HR problems</h2>
+      <h2>How I Approach HR Problems</h2>
       <p>
         My starting point in any situation is to understand what is actually happening on the ground, then layer in policy, legislation, and internal precedents before recommending a path forward.
       </p>
@@ -952,7 +962,7 @@
   <section id="learning">
     <div class="section-card">
       <div class="section-kicker">Learning</div>
-      <h2>Learning, credentials &amp; professional development</h2>
+      <h2>Learning, Credentials &amp; Professional Development</h2>
       <div class="edu-grid">
         <div>
           <div class="edu-item">
@@ -991,27 +1001,17 @@
     </div>
   </section>
 
-  <!-- Articles & writing with Elfsight widget -->
-  <section id="articles">
+  <!-- Resume -->
+  <section id="resume">
     <div class="section-card">
-      <div class="section-kicker">Writing</div>
-      <h2>How I think about HR</h2>
-      <div class="articles-layout">
-        <div class="articles-text">
-          <p>
-            I write about employee relations, frontline leadership, and practical, evidence‑based HR, with an emphasis on clear takeaways for managers and HR teams.
-          </p>
-          <p style="font-size:0.88rem;">
-            You can explore a selection of my recent posts and articles in the feed, or view all of my writing on
-            <a href="https://www.linkedin.com/in/tannerw/recent-activity/articles/" target="_blank" rel="noopener">LinkedIn</a>.
-          </p>
-        </div>
-        <aside class="articles-widget">
-          <!-- Elfsight LinkedIn Feed | Articles sidebar -->
-          <script src="https://elfsightcdn.com/platform.js" async></script>
-          <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
-        </aside>
-      </div>
+      <div class="section-kicker">Resume</div>
+      <h2>Resume</h2>
+      <p>
+        For a concise, printable view of my background, you can download my resume as a PDF.
+      </p>
+      <p>
+        <a class="btn btn-secondary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+      </p>
     </div>
   </section>
 
@@ -1019,7 +1019,7 @@
   <section id="contact">
     <div class="section-card">
       <div class="section-kicker">Contact</div>
-      <h2>Contact &amp; quick info</h2>
+      <h2>Contact &amp; Quick Info</h2>
       <div class="contact-grid">
         <div>
           <p>
@@ -1047,7 +1047,6 @@
 </footer>
 
 <script>
-  // Simple dynamic year
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
