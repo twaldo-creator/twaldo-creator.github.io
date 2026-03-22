@@ -160,6 +160,8 @@
       font-weight: 600;
     }
 
+    /* Hero */
+
     .hero {
       margin-top: 1.5rem;
       display: grid;
@@ -271,6 +273,8 @@
       gap: 0.9rem;
     }
 
+    /* Profile and snapshot */
+
     .profile-card {
       background: var(--bg-alt);
       border-radius: var(--radius-lg);
@@ -322,10 +326,6 @@
       font-size: 0.78rem;
       color: var(--text-muted);
     }
-    .hero-left .key-points {
-  margin-top: 1.2rem;
-}
-
 
     .key-points {
       background: var(--bg-alt);
@@ -334,6 +334,7 @@
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(0,0,0,0.03);
       font-size: 0.86rem;
+      margin-top: 1.2rem;
     }
 
     .key-points ul {
@@ -356,6 +357,8 @@
       color: var(--primary);
       font-size: 0.9rem;
     }
+
+    /* Reused card style for resume + articles on right */
 
     .articles-widget {
       background: var(--bg-alt);
@@ -382,6 +385,8 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* Generic section card */
 
     .section-card {
       background: var(--bg-alt);
@@ -670,7 +675,6 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#approach">Approach</a></li>
         <li><a href="#learning">Learning</a></li>
-        <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -679,90 +683,88 @@
 
 <main>
   <!-- Hero -->
- <section class="hero" id="top">
-  <div class="hero-left">
-    <div class="hero-pill">
-      <span class="hero-pill-dot"></span>
-      <span>HR Advisor for frontline organizations</span>
-    </div>
-    <h1>Employee relations, performance, and practical, evidence‑based HR.</h1>
-    <p class="hero-subtitle">
-      HR professional supporting a 130‑store national retail operation, advising leaders on employee relations, investigations, leaves and accommodations, performance, and policy interpretation.
-    </p>
-    <p class="hero-body">
-      I bring two years in a field HR specialist role and over a decade in frontline retail leadership, so my advice balances employment standards, human rights obligations, and internal policy with what actually works in busy stores.
-    </p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
-        <span>Download Resume (PDF)</span>
-      </a>
-      <a class="btn btn-secondary" href="https://www.linkedin.com/in/tannerw/recent-activity/articles/" target="_blank" rel="noopener">
-        <span>View LinkedIn Articles</span>
-      </a>
-    </div>
-    <div class="hero-meta">
-      <span class="hero-tag">HR Advisor / Generalist / Employee Relations</span>
-      <span class="hero-tag">Edmonton, AB · Relocatable</span>
-      <span class="hero-tag">Frontline retail leadership background</span>
-    </div>
-
-    <!-- Snapshot moved into left column -->
-    <div class="key-points">
-      <div class="section-kicker">Snapshot</div>
-      <strong>Who I am in 20 seconds</strong>
-      <ul>
-        <li>HR specialist supporting 8 District Directors and ~130 Store Managers across ~3,000 employees in a national retail chain.</li>
-        <li>Portfolio of ER investigations, complex accommodations, disability management, and policy interpretation, including sensitive harassment and safety cases.</li>
-        <li>Over a decade leading frontline retail teams as Assistant Store Manager and Store Manager, owning KPIs, staffing, and performance.</li>
-        <li>Comfortable surfacing compliance gaps and aligning practice with written policy and legislation, while keeping operations running.</li>
-        <li>Practical, evidence‑based advisor who grounds recommendations in policy, internal precedents, and the realities of frontline work.</li>
-      </ul>
-    </div>
-  </div>
-
-   <div class="hero-right">
-    <!-- Profile card -->
-    <div class="profile-card">
-      <div class="profile-photo">
-        <img src="profile.jpg" alt="Profile photo of Tanner Waldo">
+  <section class="hero" id="top">
+    <div class="hero-left">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        <span>HR Advisor for frontline organizations</span>
       </div>
-      <div class="profile-meta">
-        <strong>Tanner Waldo</strong>
-        <div>HR Advisor–level professional focused on employee relations, performance management, and frontline teams.</div>
-        <div class="profile-meta-row">
-          <span class="pill">Employee Relations</span>
-          <span class="pill">Leaves &amp; Accommodations</span>
-          <span class="pill">Investigations</span>
+      <h1>Employee relations, performance, and practical, evidence‑based HR.</h1>
+      <p class="hero-subtitle">
+        HR professional supporting a 130‑store national retail operation, advising leaders on employee relations, investigations, leaves and accommodations, performance, and policy interpretation.
+      </p>
+      <p class="hero-body">
+        I bring two years in a field HR specialist role and over a decade in frontline retail leadership, so my advice balances employment standards, human rights obligations, and internal policy with what actually works in busy stores.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
+          <span>Download Resume (PDF)</span>
+        </a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/tannerw/recent-activity/articles/" target="_blank" rel="noopener">
+          <span>View LinkedIn Articles</span>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span class="hero-tag">HR Advisor / Generalist / Employee Relations</span>
+        <span class="hero-tag">Edmonton, AB · Relocatable</span>
+        <span class="hero-tag">Frontline retail leadership background</span>
+      </div>
+
+      <div class="key-points">
+        <div class="section-kicker">Snapshot</div>
+        <strong>Who I am in 20 seconds</strong>
+        <ul>
+          <li>HR specialist supporting 8 District Directors and ~130 Store Managers across ~3,000 employees in a national retail chain.</li>
+          <li>Portfolio of ER investigations, complex accommodations, disability management, and policy interpretation, including sensitive harassment and safety cases.</li>
+          <li>Over a decade leading frontline retail teams as Assistant Store Manager and Store Manager, owning KPIs, staffing, and performance.</li>
+          <li>Comfortable surfacing compliance gaps and aligning practice with written policy and legislation, while keeping operations running.</li>
+          <li>Practical, evidence‑based advisor who grounds recommendations in policy, internal precedents, and the realities of frontline work.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Profile card -->
+      <div class="profile-card">
+        <div class="profile-photo">
+          <img src="profile.jpg" alt="Profile photo of Tanner Waldo">
+        </div>
+        <div class="profile-meta">
+          <strong>Tanner Waldo</strong>
+          <div>HR Advisor–level professional focused on employee relations, performance management, and frontline teams.</div>
+          <div class="profile-meta-row">
+            <span class="pill">Employee Relations</span>
+            <span class="pill">Leaves &amp; Accommodations</span>
+            <span class="pill">Investigations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact resume card -->
+      <div class="articles-widget">
+        <div class="articles-widget-inner">
+          <h3>Resume</h3>
+          <p style="margin-bottom:0.6rem;">
+            Prefer a concise, printable overview? Download my resume as a PDF.
+          </p>
+          <a class="btn btn-secondary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
+            Download Resume (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- Recent writing widget -->
+      <div class="articles-widget">
+        <div class="articles-widget-inner">
+          <h3>Recent Writing</h3>
+          <p>Selected posts and articles from LinkedIn relevant to HR, employee relations, and frontline leadership.</p>
+          <!-- Elfsight LinkedIn Feed | Articles sidebar -->
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
         </div>
       </div>
     </div>
-
-    <!-- Compact resume card -->
-    <div class="articles-widget">
-      <div class="articles-widget-inner">
-        <h3>Resume</h3>
-        <p style="margin-bottom:0.6rem;">
-          Prefer a concise, printable overview? You can download my resume as a PDF.
-        </p>
-        <a class="btn btn-secondary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
-          Download Resume (PDF)
-        </a>
-      </div>
-    </div>
-
-    <!-- Recent writing widget -->
-    <div class="articles-widget">
-      <div class="articles-widget-inner">
-        <h3>Recent Writing</h3>
-        <p>Selected posts and articles from LinkedIn relevant to HR, employee relations, and frontline leadership.</p>
-        <!-- Elfsight LinkedIn Feed | Articles sidebar -->
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
-      </div>
-    </div>
-  </div>
-
-</section>
+  </section>
 
   <!-- Who I am / What I do -->
   <section id="who-i-am">
@@ -858,7 +860,7 @@
     </div>
   </section>
 
-  <!-- Experience overview -->
+  <!-- Experience -->
   <section id="experience">
     <div class="section-card">
       <div class="section-kicker">Experience</div>
@@ -898,7 +900,7 @@
     </div>
   </section>
 
-  <!-- Approach / scenarios -->
+  <!-- Approach -->
   <section id="approach">
     <div class="section-card">
       <div class="section-kicker">Approach</div>
@@ -982,7 +984,7 @@
     </div>
   </section>
 
-  <!-- Learning / credentials -->
+  <!-- Learning -->
   <section id="learning">
     <div class="section-card">
       <div class="section-kicker">Learning</div>
@@ -1021,20 +1023,6 @@
       </div>
       <p style="margin-top:0.8rem;font-size:0.88rem;">
         Ongoing learning keeps my advice current and grounded in modern HR and labour relations practice, while my frontline background keeps it practical and implementable.
-      </p>
-    </div>
-  </section>
-
-  <!-- Resume -->
-  <section id="resume">
-    <div class="section-card">
-      <div class="section-kicker">Resume</div>
-      <h2>Resume</h2>
-      <p>
-        For a concise, printable view of my background, you can download my resume as a PDF.
-      </p>
-      <p>
-        <a class="btn btn-secondary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
       </p>
     </div>
   </section>
