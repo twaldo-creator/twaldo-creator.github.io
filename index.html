@@ -1,3 +1,6 @@
+Here’s the full updated `index.html` with the four examples, each opening a full‑width popup box for the long version (no extra pages needed).
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -463,25 +466,6 @@
       font-size: 0.86rem;
     }
 
-        .scenario-detail {
-      margin-top: 0.6rem;
-      padding-top: 0.6rem;
-      border-top: 1px solid #dde1ec;
-      font-size: 0.86rem;
-    }
-
-    .scenario-detail h3 {
-      font-size: 0.95rem;
-      margin-top: 0;
-      margin-bottom: 0.4rem;
-    }
-
-    .scenario-toggle {
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-
     .scenario-badge {
       display: inline-flex;
       align-items: center;
@@ -502,22 +486,10 @@
       font-size: 0.9rem;
     }
 
-    .scenario-sub {
+    .scenario-open {
+      font-size: 0.85rem;
       font-weight: 500;
-      margin-top: 0.4rem;
-      margin-bottom: 0.1rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
-
-    .scenario-list {
-      padding-left: 1.05rem;
-      margin: 0.1rem 0 0.25rem;
-    }
-
-    .scenario-list li { margin-bottom: 0.12rem; }
 
     .edu-grid {
       display: grid;
@@ -574,6 +546,64 @@
       flex-wrap: wrap;
     }
 
+    /* Modal overlay for full cases */
+
+    .case-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 4rem 1rem;
+      z-index: 1000;
+    }
+
+    .case-modal {
+      max-width: 780px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.25);
+      padding: 1.6rem 1.8rem 1.4rem;
+    }
+
+    .case-modal h2 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1.25rem;
+    }
+
+    .case-modal p {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-modal ul {
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      border: none;
+      background: transparent;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      color: #64748b;
+      margin-left: 0.5rem;
+    }
+
+    .case-modal-close:hover {
+      color: #0f172a;
+    }
+
     @media (max-width: 800px) {
       .hero { grid-template-columns: minmax(0, 1fr); }
       .hero-right { order: -1; }
@@ -592,6 +622,10 @@
     @media (max-width: 520px) {
       nav ul { justify-content: flex-start; }
       .btn { width: 100%; justify-content: center; }
+      .case-modal {
+        max-height: 88vh;
+        padding: 1.2rem 1.1rem 1rem;
+      }
     }
   </style>
 </head>
@@ -710,7 +744,7 @@
         My Bachelor of Human Resources and Labour Relations gives me a strong grounding in labour law, employment standards, and human rights, while my frontline leadership experience keeps my recommendations practical and implementable.
       </p>
       <ul class="quick-summary-list">
-        <li>Advise multi‑unit leaders on conduct, performance, accommodation, and termination outcomes, including higher‑risk cases with legal or reputational exposure.</li>
+        <li>Advise multi‑level leaders on conduct, performance, accommodation, and termination outcomes, including higher‑risk cases with legal or reputational exposure.</li>
         <li>Manage concurrent leave and accommodation files nationally, coordinating with LOA administrators, insurers, payroll, and benefits toward return‑to‑work or separation.</li>
         <li>Bring operational credibility from running high‑volume stores with teams of up to ~50, so I understand the pressures on frontline leaders.</li>
         <li>Identify and correct compliance gaps—for example, uncovering a misapplied leave cap and realigning practice with written LOA policy across 130 locations.</li>
@@ -835,7 +869,7 @@
     </div>
   </section>
 
-  <!-- Approach -->
+  <!-- Approach with four short cases -->
   <section id="approach">
     <div class="section-card">
       <div class="section-kicker">Approach</div>
@@ -845,7 +879,7 @@
       </p>
       <div class="scenario-grid">
 
-        <!-- CO-OP SHORT + LONG -->
+        <!-- CO-OP SHORT -->
         <div class="scenario-card">
           <div class="scenario-badge">Case Example</div>
           <div class="scenario-title">Spotting a co‑op gap and fixing it</div>
@@ -856,34 +890,11 @@
             After that visit, I sent a short survey to all stores asking who had co‑op students and whether documents were on file. We found several placements with missing paperwork in just one semester. I set up a simple online form that fed into a spreadsheet owned by HR so managers could register new students in a few minutes. I walked District leaders through the new process and the risk, and they reviewed it with their Store Managers on their regular calls. That gave us visibility and better compliance without adding a heavy new system.
           </p>
           <p>
-            <a href="javascript:void(0)" class="scenario-toggle" data-target="coop-detail">Read the full case</a>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="coop-modal">Read the full case</a>
           </p>
-          <div id="coop-detail" class="scenario-detail" hidden>
-            <h3>Turning an undocumented co‑op placement into a simple tracking system</h3>
-            <p><strong>What I noticed</strong><br>
-            On a routine store visit, a manager introduced me to “our co‑op students.” I realized I had never received any paperwork for them, even though we had a basic co‑op process on paper. If HR doesn’t know who is in the building or what agreements exist, it’s hard to manage risk if something goes wrong. That was my signal that we needed to look closer.</p>
-            <p><strong>Fixing the immediate problem</strong><br>
-            First, I focused on the students in front of us. I asked the manager for any agreements they had and, where there were gaps, I walked them through what needed to be completed right away. The message was simple: we want students here, but we also need to make sure they’re covered and that the school relationship is handled properly.</p>
-            <p><strong>Checking if it was a one‑off</strong><br>
-            Once that was under control, I wanted to know if this was happening elsewhere. I created a short survey for all stores:
-            </p>
-            <ul>
-              <li>Do you have co‑op students right now?</li>
-              <li>How many?</li>
-              <li>Do you have the required forms on file?</li>
-            </ul>
-            <p>
-            The answers showed multiple undocumented placements in one semester. That told me this wasn’t just one manager forgetting a step. The gap was built into how we were handling co‑op placements overall.</p>
-            <p><strong>Creating a simple way to track students</strong><br>
-            Because co‑op students weren’t set up in our HR system like regular employees, any fix had to work outside of that system. I created a one‑page online form that managers could fill out when a new co‑op placement started. The information went straight into a spreadsheet owned by HR and captured the basics: student name, store, school, supervisor, dates, and whether the paperwork was complete. Managers didn’t need new logins or training on a big tool; they just needed the link.</p>
-            <p><strong>Rolling it out so people would actually use it</strong><br>
-            To make sure the process stuck, I used a train‑the‑trainer approach. I met with District leaders, explained the risk, and walked them through the form step by step. They then reviewed it with their Store Managers on their regular district calls, using examples from their own stores. Over time, the reminder to submit the form could be added to existing checklists so it became part of normal planning rather than “one more extra thing.”</p>
-            <p><strong>Why this matters</strong><br>
-            A simple question in one store turned into a clearer way to manage every co‑op placement. HR could see who was in the business and whether they were properly documented. Managers had an easy way to do the right thing. The company reduced its risk in audits or incidents without investing in a large new system. This is the kind of practical fix I like to build when I spot a gap between how work actually happens and what the policy expects.</p>
-          </div>
         </div>
 
-        <!-- FALSIFIED SAFETY SHORT + LONG -->
+        <!-- FALSIFIED SAFETY SHORT -->
         <div class="scenario-card">
           <div class="scenario-badge">Case Example</div>
           <div class="scenario-title">Handling falsified safety records in a retail store</div>
@@ -894,26 +905,11 @@
             In this kind of situation, I would quietly review the safety binder, look for patterns in the paperwork, and identify other people who should be on the committee but might not be attending meetings. I would then loop in the District leader and HR or investigations team so the case is handled through a formal process. Falsifying safety records is a serious breach of trust, even if no incident has occurred yet. My focus is on protecting the reporter, getting clear facts, and recommending a response that treats the behaviour as the serious integrity issue it is.
           </p>
           <p>
-            <a href="javascript:void(0)" class="scenario-toggle" data-target="safety-detail">Read the full case</a>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="safety-modal">Read the full case</a>
           </p>
-          <div id="safety-detail" class="scenario-detail" hidden>
-            <h3>Investigating falsified safety committee records in a store</h3>
-            <p><strong>How the concern came up</strong><br>
-            On a visit to one store, a team member pulled me aside and said their signature was being forged on joint health and safety committee meeting minutes. They were worried about speaking up but also uncomfortable seeing their name used on documents for meetings they didn’t attend. When someone brings me that kind of concern, I start by thanking them and explaining what the next steps might look like, including the fact that I probably won’t be able to share the final outcome with them.</p>
-            <p><strong>Protecting the reporter and clarifying the details</strong><br>
-            I asked if they would be willing to be contacted again by me or by our investigations team and made sure they knew we would treat their information seriously. Then I asked simple, practical questions: which forms they had seen, how they knew the signatures were not genuine, and whether there were any other employees in a similar position. The goal at this stage is not to cross‑examine them, but to understand what exactly is being alleged and where we should look next.</p>
-            <p><strong>Reviewing the records</strong><br>
-            In a best‑practice approach, I would then review the safety binder and related records, without making a scene. I would look at several months of committee minutes, note who is listed as attending, and check whether the signatures look genuine or appear to be written by the same person. I would document what I saw, including dates and any patterns, and, where allowed, take photos or copies so we have a clear record of the concern.</p>
-            <p><strong>Escalating for a formal investigation</strong><br>
-            Because safety documentation touches legal and regulatory obligations, I would not handle the whole investigation alone. After my visit, I would loop in the District leader and HR or investigations team, summarize what the employee reported, and share what I saw in the documents. In many organizations, a case like this would be logged in a central system so it can be triaged and assigned. From there, an investigation plan can be built: who to interview, what records to review, and how to handle conversations with the Store Manager.</p>
-            <p><strong>Recommending outcomes and preventive steps</strong><br>
-            If the investigation confirms that a leader has been falsifying safety records, I would recommend treating it as serious misconduct. Even if no accident has happened, forging safety documents breaks trust with staff and with any external body that might rely on those records. Depending on the facts and internal policy, that may lead to termination or strong corrective action. I would also suggest some follow‑up steps: clearer training for managers on safety committee requirements, spot checks of safety documentation in other stores, and a reminder to staff that they can raise concerns without fear of retaliation.</p>
-            <p><strong>What this shows about my approach</strong><br>
-            In cases like this, I focus on three things: protecting the person who spoke up, getting objective information rather than relying on rumours, and making sure decisions match the seriousness of the behaviour. Falsified safety records are not just “paperwork issues.” They signal a bigger problem with integrity and respect for the people working in the store.</p>
-          </div>
         </div>
 
-        <!-- AVAILABILITY SHORT + LONG -->
+        <!-- AVAILABILITY SHORT -->
         <div class="scenario-card">
           <div class="scenario-badge">Case Example</div>
           <div class="scenario-title">Coaching managers through availability and scheduling limits</div>
@@ -924,26 +920,11 @@
             In these situations, I help leaders separate true restrictions (for example, medical or family needs) from preferences, and I coach managers on how to have honest conversations about role requirements. That can be as simple as: “Your current availability isn’t working for this role. Is there any room to open it up?” HR’s role is to make sure those conversations respect policy and human rights obligations, not to take them over. When adjustments are needed, I also watch for constructive dismissal risk so changes to hours or status are handled in a fair and defensible way.
           </p>
           <p>
-            <a href="javascript:void(0)" class="scenario-toggle" data-target="availability-detail">Read the full case</a>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="availability-modal">Read the full case</a>
           </p>
-          <div id="availability-detail" class="scenario-detail" hidden>
-            <h3>Managing availability limits without drifting into constructive dismissal</h3>
-            <p><strong>How the problem shows up</strong><br>
-            In retail, managers often say yes to availability requests because they want to support their people. Over time, though, those well‑intentioned decisions can stack up. Suddenly the store can’t cover evenings or weekends, a few flexible people are carrying most of the load, and leaders are frustrated. That’s usually when HR gets the call.</p>
-            <p><strong>Understanding what’s really driving the schedule</strong><br>
-            When I look at a situation like this, I start by asking leaders to map out who is available when and why. I ask them to separate true restrictions from preferences. For example: a medical limit or caregiving responsibility is not the same as “I just prefer not to close.” This helps leaders see where they have some room to work and where they might need to consider a formal accommodation process.</p>
-            <p><strong>Coaching managers to have the conversation</strong><br>
-            A common pattern is that managers want HR to deliver the hard message for them. Instead, I coach them on how to have a clear, respectful conversation themselves. That often sounds like: “Here’s what this role needs in terms of availability. Here’s where your current availability doesn’t line up. Is there any flexibility to adjust?” If there is a possible human rights issue behind the request, I guide them to pause the conversation and loop HR in so we can handle it as an accommodation, not just a preference discussion.</p>
-            <p><strong>Avoiding constructive dismissal</strong><br>
-            When leaders try to solve the problem by cutting hours, changing shifts, or moving people into less desirable roles, they can unintentionally move into constructive dismissal territory. I remind them that sudden, targeted negative changes to hours, pay, or status can be seen as a termination in disguise. Instead, I recommend gradual and transparent changes, clear documentation of business reasons, and consistent treatment across staff in similar roles. Where the role truly can’t be done with the current availability, I help them frame options clearly so employees can make informed choices.</p>
-            <p><strong>Clarifying HR’s role</strong><br>
-            Throughout, I’m clear that HR is a partner, not a shield. I will help leaders think through risks, script conversations, and review notes, but I won’t own their day‑to‑day performance and availability discussions. That balance protects HR from becoming the “bad cop,” keeps accountability with the people who run the store, and still respects legal and policy boundaries.</p>
-            <p><strong>Why this matters</strong><br>
-            Handled this way, availability issues become a chance to reset expectations rather than a source of ongoing resentment. Stores get more workable schedules, managers gain confidence having direct conversations, and the organization reduces its risk of constructive dismissal or discrimination claims.</p>
-          </div>
         </div>
 
-        <!-- PIP SHORT + LONG -->
+        <!-- PIP SHORT -->
         <div class="scenario-card">
           <div class="scenario-badge">Case Example</div>
           <div class="scenario-title">Building a defensible PIP for a long‑service leader</div>
@@ -954,31 +935,13 @@
             We turned general frustrations into clear expectations, specific examples, and measurable goals. I set up a 30/60/90‑day check‑in structure so progress and support were documented along the way. This approach gave the ASM a fair chance to improve and gave the company a well‑supported file if performance didn’t change. It also helped the manager learn how to handle future performance issues in a more structured way.
           </p>
           <p>
-            <a href="javascript:void(0)" class="scenario-toggle" data-target="pip-detail">Read the full case</a>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="pip-modal">Read the full case</a>
           </p>
-          <div id="pip-detail" class="scenario-detail" hidden>
-            <h3>Designing a defensible performance plan for a long‑tenured manager</h3>
-            <p><strong>Starting point: “I just want them gone”</strong><br>
-            In this scenario, a Store Manager wanted to terminate a long‑service Assistant Store Manager. Their reasons were real but very broad: the ASM didn’t “step up,” was “negative,” and “didn’t lead by example.” There were few written examples, no prior formal discipline, and no clear expectations on record. Moving straight to termination in that context would create significant risk.</p>
-            <p><strong>Clarifying expectations and current performance</strong><br>
-            I began by asking the Store Manager to describe what “good” would look like in this role. We broke that down into specific tasks and behaviours: completing key routines, following through on coaching conversations, managing schedules accurately, and leading floor standards. Then we compared those expectations to what the ASM was actually doing, using real recent examples. This helped the manager see where the gaps were and gave us something concrete to work with.</p>
-            <p><strong>Rewriting the PIP so it means something</strong><br>
-            The original draft PIP was full of vague phrases like “improve leadership” and “be more proactive.” I worked with the manager to rewrite it in plain, specific language. Instead of “improve leadership,” we might say “conduct daily huddles with your team on at least X days per week and document main priorities.” Instead of “own your responsibilities,” we might say “complete weekly inventory checks by [time] every [day] and report variances to the Store Manager.” Each item on the plan was something we could observe and record as done or not done.</p>
-            <p><strong>Building a fair process</strong><br>
-            To make the plan fair and defensible, we set up a clear 30/60/90‑day structure with scheduled check‑ins. At each check‑in, the manager would review progress against the plan, note specific examples, and document any coaching or support provided. We also identified what support the ASM would receive: coaching from the Store Manager, shadowing on key tasks, and access to any relevant training. The idea was not just to create a paper trail, but to show that the company genuinely gave the ASM a chance to improve.</p>
-            <p><strong>Supporting the manager</strong><br>
-            A piece many people overlook is how uncomfortable some managers are with these conversations. I helped the Store Manager prepare for the initial PIP meeting, including how to explain the plan, how to answer emotional reactions, and how to keep the discussion focused on behaviour and results rather than personality. I also checked in with the manager during the PIP period to review notes and help them stay consistent.</p>
-            <p><strong>Outcomes and risk management</strong><br>
-            A structured PIP like this leads to one of two outcomes. Either the ASM meets the expectations and the store benefits from a stronger leader, or they do not, and the company has a much clearer and more defensible basis for further action, up to and including termination. In both cases, the process shows respect for the employee and reduces legal and reputational risk for the employer.</p>
-            <p><strong>What this says about my approach</strong><br>
-            I see performance management as both a people process and a risk process. My goal is to make sure expectations are clear, support is real, and documentation is strong enough to stand up to internal and external scrutiny. At the same time, I want managers to feel more confident handling difficult performance issues themselves, with HR as a partner rather than a shield.</p>
-          </div>
         </div>
 
       </div>
     </div>
   </section>
-
 
   <!-- Learning -->
   <section id="learning">
@@ -1047,6 +1010,87 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal overlay + templates -->
+  <div id="case-modal-overlay" class="case-modal-overlay" hidden>
+    <div class="case-modal">
+      <button type="button" class="case-modal-close" aria-label="Close case">&times;</button>
+      <div id="case-modal-content"></div>
+    </div>
+  </div>
+
+  <template id="coop-modal">
+    <h2>Turning an undocumented co‑op placement into a simple tracking system</h2>
+    <p><strong>What I noticed</strong><br>
+    On a routine store visit, a manager introduced me to “our co‑op students.” I realized I had never received any paperwork for them, even though we had a basic co‑op process on paper. If HR doesn’t know who is in the building or what agreements exist, it’s hard to manage risk if something goes wrong. That was my signal that we needed to look closer.</p>
+    <p><strong>Fixing the immediate problem</strong><br>
+    First, I focused on the students in front of us. I asked the manager for any agreements they had and, where there were gaps, I walked them through what needed to be completed right away. The message was simple: we want students here, but we also need to make sure they’re covered and that the school relationship is handled properly.</p>
+    <p><strong>Checking if it was a one‑off</strong><br>
+    Once that was under control, I wanted to know if this was happening elsewhere. I created a short survey for all stores:</p>
+    <ul>
+      <li>Do you have co‑op students right now?</li>
+      <li>How many?</li>
+      <li>Do you have the required forms on file?</li>
+    </ul>
+    <p>The answers showed multiple undocumented placements in one semester. That told me this wasn’t just one manager forgetting a step. The gap was built into how we were handling co‑op placements overall.</p>
+    <p><strong>Creating a simple way to track students</strong><br>
+    Because co‑op students weren’t set up in our HR system like regular employees, any fix had to work outside of that system. I created a one‑page online form that managers could fill out when a new co‑op placement started. The information went straight into a spreadsheet owned by HR and captured the basics: student name, store, school, supervisor, dates, and whether the paperwork was complete. Managers didn’t need new logins or training on a big tool; they just needed the link.</p>
+    <p><strong>Rolling it out so people would actually use it</strong><br>
+    To make sure the process stuck, I used a train‑the‑trainer approach. I met with District leaders, explained the risk, and walked them through the form step by step. They then reviewed it with their Store Managers on their regular district calls, using examples from their own stores. Over time, the reminder to submit the form could be added to existing checklists so it became part of normal planning rather than “one more extra thing.”</p>
+    <p><strong>Why this matters</strong><br>
+    A simple question in one store turned into a clearer way to manage every co‑op placement. HR could see who was in the business and whether they were properly documented. Managers had an easy way to do the right thing. The company reduced its risk in audits or incidents without investing in a large new system. This is the kind of practical fix I like to build when I spot a gap between how work actually happens and what the policy expects.</p>
+  </template>
+
+  <template id="safety-modal">
+    <h2>Investigating falsified safety committee records in a store</h2>
+    <p><strong>How the concern came up</strong><br>
+    On a visit to one store, a team member pulled me aside and said their signature was being forged on joint health and safety committee meeting minutes. They were worried about speaking up but also uncomfortable seeing their name used on documents for meetings they didn’t attend. When someone brings me that kind of concern, I start by thanking them and explaining what the next steps might look like, including the fact that I probably won’t be able to share the final outcome with them.</p>
+    <p><strong>Protecting the reporter and clarifying the details</strong><br>
+    I asked if they would be willing to be contacted again by me or by our investigations team and made sure they knew we would treat their information seriously. Then I asked simple, practical questions: which forms they had seen, how they knew the signatures were not genuine, and whether there were any other employees in a similar position. The goal at this stage is not to cross‑examine them, but to understand what exactly is being alleged and where we should look next.</p>
+    <p><strong>Reviewing the records</strong><br>
+    In a best‑practice approach, I would then review the safety binder and related records, without making a scene. I would look at several months of committee minutes, note who is listed as attending, and check whether the signatures look genuine or appear to be written by the same person. I would document what I saw, including dates and any patterns, and, where allowed, take photos or copies so we have a clear record of the concern.</p>
+    <p><strong>Escalating for a formal investigation</strong><br>
+    Because safety documentation touches legal and regulatory obligations, I would not handle the whole investigation alone. After my visit, I would loop in the District leader and HR or investigations team, summarize what the employee reported, and share what I saw in the documents. In many organizations, a case like this would be logged in a central system so it can be triaged and assigned. From there, an investigation plan can be built: who to interview, what records to review, and how to handle conversations with the Store Manager.</p>
+    <p><strong>Recommending outcomes and preventive steps</strong><br>
+    If the investigation confirms that a leader has been falsifying safety records, I would recommend treating it as serious misconduct. Even if no accident has happened, forging safety documents breaks trust with staff and with any external body that might rely on those records. Depending on the facts and internal policy, that may lead to termination or strong corrective action. I would also suggest some follow‑up steps: clearer training for managers on safety committee requirements, spot checks of safety documentation in other stores, and a reminder to staff that they can raise concerns without fear of retaliation.</p>
+    <p><strong>What this shows about my approach</strong><br>
+    In cases like this, I focus on three things: protecting the person who spoke up, getting objective information rather than relying on rumours, and making sure decisions match the seriousness of the behaviour. Falsified safety records are not just “paperwork issues.” They signal a bigger problem with integrity and respect for the people working in the store.</p>
+  </template>
+
+  <template id="availability-modal">
+    <h2>Managing availability limits without drifting into constructive dismissal</h2>
+    <p><strong>How the problem shows up</strong><br>
+    In retail, managers often say yes to availability requests because they want to support their people. Over time, though, those well‑intentioned decisions can stack up. Suddenly the store can’t cover evenings or weekends, a few flexible people are carrying most of the load, and leaders are frustrated. That’s usually when HR gets the call.</p>
+    <p><strong>Understanding what’s really driving the schedule</strong><br>
+    When I look at a situation like this, I start by asking leaders to map out who is available when and why. I ask them to separate true restrictions from preferences. For example: a medical limit or caregiving responsibility is not the same as “I just prefer not to close.” This helps leaders see where they have some room to work and where they might need to consider a formal accommodation process.</p>
+    <p><strong>Coaching managers to have the conversation</strong><br>
+    A common pattern is that managers want HR to deliver the hard message for them. Instead, I coach them on how to have a clear, respectful conversation themselves. That often sounds like: “Here’s what this role needs in terms of availability. Here’s where your current availability doesn’t line up. Is there any flexibility to adjust?” If there is a possible human rights issue behind the request, I guide them to pause the conversation and loop HR in so we can handle it as an accommodation, not just a preference discussion.</p>
+    <p><strong>Avoiding constructive dismissal</strong><br>
+    When leaders try to solve the problem by cutting hours, changing shifts, or moving people into less desirable roles, they can unintentionally move into constructive dismissal territory. I remind them that sudden, targeted negative changes to hours, pay, or status can be seen as a termination in disguise. Instead, I recommend gradual and transparent changes, clear documentation of business reasons, and consistent treatment across staff in similar roles. Where the role truly can’t be done with the current availability, I help them frame options clearly so employees can make informed choices.</p>
+    <p><strong>Clarifying HR’s role</strong><br>
+    Throughout, I’m clear that HR is a partner, not a shield. I will help leaders think through risks, script conversations, and review notes, but I won’t own their day‑to‑day performance and availability discussions. That balance protects HR from becoming the “bad cop,” keeps accountability with the people who run the store, and still respects legal and policy boundaries.</p>
+    <p><strong>Why this matters</strong><br>
+    Handled this way, availability issues become a chance to reset expectations rather than a source of ongoing resentment. Stores get more workable schedules, managers gain confidence having direct conversations, and the organization reduces its risk of constructive dismissal or discrimination claims.</p>
+  </template>
+
+  <template id="pip-modal">
+    <h2>Designing a defensible performance plan for a long‑tenured manager</h2>
+    <p><strong>Starting point: “I just want them gone”</strong><br>
+    In this scenario, a Store Manager wanted to terminate a long‑service Assistant Store Manager. Their reasons were real but very broad: the ASM didn’t “step up,” was “negative,” and “didn’t lead by example.” There were few written examples, no prior formal discipline, and no clear expectations on record. Moving straight to termination in that context would create significant risk.</p>
+    <p><strong>Clarifying expectations and current performance</strong><br>
+    I began by asking the Store Manager to describe what “good” would look like in this role. We broke that down into specific tasks and behaviours: completing key routines, following through on coaching conversations, managing schedules accurately, and leading floor standards. Then we compared those expectations to what the ASM was actually doing, using real recent examples. This helped the manager see where the gaps were and gave us something concrete to work with.</p>
+    <p><strong>Rewriting the PIP so it means something</strong><br>
+    The original draft PIP was full of vague phrases like “improve leadership” and “be more proactive.” I worked with the manager to rewrite it in plain, specific language. Instead of “improve leadership,” we might say “conduct daily huddles with your team on at least X days per week and document main priorities.” Instead of “own your responsibilities,” we might say “complete weekly inventory checks by [time] every [day] and report variances to the Store Manager.” Each item on the plan was something we could observe and record as done or not done.</p>
+    <p><strong>Building a fair process</strong><br>
+    To make the plan fair and defensible, we set up a clear 30/60/90‑day structure with scheduled check‑ins. At each check‑in, the manager would review progress against the plan, note specific examples, and document any coaching or support provided. We also identified what support the ASM would receive: coaching from the Store Manager, shadowing on key tasks, and access to any relevant training. The idea was not just to create a paper trail, but to show that the company genuinely gave the ASM a chance to improve.</p>
+    <p><strong>Supporting the manager</strong><br>
+    A piece many people overlook is how uncomfortable some managers are with these conversations. I helped the Store Manager prepare for the initial PIP meeting, including how to explain the plan, how to answer emotional reactions, and how to keep the discussion focused on behaviour and results rather than personality. I also checked in with the manager during the PIP period to review notes and help them stay consistent.</p>
+    <p><strong>Outcomes and risk management</strong><br>
+    A structured PIP like this leads to one of two outcomes. Either the ASM meets the expectations and the store benefits from a stronger leader, or they do not, and the company has a much clearer and more defensible basis for further action, up to and including termination. In both cases, the process shows respect for the employee and reduces legal and reputational risk for the employer.</p>
+    <p><strong>What this says about my approach</strong><br>
+    I see performance management as both a people process and a risk process. My goal is to make sure expectations are clear, support is real, and documentation is strong enough to stand up to internal and external scrutiny. At the same time, I want managers to feel more confident handling difficult performance issues themselves, with HR as a partner rather than a shield.</p>
+  </template>
+
 </main>
 
 <footer>
@@ -1055,27 +1099,50 @@
 </footer>
 
 <script>
+  // Year in footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  document.querySelectorAll('.scenario-toggle').forEach(function(link) {
+  // Scenario modals
+  const overlay = document.getElementById('case-modal-overlay');
+  const contentBox = document.getElementById('case-modal-content');
+  const closeBtn = document.querySelector('.case-modal-close');
+
+  function openCaseModal(templateId) {
+    const tpl = document.getElementById(templateId);
+    if (!tpl) return;
+    contentBox.innerHTML = '';
+    contentBox.appendChild(tpl.content.cloneNode(true));
+    overlay.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCaseModal() {
+    overlay.setAttribute('hidden', '');
+    contentBox.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.scenario-open').forEach(function (link) {
     link.addEventListener('click', function () {
-      var id = this.getAttribute('data-target');
-      var box = document.getElementById(id);
-      if (!box) return;
-      var isHidden = box.hasAttribute('hidden');
-      // Close any other open detail boxes if you want only one open at a time:
-      // document.querySelectorAll('.scenario-detail').forEach(d => d.setAttribute('hidden',''));
-      if (isHidden) {
-        box.removeAttribute('hidden');
-        this.textContent = 'Hide full case';
-      } else {
-        box.setAttribute('hidden', '');
-        this.textContent = 'Read the full case';
-      }
+      const id = this.getAttribute('data-modal');
+      openCaseModal(id);
     });
   });
-</script>
 
-  
+  closeBtn.addEventListener('click', closeCaseModal);
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) {
+      closeCaseModal();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) {
+      closeCaseModal();
+    }
+  });
+</script>
 </body>
 </html>
+```
