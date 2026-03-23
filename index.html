@@ -186,10 +186,6 @@
       color: var(--text-main);
     }
 
-    .hero-body p {
-      margin: 0 0 0.5rem;
-    }
-
     .hero-meta {
       margin-top: 0.9rem;
       display: flex;
@@ -296,94 +292,341 @@
       font-size: 0.9rem;
     }
 
-    /* Sections */
-
-    .card {
+    .articles-widget {
       background: var(--bg-alt);
       border-radius: var(--radius-lg);
+      padding: 0.75rem 0.9rem 0.9rem;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(0,0,0,0.03);
-      padding: 1.3rem 1.4rem;
-      font-size: 0.93rem;
+      font-size: 0.85rem;
     }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
-      gap: 1.5rem;
+    .articles-widget h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
     }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin: 0.4rem 0 0.6rem;
-    }
-
-    .chip {
-      padding: 0.18rem 0.6rem;
-      border-radius: var(--radius-pill);
-      background: var(--chip-bg);
-      font-size: 0.78rem;
+    .articles-widget p {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
       color: var(--text-muted);
     }
 
-    .list-clean {
+    .articles-widget-inner {
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(23, 70, 124, 0.35);
+    }
+    .btn-primary:hover {
+      background: #184777;
+      text-decoration: none;
+    }
+
+    /* Sections */
+
+    .section-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.9rem;
+    }
+
+    .quick-summary-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 0.4rem 1.5rem;
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0;
+      font-size: 0.9rem;
+    }
+
+    .quick-summary-list li {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .quick-summary-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.25rem;
+      top: 0.58rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--primary);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.7rem;
+    }
+
+    .skill-cluster {
+      background: #f9fafc;
+      border-radius: 12px;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid #e0e4ef;
+      font-size: 0.86rem;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+      color: var(--text-main);
+    }
+
+    .skill-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-top: 0.25rem;
+    }
+
+    .skill-chip {
+      padding: 0.1rem 0.45rem;
+      border-radius: var(--radius-pill);
+      background: #e9edf7;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .experience-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.2rem;
+    }
+
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.88rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 0.45rem;
+      padding-left: 0.9rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 0.5rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .timeline-role { font-weight: 600; }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.7rem;
+    }
+
+    .scenario-card {
+      background: #f9fafc;
+      border-radius: 12px;
+      border: 1px solid #e1e4ef;
+      padding: 0.9rem 0.95rem;
+      font-size: 0.86rem;
+    }
+
+    .scenario-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.72rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: #eef3ff;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .scenario-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .scenario-open {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1rem;
+      font-size: 0.88rem;
+    }
+
+    .edu-item { margin-bottom: 0.5rem; }
+
+    .edu-title { font-weight: 600; }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+    }
+
+    .tag {
+      border-radius: var(--radius-pill);
+      padding: 0.15rem 0.6rem;
+      font-size: 0.78rem;
+      border: 1px solid #dde1ec;
+      background: #f9fafc;
+      color: var(--text-muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1rem;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+
+    .contact-list {
       list-style: none;
       padding-left: 0;
       margin: 0.4rem 0 0;
     }
 
-    .list-clean li {
-      margin-bottom: 0.35rem;
-    }
-
-    .scenario {
-      border-radius: 10px;
-      border: 1px solid var(--border-subtle);
-      padding: 0.9rem 1rem;
-      margin-bottom: 0.75rem;
-      background: #fbfbfd;
-    }
-
-    .scenario h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .scenario strong {
-      font-weight: 600;
-    }
-
-    .scenario p {
-      margin: 0.25rem 0;
-    }
-
-    /* Footer */
+    .contact-list li { margin-bottom: 0.25rem; }
 
     footer {
-      border-top: 1px solid var(--border-subtle);
-      padding: 1.5rem 1.25rem 2rem;
-      font-size: 0.83rem;
-      color: var(--text-muted);
-    }
-
-    footer .footer-inner {
       max-width: var(--max-width);
       margin: 0 auto;
+      padding: 0 1.25rem 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      align-items: center;
       justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* Modal overlay for full cases */
+
+    .case-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 4rem 1rem;
+      z-index: 1000;
+    }
+
+    .case-modal-overlay[hidden] {
+      display: none !important;
+    }
+
+    .case-modal {
+      max-width: 780px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.25);
+      padding: 1.6rem 1.8rem 1.4rem;
+    }
+
+    .case-modal h2 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1.25rem;
+    }
+
+    .case-modal p {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-modal ul {
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      border: none;
+      background: transparent;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      color: #64748b;
+      margin-left: 0.5rem;
+    }
+
+    .case-modal-close:hover {
+      color: #0f172a;
     }
 
     @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-right { order: -1; }
+      .hero-left { padding: 1.1rem 1.1rem; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner { padding-inline: 0.75rem; }
+      main { padding-inline: 0.75rem; }
+      .quick-summary-list { grid-template-columns: minmax(0, 1fr); }
+      .experience-layout { grid-template-columns: minmax(0, 1fr); }
+      .edu-grid { grid-template-columns: minmax(0, 1fr); }
+      .contact-grid { grid-template-columns: minmax(0, 1fr); }
+      .scenario-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      nav ul { justify-content: flex-start; }
+      .btn { width: 100%; justify-content: center; }
+      .case-modal {
+        max-height: 88vh;
+        padding: 1.2rem 1.1rem 1rem;
       }
     }
   </style>
@@ -393,18 +636,20 @@
   <div class="nav-inner">
     <div class="nav-brand">
       <div class="nav-dots">
-        <div class="nav-dot"></div>
-        <div class="nav-dot"></div>
-        <div class="nav-dot"></div>
+        <span class="nav-dot"></span>
+        <span class="nav-dot"></span>
+        <span class="nav-dot"></span>
       </div>
-      <span><strong>Tanner Waldo</strong> People &amp; Culture Advisor</span>
+      <span><strong>Tanner Waldo</strong> · People &amp; Culture Advisor</span>
     </div>
     <nav>
       <ul>
-        <li><a href="#about">About</a></li>
+        <li><a href="#who-i-am">Profile</a></li>
         <li><a href="#skills">Core Skills</a></li>
-        <li><a href="#approach">How I Work</a></li>
-        <li><a href="#contact">Contact &amp; Roles</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -412,36 +657,44 @@
 
 <main>
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero-left">
       <div class="hero-pill">
         <span class="hero-pill-dot"></span>
-        People &amp; Culture for frontline organizations
+        <span>People &amp; Culture Advisor for frontline organizations</span>
       </div>
-      <h1>People &amp; Culture Advisor for busy, frontline teams</h1>
+      <h1>People &amp; Culture Advisor for busy, frontline teams.</h1>
       <p class="hero-subtitle">
-        I help retail leaders handle complex employee relations and leave cases, while also improving engagement, trust, and day‑to‑day experience for frontline teams.
+        I help frontline leaders handle complex employee relations and leave cases, while also improving engagement, trust, and day‑to‑day experience for frontline teams across ~130 stores in a national retail chain.
       </p>
-      <div class="hero-body">
-        <p>
-          I’ve supported District leaders and Store Managers across ~130 locations in a national retail chain, combining employee relations, investigations, performance management, leaves and accommodations, and policy interpretation with practical engagement and culture work in busy stores.
-        </p>
-        <p>
-          My approach is evidence‑based and plain‑language: I translate legislation, policies, and internal precedents into realistic options for leaders, and I use data, engagement surveys, and on‑site conversations with team members to understand what’s really happening on the floor.
-        </p>
-      </div>
+      <p class="hero-body">
+        I’ve supported District leaders and Store Managers across ~130 locations, combining employee relations, investigations, performance management, leaves and accommodations, and policy interpretation with practical engagement and culture work in busy stores. My approach is evidence‑based and plain‑language: I translate legislation, policies, and internal precedents into realistic options for leaders, and I use data, engagement surveys, and on‑site conversations with team members to understand what’s really happening on the floor.
+      </p>
+      <p class="hero-body">
+        I spend as much time listening to frontline teams as I do reviewing policy. On store visits, I meet every on‑shift team member, promote benefits and programs, and connect engagement survey results to what people are actually experiencing at work. That listening work sits alongside structured investigations, higher‑risk performance plans, and thoughtful accommodation and leave decisions, so outcomes are both fair to employees and defensible for the organization.
+      </p>
       <div class="hero-meta">
-        <div class="hero-tag">Bachelor of Human Resources and Labour Relations (BHRLR)</div>
-        <div class="hero-tag">Field HR Advisor for ~3,000 employees</div>
-        <div class="hero-tag">Frontline retail leadership &amp; training background</div>
+        <span class="hero-tag">Bachelor of Human Resources and Labour Relations (BHRLR)</span>
+        <span class="hero-tag">Field HR Advisor for ~3,000 employees</span>
+        <span class="hero-tag">Frontline leadership &amp; training background</span>
+      </div>
+
+      <div class="key-points">
+        <div class="section-kicker">Snapshot</div>
+        <strong>HR that balances people, risk, and operations</strong>
+        <ul>
+          <li>Field HR support for ~3,000 employees: coaching leaders through investigations, performance management, leaves and accommodations, and policy interpretation.</li>
+          <li>Regular on‑site HR visits: meet with every on‑shift team member, promote benefits and programs, and use engagement survey results and listening to surface and address concerns early.</li>
+          <li>Known for pairing fair, well‑documented decisions with psychological safety and trust: I give leaders options, not just “yes/no” answers, and help them understand people, risk, and operational implications.</li>
+        </ul>
       </div>
     </div>
 
     <div class="hero-right">
-      <div class="profile-card" id="about">
+      <!-- Profile card -->
+      <div class="profile-card" id="who-i-am">
         <div class="profile-photo">
-          <!-- Optional photo: replace src with your image, or leave blank -->
-          <img src="" alt="profile.jpg">
+          <img src="profile.jpg" alt="Profile photo of Tanner Waldo">
         </div>
         <div class="profile-meta">
           <strong>Who I am in 20 seconds</strong>
@@ -454,172 +707,489 @@
         </div>
       </div>
 
-      <div class="key-points">
-        <div class="section-kicker">Snapshot</div>
-        <h2>HR that balances people, risk, and operations</h2>
-        <ul>
-          <li>Field HR support for ~3,000 employees: coaching leaders through investigations, performance management, leaves and accommodations, and policy interpretation.</li>
-          <li>Regular on‑site HR visits: meet with every on‑shift team member, promote benefits and programs, and use engagement survey results and listening to surface and address concerns early.</li>
-          <li>Known for pairing fair, well‑documented decisions with psychological safety and trust: I give leaders options, not just “yes/no” answers, and help them understand people, risk, and operational implications.</li>
-        </ul>
+      <!-- Resume card -->
+      <div class="articles-widget">
+        <div class="articles-widget-inner">
+          <h3>Resume</h3>
+          <p style="margin-bottom:0.6rem;">
+            For a concise overview of my people &amp; culture work, education, and frontline operations background, you can download my resume as a PDF.
+          </p>
+          <a class="btn btn-primary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
+            Download Resume (PDF)
+          </a>
+        </div>
+      </div>
+
+      <!-- Recent writing widget -->
+      <div class="articles-widget">
+        <div class="articles-widget-inner">
+          <h3>Recent Writing</h3>
+          <p>
+            Selected posts and articles from LinkedIn where I break down people &amp; culture and employee relations issues for leaders in clear, practical language.
+          </p>
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Core Skills -->
   <section id="skills">
-    <div class="section-kicker">Core skills</div>
-    <h2>What I actually do as a People &amp; Culture Advisor</h2>
+    <div class="section-card">
+      <div class="section-kicker">Core Skills</div>
+      <h2>What I actually do as a People &amp; Culture Advisor</h2>
+      <p>
+        I bring a blend of employee relations, leaves, and policy work with hands‑on engagement and culture support in busy, customer‑facing environments. The same store visits where I help leaders with ER issues are also where I listen to teams, close the loop on feedback, and look for simple ways to build trust and clarity.
+      </p>
+      <div class="skills-grid">
+        <div class="skill-cluster">
+          <div class="skill-label">Employee relations &amp; investigations</div>
+          <p>
+            I handle sensitive cases in a way that is fair, well‑documented, and defensible, while maintaining trust with employees and leaders when possible.
+          </p>
+          <div class="skill-chip-row">
+            <span class="skill-chip">Harassment &amp; conduct cases</span>
+            <span class="skill-chip">Safety &amp; falsified records</span>
+            <span class="skill-chip">Higher‑risk PIPs</span>
+          </div>
+          <p>
+            Examples include investigations into harassment, safety violations, falsified records, and accommodation disputes. I coach leaders on documentation, progressive discipline, and performance management, push back on weak or premature terminations, and help build stronger, more defensible cases where appropriate.
+          </p>
+        </div>
 
-    <div class="two-col">
-      <div class="card">
-        <h3>Employee relations &amp; investigations</h3>
-        <p>
-          I handle sensitive cases in a way that is fair, well‑documented, and defensible, while maintaining trust with employees and leaders.
-        </p>
-        <ul class="list-clean">
-          <li>Investigations into harassment, safety violations, falsified records, and accommodation disputes, with clear findings and recommendations.</li>
-          <li>Coach leaders on documentation, progressive discipline, and performance management, including higher‑risk PIPs.</li>
-          <li>Push back on weak or premature terminations and help leaders build stronger, more defensible cases where appropriate.</li>
-        </ul>
+        <div class="skill-cluster">
+          <div class="skill-label">Leaves, accommodations &amp; return to work</div>
+          <p>
+            I manage complex disability and leave cases in partnership with leaders, third‑party administrators, and Legal, focusing on both compliance and humane outcomes.
+          </p>
+          <div class="skill-chip-row">
+            <span class="skill-chip">Medical &amp; disability leaves</span>
+            <span class="skill-chip">Undue hardship &amp; FoC</span>
+            <span class="skill-chip">RTW planning</span>
+          </div>
+          <p>
+            I handle 20–30 concurrent leave and accommodation files at a time, clarify undue hardship and frustration of contract for leaders, and design practical, staged return‑to‑work plans that work for the employee, the team, and operations.
+          </p>
+        </div>
 
-        <h3>Leaves, accommodations &amp; return to work</h3>
-        <p>
-          I manage complex disability and leave cases in partnership with leaders, third‑party administrators, and Legal, focusing on both compliance and humane outcomes.
-        </p>
-        <ul class="list-clean">
-          <li>20–30 concurrent medical leave and accommodation files at a time, coordinating LOA vendor, insurer, payroll, and benefits.</li>
-          <li>Clarify undue hardship, frustration of contract, and addiction‑related accommodations for leaders who are unsure or resistant.</li>
-          <li>Design practical, staged return‑to‑work plans that work for the employee, the team, and operations.</li>
-        </ul>
-      </div>
+        <div class="skill-cluster">
+          <div class="skill-label">Engagement &amp; culture</div>
+          <p>
+            I use engagement data, on‑site listening, and benefits/recognition programs to help leaders build trust and a better day‑to‑day experience for frontline teams.
+          </p>
+          <div class="skill-chip-row">
+            <span class="skill-chip">Engagement surveys</span>
+            <span class="skill-chip">On‑site listening</span>
+            <span class="skill-chip">Benefits &amp; recognition</span>
+            <span class="skill-chip">Psychological safety</span>
+          </div>
+          <p>
+            I review engagement survey results before HR visits, use them to guide 1:1 and small‑group conversations, promote benefits and programs in ways that feel relevant to frontline employees, and help leaders identify a small set of visible, follow‑through actions that demonstrate they are listening and responding.
+          </p>
+        </div>
 
-      <div class="card">
-        <h3>Engagement &amp; culture</h3>
-        <p>
-          I use engagement data, on‑site listening, and benefits/recognition programs to help leaders build trust and a better day‑to‑day experience for frontline teams.
-        </p>
-        <ul class="list-clean">
-          <li>Review engagement survey results in advance of HR visits; use them to guide 1:1 and small‑group conversations with team members and leaders.</li>
-          <li>Promote benefits, programs, and resources in ways that feel relevant to frontline employees, closing awareness and access gaps.</li>
-          <li>Help leaders identify a small set of visible, follow‑through actions that demonstrate they are listening and responding.</li>
-        </ul>
+        <div class="skill-cluster">
+          <div class="skill-label">Policy interpretation &amp; practical compliance</div>
+          <p>
+            I close policy–practice gaps and explain complex rules in plain language, so leaders and frontline teams know what’s expected without feeling buried in jargon.
+          </p>
+          <div class="skill-chip-row">
+            <span class="skill-chip">Policy review</span>
+            <span class="skill-chip">Risk assessment</span>
+            <span class="skill-chip">Simple tools &amp; trackers</span>
+          </div>
+          <p>
+            This has included spotting and correcting a nationwide misapplication of LOA policy (60 days vs. written six‑month entitlement) and creating simple tools (like co‑op tracking forms) that make compliance feel doable, not bureaucratic.
+          </p>
+        </div>
 
-        <h3>Policy interpretation &amp; practical compliance</h3>
-        <p>
-          I close policy–practice gaps and explain complex rules in plain language, so leaders and frontline teams know what’s expected.
-        </p>
-        <ul class="list-clean">
-          <li>Spotted and corrected a nationwide misapplication of LOA policy (60 days vs. written six‑month entitlement) across 130+ locations.</li>
-          <li>Translate policies, collective agreement language, and internal precedents into practical options for busy store leaders.</li>
-          <li>Design simple tools and trackers (e.g., for co‑op placements) that make compliance feel doable, not bureaucratic.</li>
-        </ul>
-      </div>
-    </div>
+        <div class="skill-cluster">
+          <div class="skill-label">Frontline leadership &amp; change</div>
+          <p>
+            Before moving into Field HR, I spent over a decade in store leadership. That experience shapes how I support leaders today.
+          </p>
+          <div class="skill-chip-row">
+            <span class="skill-chip">Store leadership</span>
+            <span class="skill-chip">Leader training</span>
+            <span class="skill-chip">Change support</span>
+          </div>
+          <p>
+            I led high‑volume stores with up to 50 employees and $7.5M annual sales and designed 1‑to‑4‑week training programs for new and promoted leaders. That means I’m a realistic thought‑partner: I understand what can and cannot work in a busy store on a Tuesday night.
+          </p>
+        </div>
 
-    <div class="two-col" style="margin-top:1.5rem;">
-      <div class="card">
-        <h3>Frontline leadership &amp; change</h3>
-        <p>
-          Before moving into Field HR, I spent over a decade in store leadership. That experience shapes how I support leaders today.
-        </p>
-        <ul class="list-clean">
-          <li>Led high‑volume stores with up to 50 employees and $7.5M annual sales, managing staffing, scheduling, and performance.</li>
-          <li>Designed and delivered 1‑to‑4‑week training programs for new and promoted leaders as a district training manager.</li>
-          <li>Serve as a realistic thought‑partner for leaders; I understand what can and cannot work in a busy store on a Tuesday night.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Compensation, data &amp; evidence‑based HR</h3>
-        <p>
-          I’m comfortable with HRIS cleanup, basic compensation/benefits concepts, and using data to make HR decisions less anecdotal.
-        </p>
-        <ul class="list-clean">
-          <li>Resolved 300+ HRIS address exceptions in two weeks to enable on‑time T4s for ~3,000 employees and identified upstream onboarding fixes.</li>
-          <li>ADP entry‑level compensation and benefits certificate and in‑progress data analytics training to support more data‑informed HR work.</li>
-          <li>Use internal precedents, metrics, and trend data (e.g., case types, time to resolve) to guide recommendations.</li>
-        </ul>
+        <div class="skill-cluster">
+          <div class="skill-label">Compensation, data &amp; evidence‑based HR</div>
+          <p>
+            I’m comfortable with HRIS cleanup, basic compensation/benefits concepts, and using data to make HR decisions less anecdotal.
+          </p>
+          <div class="skill-chip-row">
+            <span class="skill-chip">HRIS cleanup</span>
+            <span class="skill-chip">Comp &amp; benefits basics</span>
+            <span class="skill-chip">People data</span>
+          </div>
+          <p>
+            I’ve resolved 300+ HRIS address exceptions in two weeks to enable on‑time T4s for ~3,000 employees and identified upstream onboarding fixes. I hold an ADP entry‑level compensation and benefits certificate and am completing data analytics training to support more data‑informed HR work.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- How I approach HR problems -->
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-card">
+      <div class="section-kicker">Experience</div>
+      <h2>Experience</h2>
+      <div class="experience-layout">
+        <div>
+          <p>
+            My people &amp; culture practice is grounded in frontline experience. I spent over a decade in store‑level leadership roles at Michaels, including Assistant Store Manager and Store Manager in high‑volume locations, where I owned staffing, scheduling, KPIs, performance, and health and safety.
+          </p>
+          <p>
+            I then moved into a Field HR / People &amp; Culture Specialist role, providing comprehensive support to 8 District Directors and approximately 130 Store Managers across Canada, with a focus on employee relations, investigations, leaves and accommodations, engagement, and policy interpretation.
+          </p>
+          <p>
+            Combined with my BHRLR degree, that experience means I can sit with a district leader or store manager, understand their operational reality in detail, and still give clear, defensible advice rooted in employment standards, human rights, internal policy, and what their teams are actually telling us.
+          </p>
+        </div>
+        <div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-role">Field HR / People &amp; Culture Specialist (Canada)</div>
+              <div>Michaels Stores, Inc. · Remote</div>
+              <div>Advised 8 District Directors and ~130 Store Managers on employee relations, leaves, accommodations, investigations, engagement, and policy.</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-role">Store Manager</div>
+              <div>Michaels Stores, Inc.</div>
+              <div>Led a high‑volume store with up to 50 team members and ~$7.5M in annual sales, serving as district training manager for new leaders.</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-role">Assistant Store Manager</div>
+              <div>Michaels Stores, Inc.</div>
+              <div>Built a frontline leadership foundation in operations, people management, and training across single‑store assignments.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
   <section id="approach">
-    <div class="section-kicker">How I work</div>
-    <h2>How I approach HR and People &amp; Culture problems</h2>
+    <div class="section-card">
+      <div class="section-kicker">How I work</div>
+      <h2>How I approach HR and People &amp; Culture problems</h2>
+      <p>
+        I start by understanding what is really happening on the ground, then layer in policy, legislation, internal precedents, engagement data, and practical constraints before recommending a path forward. These examples show how I think through different kinds of people and culture problems.
+      </p>
+      <div class="scenario-grid">
 
-    <div class="two-col">
-      <div>
-        <div class="scenario">
-          <h3>1. Performance issues in a busy store</h3>
-          <p><strong>Situation:</strong> A Store Manager wants to terminate an underperforming team member quickly.</p>
-          <p><strong>Questions &amp; information:</strong> What has already been documented? What specific examples can the leader give? What support or expectations were clearly communicated? How is this affecting the team and customers?</p>
-          <p><strong>Policy &amp; framework:</strong> Performance management policies, progressive discipline guidelines, and any relevant past precedents.</p>
-          <p><strong>Advisory stance:</strong> I help the leader slow down enough to do this properly: clarify expectations, set a realistic improvement plan where appropriate, and document fairly. If termination is the right outcome, we get there with defensible, humane steps.</p>
+        <!-- Co-op short -->
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Spotting a co‑op gap and fixing it</div>
+          <p>
+            On a store visit, a manager introduced two co‑op students. I knew I hadn’t seen any paperwork for them, even though there was supposed to be a standard process. I asked the manager to complete the forms right away so the students were properly covered.
+          </p>
+          <p>
+            After that visit, I sent a short survey to all stores asking who had co‑op students and whether documents were on file. We found several placements with missing paperwork in just one semester. I set up a simple online form that fed into a spreadsheet owned by HR so managers could register new students in a few minutes and walked District leaders through the new process and the risk. That gave us visibility and better compliance without adding a heavy new system.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="coop-modal">Read the full case</a>
+          </p>
         </div>
 
-        <div class="scenario">
-          <h3>2. Complex accommodation or leave case</h3>
-          <p><strong>Situation:</strong> A leader is frustrated by a long‑running medical leave and wants to know “if we can just end this.”</p>
-          <p><strong>Questions &amp; information:</strong> What medical information do we have? What accommodations have been tried? What is the impact on the team and scheduling? Has the employee been kept in the loop?</p>
-          <p><strong>Policy &amp; framework:</strong> Human rights obligations, undue hardship, internal LOA policies, and case law/precedents.</p>
-          <p><strong>Advisory stance:</strong> I explain the legal and human context in plain language, outline options (e.g., modified duties, gradual RTW, frustration of contract), and help the leader choose a path that balances compliance, fairness, and operational reality.</p>
-        </div>
-      </div>
-
-      <div>
-        <div class="scenario">
-          <h3>3. Policy–practice gap creating risk</h3>
-          <p><strong>Situation:</strong> Store practices have drifted away from written policy in a way that creates risk (e.g., LOA caps, undocumented co‑op placements).</p>
-          <p><strong>Questions &amp; information:</strong> What is actually happening in stores? Why did people start doing it this way? What do leaders and team members think the rule is?</p>
-          <p><strong>Policy &amp; framework:</strong> Written policy, collective agreement language (where applicable), and legal obligations.</p>
-          <p><strong>Advisory stance:</strong> I identify the real‑world gap, confirm the correct interpretation, and then co‑design simple tools, training, and communications that make it easy for leaders and teams to get back into alignment.</p>
+        <!-- Safety short -->
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Handling falsified safety records in a retail store</div>
+          <p>
+            During a store visit, a team member told me their signature was being forged on joint health and safety committee minutes. I thanked them for speaking up, explained what I could and couldn’t share about any investigation, and asked if they were comfortable being contacted again. From there, I gathered basic details about what they had seen and which documents were involved.
+          </p>
+          <p>
+            In this kind of situation, I quietly review the safety binder, look for patterns, and identify who should be on the committee but might not be attending. I then loop in the District leader and investigations team so the case is handled formally. Falsifying safety records is a serious breach of trust, even if no incident has occurred yet, so my focus is on protecting the reporter, getting clear facts, and recommending a response that treats the behaviour as a serious integrity issue.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="safety-modal">Read the full case</a>
+          </p>
         </div>
 
-        <div class="scenario">
-          <h3>4. Low engagement and low trust in leadership</h3>
-          <p><strong>Situation:</strong> Engagement survey results flag low trust in leadership and low scores on communication in a high‑volume store.</p>
-          <p><strong>Questions &amp; information:</strong> What specific feedback did employees share in comments? What have leaders already tried? How do team members describe day‑to‑day interactions with their manager?</p>
-          <p><strong>Policy &amp; framework:</strong> Engagement survey themes, values statements, any existing recognition or communication expectations.</p>
-          <p><strong>Advisory stance:</strong> I use on‑site HR visits and small‑group conversations to hear more detail, then help the leader choose two or three simple, visible changes (e.g., regular huddles, better follow‑up on issues, benefit reminders) and set a check‑in to review impact. The focus is on rebuilding trust through consistent actions, not grand programs.</p>
+        <!-- Availability short -->
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Coaching managers through availability and scheduling limits</div>
+          <p>
+            In many stores, managers gradually agree to more and more limited availability for staff. Over time, the schedule becomes hard to cover, and the remaining team members burn out. Leaders then ask HR to “fix” the problem, even though the issue came from decisions made in the store.
+          </p>
+          <p>
+            I help leaders separate true restrictions (for example, medical or family needs) from preferences, and coach managers on how to have honest, respectful conversations about role requirements. HR’s role is to ensure those discussions respect policy and human rights obligations while keeping psychological safety and fairness at the centre. When adjustments are needed, I also watch for constructive dismissal risk so changes to hours or status are handled in a clear and defensible way.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="availability-modal">Read the full case</a>
+          </p>
         </div>
+
+        <!-- PIP short -->
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Performance issues in a busy store</div>
+          <p>
+            A Store Manager wants to terminate an underperforming team member quickly, but there is little documentation and only broad complaints. Moving straight to termination would create risk and damage trust.
+          </p>
+          <p>
+            I help the leader slow down enough to do this properly: clarify expectations, gather specific examples, and set a realistic improvement plan where appropriate. We build a fair, well‑documented process that gives the employee a chance to improve and gives the company a defensible file if termination becomes necessary.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="pip-modal">Read the full case</a>
+          </p>
+        </div>
+
+        <!-- Engagement short -->
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Low engagement and low trust in leadership</div>
+          <p>
+            Engagement survey results flag low trust in leadership and low scores on communication in a high‑volume store. Leaders are worried about turnover and morale, but aren’t sure where to start without making big promises they can’t keep.
+          </p>
+          <p>
+            I review survey comments, then visit the store to walk the floor with the leader and speak with every on‑shift team member. I use what I hear to help the leader choose two or three visible, realistic changes—like better huddles, clear follow‑through on issues, and targeted recognition—and we set a check‑in to review impact. The focus is on rebuilding trust through consistent actions, not grand programs.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="engagement-modal">Read the full case</a>
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contact & roles -->
+  <!-- Learning -->
+  <section id="learning">
+    <div class="section-card">
+      <div class="section-kicker">Learning</div>
+      <h2>Learning, Credentials &amp; Professional Development</h2>
+      <div class="edu-grid">
+        <div>
+          <div class="edu-item">
+            <div class="edu-title">Bachelor of Human Resources and Labour Relations</div>
+            <div>Athabasca University</div>
+            <div>Covers labour law, collective agreements, collective bargaining, grievance arbitration, employment standards, and human rights, providing a strong labour relations foundation.</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">CPHR designation (in progress)</div>
+            <div>CPHR Alberta · Registered to write the National Knowledge Exam, with ongoing exam prep and monthly roundtable participation.</div>
+          </div>
+        </div>
+        <div>
+          <div class="edu-item">
+            <div class="edu-title">ADP Entry‑Level Compensation and Benefits Analyst Certificate</div>
+            <div>Introduced core concepts in compensation and benefits, supporting a growing interest in data‑informed people &amp; culture decision‑making.</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Google Data Analytics Professional Certificate (in progress)</div>
+            <div>Building comfort with data analysis, spreadsheets, and evidence‑based problem‑solving that can be applied to people &amp; culture questions.</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Selected professional development</div>
+            <div class="tag-row">
+              <span class="tag">Workplace investigations (Getting it Right)</span>
+              <span class="tag">Generative AI for HR Professionals (IBM)</span>
+              <span class="tag">Autism &amp; neurodiversity in the workplace</span>
+              <span class="tag">CPHR roundtables and NKE prep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:0.8rem;font-size:0.88rem;">
+        Ongoing learning keeps my advice current and grounded in modern people &amp; culture and labour relations practice, while my frontline background keeps it practical and implementable.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
-    <div class="section-kicker">Contact &amp; roles</div>
-    <h2>Where I’m a good fit</h2>
-    <div class="card">
-      <p>
-        I’m based in Edmonton, AB and open to roles in Alberta and remote/virtual roles across Canada.
-      </p>
-      <p>
-        I’m most aligned to:
-      </p>
-      <ul class="list-clean">
-        <li>HR Advisor / People &amp; Culture Advisor roles supporting frontline or multi‑site operations (retail, hospitality, contact centres, logistics, etc.).</li>
-        <li>HR Generalist roles where employee relations, engagement, and leader coaching are a big part of the portfolio.</li>
-        <li>Employee Relations / Disability &amp; Leave Specialist roles that value both compliance and a humane, plain‑language approach.</li>
-      </ul>
-      <p style="margin-top:0.6rem;">
-        You can reach me at <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a>. I’m happy to share a full resume, talk through specific kinds of cases I’ve handled, or walk you through how I’d approach the kinds of people challenges your leaders are facing.
-      </p>
+    <div class="section-card">
+      <div class="section-kicker">Contact &amp; roles</div>
+      <h2>Where I’m a good fit</h2>
+      <div class="contact-grid">
+        <div>
+          <p>
+            I’m based in Edmonton, AB and open to roles in Alberta and remote/virtual roles across Canada.
+          </p>
+          <p>
+            I’m most aligned to:
+          </p>
+          <ul class="contact-list">
+            <li>HR Advisor / People &amp; Culture Advisor roles supporting frontline or multi‑site operations (retail, hospitality, contact centres, logistics, etc.).</li>
+            <li>HR Generalist roles where employee relations, engagement, and leader coaching are a big part of the portfolio.</li>
+            <li>Employee Relations / Disability &amp; Leave Specialist roles that value both compliance and a humane, plain‑language approach.</li>
+          </ul>
+        </div>
+        <div>
+          <p>
+            You can reach me at <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a> or connect on LinkedIn at <a href="https://www.linkedin.com/in/tannerw" target="_blank" rel="noopener">linkedin.com/in/tannerw</a>. I’m happy to share a full resume, talk through specific kinds of cases I’ve handled, or walk you through how I’d approach the people challenges your leaders are facing.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Modal overlay + templates -->
+  <div id="case-modal-overlay" class="case-modal-overlay" hidden>
+    <div class="case-modal">
+      <button type="button" class="case-modal-close" aria-label="Close case">&times;</button>
+      <div id="case-modal-content"></div>
+    </div>
+  </div>
+
+  <template id="coop-modal">
+    <h2>Turning an undocumented co‑op placement into a simple tracking system</h2>
+    <p><strong>What I noticed</strong><br>
+    On a routine store visit, a manager introduced me to “our co‑op students.” I realized I had never received any paperwork for them, even though we had a basic co‑op process on paper. If HR doesn’t know who is in the building or what agreements exist, it’s hard to manage risk if something goes wrong. That was my signal that we needed to look closer.</p>
+    <p><strong>Fixing the immediate problem</strong><br>
+    First, I focused on the students in front of us. I asked the manager for any agreements they had and, where there were gaps, I walked them through what needed to be completed right away. The message was simple: we want students here, but we also need to make sure they’re covered and that the school relationship is handled properly.</p>
+    <p><strong>Checking if it was a one‑off</strong><br>
+    Once that was under control, I wanted to know if this was happening elsewhere. I created a short survey for all stores:</p>
+    <ul>
+      <li>Do you have co‑op students right now?</li>
+      <li>How many?</li>
+      <li>Do you have the required forms on file?</li>
+    </ul>
+    <p>The answers showed multiple undocumented placements in one semester. That told me this wasn’t just one manager forgetting a step. The gap was built into how we were handling co‑op placements overall.</p>
+    <p><strong>Creating a simple way to track students</strong><br>
+    Because co‑op students weren’t set up in our HR system like regular employees, any fix had to work outside of that system. I created a one‑page online form that managers could fill out when a new co‑op placement started. The information went straight into a spreadsheet owned by HR and captured the basics: student name, store, school, supervisor, dates, and whether the paperwork was complete. Managers didn’t need new logins or training on a big tool; they just needed the link.</p>
+    <p><strong>Rolling it out so people would actually use it</strong><br>
+    To make sure the process stuck, I used a train‑the‑trainer approach. I met with District leaders, explained the risk, and walked them through the form step by step. They then reviewed it with their Store Managers on their regular district calls, using examples from their own stores. Over time, the reminder to submit the form could be added to existing checklists so it became part of normal planning rather than “one more extra thing.”</p>
+    <p><strong>Why this matters</strong><br>
+    A simple question in one store turned into a clearer way to manage every co‑op placement. HR could see who was in the business and whether they were properly documented. Managers had an easy way to do the right thing. The company reduced its risk in audits or incidents without investing in a large new system. This is the kind of practical fix I like to build when I spot a gap between how work actually happens and what the policy expects.</p>
+  </template>
+
+  <template id="safety-modal">
+    <h2>Investigating falsified safety committee records in a store</h2>
+    <p><strong>How the concern came up</strong><br>
+    On a visit to one store, a team member pulled me aside and said their signature was being forged on joint health and safety committee meeting minutes. They were worried about speaking up but also uncomfortable seeing their name used on documents for meetings they didn’t attend. When someone brings me that kind of concern, I start by thanking them and explaining what the next steps might look like, including the fact that I probably won’t be able to share the final outcome with them.</p>
+    <p><strong>Protecting the reporter and clarifying the details</strong><br>
+    I asked if they would be willing to be contacted again by me or by our investigations team and made sure they knew we would treat their information seriously. Then I asked simple, practical questions: which forms they had seen, how they knew the signatures were not genuine, and whether there were any other employees in a similar position. The goal at this stage is not to cross‑examine them, but to understand what exactly is being alleged and where we should look next.</p>
+    <p><strong>Reviewing the records</strong><br>
+    In a best‑practice approach, I would then review the safety binder and related records, without making a scene. I would look at several months of committee minutes, note who is listed as attending, and check whether the signatures look genuine or appear to be written by the same person. I would document what I saw, including dates and any patterns, and, where allowed, take photos or copies so we have a clear record of the concern.</p>
+    <p><strong>Escalating for a formal investigation</strong><br>
+    Because safety documentation touches legal and regulatory obligations, I would not handle the whole investigation alone. After my visit, I would loop in the District leader and HR or investigations team, summarize what the employee reported, and share what I saw in the documents. In many organizations, a case like this would be logged in a central system so it can be triaged and assigned. From there, an investigation plan can be built: who to interview, what records to review, and how to handle conversations with the Store Manager.</p>
+    <p><strong>Recommending outcomes and preventive steps</strong><br>
+    If the investigation confirms that a leader has been falsifying safety records, I would recommend treating it as serious misconduct. Even if no accident has happened, forging safety documents breaks trust with staff and with any external body that might rely on those records. Depending on the facts and internal policy, that may lead to termination or strong corrective action. I would also suggest some follow‑up steps: clearer training for managers on safety committee requirements, spot checks of safety documentation in other stores, and a reminder to staff that they can raise concerns without fear of retaliation.</p>
+    <p><strong>What this shows about my approach</strong><br>
+    In cases like this, I focus on three things: protecting the person who spoke up, getting objective information rather than relying on rumours, and making sure decisions match the seriousness of the behaviour. Falsified safety records are not just “paperwork issues.” They signal a bigger problem with integrity and respect for the people working in the store.</p>
+  </template>
+
+  <template id="availability-modal">
+    <h2>Managing availability limits without drifting into constructive dismissal</h2>
+    <p><strong>How the problem shows up</strong><br>
+    In retail, managers often say yes to availability requests because they want to support their people. Over time, though, those well‑intentioned decisions can stack up. Suddenly the store can’t cover evenings or weekends, a few flexible people are carrying most of the load, and leaders are frustrated. That’s usually when HR gets the call.</p>
+    <p><strong>Understanding what’s really driving the schedule</strong><br>
+    When I look at a situation like this, I start by asking leaders to map out who is available when and why. I ask them to separate true restrictions from preferences. For example: a medical limit or caregiving responsibility is not the same as “I just prefer not to close.” This helps leaders see where they have some room to work and where they might need to consider a formal accommodation process.</p>
+    <p><strong>Coaching managers to have the conversation</strong><br>
+    A common pattern is that managers want HR to deliver the hard message for them. Instead, I coach them on how to have a clear, respectful conversation themselves. That often sounds like: “Here’s what this role needs in terms of availability. Here’s where your current availability doesn’t line up. Is there any flexibility to adjust?” If there is a possible human rights issue behind the request, I guide them to pause the conversation and loop HR in so we can handle it as an accommodation, not just a preference discussion.</p>
+    <p><strong>Avoiding constructive dismissal</strong><br>
+    When leaders try to solve the problem by cutting hours, changing shifts, or moving people into less desirable roles, they can unintentionally move into constructive dismissal territory. I remind them that sudden, targeted negative changes to hours, pay, or status can be seen as a termination in disguise. Instead, I recommend gradual and transparent changes, clear documentation of business reasons, and consistent treatment across staff in similar roles. Where the role truly can’t be done with the current availability, I help them frame options clearly so employees can make informed choices.</p>
+    <p><strong>Clarifying HR’s role</strong><br>
+    Throughout, I’m clear that HR is a partner, not a shield. I will help leaders think through risks, script conversations, and review notes, but I won’t own their day‑to‑day performance and availability discussions. That balance protects HR from becoming the “bad cop,” keeps accountability with the people who run the store, and still respects legal and policy boundaries.</p>
+    <p><strong>Why this matters</strong><br>
+    Handled this way, availability issues become a chance to reset expectations rather than a source of ongoing resentment. Stores get more workable schedules, managers gain confidence having direct conversations, and the organization reduces its risk of constructive dismissal or discrimination claims.</p>
+  </template>
+
+  <template id="pip-modal">
+    <h2>Designing a defensible performance plan for a long‑tenured manager</h2>
+    <p><strong>Starting point: “I just want them gone”</strong><br>
+    In this scenario, a Store Manager wanted to terminate a long‑service Assistant Store Manager. Their reasons were real but very broad: the ASM didn’t “step up,” was “negative,” and “didn’t lead by example.” There were few written examples, no prior formal discipline, and no clear expectations on record. Moving straight to termination in that context would create significant risk.</p>
+    <p><strong>Clarifying expectations and current performance</strong><br>
+    I began by asking the Store Manager to describe what “good” would look like in this role. We broke that down into specific tasks and behaviours: completing key routines, following through on coaching conversations, managing schedules accurately, and leading floor standards. Then we compared those expectations to what the ASM was actually doing, using real recent examples. This helped the manager see where the gaps were and gave us something concrete to work with.</p>
+    <p><strong>Rewriting the PIP so it means something</strong><br>
+    The original draft PIP was full of vague phrases like “improve leadership” and “be more proactive.” I worked with the manager to rewrite it in plain, specific language. Instead of “improve leadership,” we might say “conduct daily huddles with your team on at least X days per week and document main priorities.” Instead of “own your responsibilities,” we might say “complete weekly inventory checks by [time] every [day] and report variances to the Store Manager.” Each item on the plan was something we could observe and record as done or not done.</p>
+    <p><strong>Building a fair process</strong><br>
+    To make the plan fair and defensible, we set up a clear 30/60/90‑day structure with scheduled check‑ins. At each check‑in, the manager would review progress against the plan, note specific examples, and document any coaching or support provided. We also identified what support the ASM would receive: coaching from the Store Manager, shadowing on key tasks, and access to any relevant training. The idea was not just to create a paper trail, but to show that the company genuinely gave the ASM a chance to improve.</p>
+    <p><strong>Supporting the manager</strong><br>
+    A piece many people overlook is how uncomfortable some managers are with these conversations. I helped the Store Manager prepare for the initial PIP meeting, including how to explain the plan, how to answer emotional reactions, and how to keep the discussion focused on behaviour and results rather than personality. I also checked in with the manager during the PIP period to review notes and help them stay consistent.</p>
+    <p><strong>Outcomes and risk management</strong><br>
+    A structured PIP like this leads to one of two outcomes. Either the ASM meets the expectations and the store benefits from a stronger leader, or they do not, and the company has a much clearer and more defensible basis for further action, up to and including termination. In both cases, the process shows respect for the employee and reduces legal and reputational risk for the employer.</p>
+    <p><strong>What this says about my approach</strong><br>
+    I see performance management as both a people process and a risk process. My goal is to make sure expectations are clear, support is real, and documentation is strong enough to stand up to internal and external scrutiny. At the same time, I want managers to feel more confident handling difficult performance issues themselves, with HR as a partner rather than a shield.</p>
+  </template>
+
+  <template id="engagement-modal">
+    <h2>Low engagement and low trust in leadership</h2>
+    <p><strong>Situation</strong><br>
+    Engagement survey results flag low trust in leadership and low scores on communication in a high‑volume store. Comments mention inconsistent communication, feeling “out of the loop,” and not knowing whether survey feedback ever goes anywhere. Leaders are worried about turnover and morale, but aren’t sure where to start without making big promises they can’t keep.</p>
+    <p><strong>Questions &amp; information</strong><br>
+    I review the survey results and comments in detail, then visit the store. I walk the floor with the Store Manager, ask how they currently share information, and speak with every on‑shift team member. I ask simple questions: what makes a good day here, what gets in the way, and when they last saw a change happen because of their feedback. The goal is to understand how communication and trust feel in real time, not just in survey graphs.</p>
+    <p><strong>Policy &amp; framework</strong><br>
+    I look at engagement survey themes, values statements, and any existing expectations around communication, recognition, and feedback. I also consider any prior commitments made to the team after past surveys and whether those were visibly followed through.</p>
+    <p><strong>Advisory stance / how I’d coach the leader</strong><br>
+    I share themes—not quotes—with the Store Manager and District leader, highlighting where people feel unheard, where recognition isn’t landing, and where mixed messages are creating frustration. Together, we pick a small set of actions the team will notice: a quick weekly update huddle focused on what’s changing and why, a simple way for staff to raise questions between surveys, and a plan to recognize effort during peak periods, not just at year‑end. We agree on who will do what, when, and how we will tell the team about these changes so they know it’s a direct response to their feedback. On a follow‑up visit, I join a store huddle where the manager walks through the engagement results in plain language, shares the commitments, and invites questions. I support them in framing this as “here’s what we heard, here’s what we’re trying,” rather than promising to fix everything immediately.</p>
+    <p><strong>Why this matters</strong><br>
+    Over the following cycle, scores and comments typically improve, but the more important shift is that more team members are willing to speak up between surveys. They can see that their input leads to visible changes, and leaders feel more confident talking openly about what they can and can’t do. That’s the balance I aim for: using data and structure to reduce risk, while building a culture where people feel safe to be honest and leadership has the tools to respond.</p>
+  </template>
+
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <div>© <span id="year"></span> Tanner Waldo</div>
-    <div>People &amp; Culture Advisor • Employee Relations • Engagement &amp; Frontline HR</div>
-  </div>
+  <span>© <span id="year"></span> Tanner Waldo</span>
+  <span>People &amp; Culture Advisor • Employee Relations • Engagement &amp; Frontline HR</span>
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.addEventListener('DOMContentLoaded', function () {
+    var yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    var overlay = document.getElementById('case-modal-overlay');
+    var contentBox = document.getElementById('case-modal-content');
+    var closeBtn = overlay ? overlay.querySelector('.case-modal-close') : null;
+
+    if (!overlay || !contentBox || !closeBtn) {
+      return;
+    }
+
+    function openCaseModal(templateId) {
+      var tpl = document.getElementById(templateId);
+      if (!tpl || !tpl.content) return;
+      contentBox.innerHTML = '';
+      contentBox.appendChild(tpl.content.cloneNode(true));
+      overlay.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCaseModal() {
+      overlay.setAttribute('hidden', '');
+      contentBox.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    var links = document.querySelectorAll('.scenario-open');
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        var id = link.getAttribute('data-modal');
+        openCaseModal(id);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeCaseModal);
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) {
+        closeCaseModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) {
+        closeCaseModal();
+      }
+    });
+  });
 </script>
 </body>
 </html>
