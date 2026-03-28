@@ -1,61 +1,564 @@
-<li><a href="#skills">Core Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#approach">Approach</a></li>
-        <li><a href="#learning">Learning</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#learning">Education & Development</a></li>
-</ul>
-</nav>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tanner Waldo | People & Culture Advisor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="People & Culture Advisor for frontline organizations, combining strong employee relations and compliance experience with practical engagement and culture work in busy retail environments.">
+  <style>
+    :root {
+      --bg: #f7f7f9;
+      --bg-alt: #ffffff;
+      --primary: #1f5c99;
+      --primary-soft: rgba(31, 92, 153, 0.08);
+      --accent: #e0a200;
+      --text-main: #1c1c1f;
+      --text-muted: #555a60;
+      --border-subtle: #dde0e6;
+      --chip-bg: #eef1f7;
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
+      --radius-lg: 14px;
+      --radius-pill: 999px;
+      --max-width: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 247, 249, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .nav-brand strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .nav-dots {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      opacity: 0.25;
+    }
+    .nav-dot:nth-child(2) { opacity: 0.5; }
+    .nav-dot:nth-child(3) { opacity: 0.8; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-pill);
+      color: var(--text-muted);
+      border: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--border-subtle);
+      background: #ffffff;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3rem;
+    }
+
+    section { margin-bottom: 2.75rem; }
+
+    h1, h2, h3 {
+      margin: 0 0 0.3rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+    h2 { font-size: 1.35rem; margin-bottom: 0.8rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.15rem;
+      font-weight: 600;
+    }
+
+    /* Hero */
+
+    .hero {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .hero-left {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.6rem;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .hero-subtitle {
+      margin-top: 0.25rem;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+
+    .hero-body {
+      margin-top: 0.7rem;
+      font-size: 0.94rem;
+      color: var(--text-main);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    /* Profile and snapshot */
+
+    .profile-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0,0,0,0.03);
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .profile-photo {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-meta {
+      font-size: 0.83rem;
+    }
+
+    .profile-meta strong {
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .profile-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.2rem;
+    }
+
+    .pill {
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: var(--chip-bg);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .key-points {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.86rem;
+      margin-top: 1.2rem;
+    }
+
+    .key-points ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.4rem 0 0;
+    }
+
+    .key-points li {
+      margin-bottom: 0.22rem;
+      position: relative;
+      padding-left: 0.9rem;
+    }
+
+    .key-points li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .articles-widget {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 0.9rem 0.9rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.85rem;
+    }
+
+    .articles-widget h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .articles-widget p {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .articles-widget-inner {
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(23, 70, 124, 0.35);
+    }
+    .btn-primary:hover {
+      background: #184777;
+      text-decoration: none;
+    }
+
+    /* Sections */
+
+    .section-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.3rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.9rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.7rem;
+    }
+
+    .skill-cluster {
+      background: #f9fafc;
+      border-radius: 12px;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid #e0e4ef;
+      font-size: 0.86rem;
+    }
+
+    .skill-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+      color: var(--text-main);
+    }
+
+    .experience-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.2rem;
+    }
+
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.4rem 0 0;
+      font-size: 0.88rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 0.45rem;
+      padding-left: 0.9rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 0.5rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .timeline-role { font-weight: 600; }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.7rem;
+    }
+
+    .scenario-card {
+      background: #f9fafc;
+      border-radius: 12px;
+      border: 1px solid #e1e4ef;
+      padding: 0.9rem 0.95rem;
+      font-size: 0.86rem;
+    }
+
+    .scenario-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.72rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: #eef3ff;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .scenario-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .scenario-open {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1rem;
+      font-size: 0.88rem;
+    }
+
+    .edu-item { margin-bottom: 0.5rem; }
+
+    .edu-title { font-weight: 600; }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    /* Modal overlay */
+
+    .case-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 4rem 1rem;
+      z-index: 1000;
+    }
+
+    .case-modal-overlay[hidden] {
+      display: none !important;
+    }
+
+    .case-modal {
+      max-width: 780px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(15,23,42,0.25);
+      padding: 1.6rem 1.8rem 1.4rem;
+    }
+
+    .case-modal h2 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1.25rem;
+    }
+
+    .case-modal p {
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-modal ul {
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-modal-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      border: none;
+      background: transparent;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      color: #64748b;
+      margin-left: 0.5rem;
+    }
+
+    .case-modal-close:hover {
+      color: #0f172a;
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-right { order: -1; }
+      .hero-left { padding: 1.1rem 1.1rem; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner { padding-inline: 0.75rem; }
+      main { padding-inline: 0.75rem; }
+      .experience-layout { grid-template-columns: minmax(0, 1fr); }
+      .edu-grid { grid-template-columns: minmax(0, 1fr); }
+      .scenario-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    @media (max-width: 520px) {
+      nav ul { justify-content: flex-start; }
+      .btn { width: 100%; justify-content: center; }
+      .case-modal {
+        max-height: 88vh;
+        padding: 1.2rem 1.1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-dots">
+        <span class="nav-dot"></span>
+        <span class="nav-dot"></span>
+        <span class="nav-dot"></span>
+      </div>
+      <span><strong>Tanner Waldo</strong> · People &amp; Culture Advisor</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#who-i-am">Profile</a></li>
+        <li><a href="#skills">Core Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#learning">Education</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>
-<!-- Hero -->
+  <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero-left">
       <h1>People &amp; Culture support for frontline teams.</h1>
       <p class="hero-subtitle">
         I worked with store and district leaders on performance, conduct, leaves, and the day‑to‑day questions that affected staffing, coverage, and morale.
-<section class="hero" id="top">
-  <div class="hero-left">
-    <h1>People &amp; Culture support for frontline teams.</h1>
-    <p class="hero-subtitle">
-      I worked with store and district leaders on performance, conduct, leaves, and the day‑to‑day questions that affected staffing, coverage, and morale.
-    </p>
-    <p class="hero-body">
-      As part of a three person team, I supported 8 District Directors and about 130 Store Managers across Canada on employee relations and investigations, performance conversations, leaves and accommodations, and making sure policy fit how stores actually ran.
-    </p>
-    <p class="hero-body">
-      On visits, I walked the floor, talked with whoever was on shift, and asked how work felt in practice; I used what I heard, along with engagement results and active cases, to help leaders make decisions that were fair to people and defensible for the company.
-    </p>
-
-    <div class="key-points">
-      <div class="section-kicker">Snapshot</div>
-      <strong>HR that respects people and the work</strong>
-      <ul>
-        <li>Day‑to‑day support for store and district leaders on investigations, performance issues, leaves, accommodations, and “what does the policy actually say?” questions.</li>
-        <li>Regular in‑store HR visits to listen to teams, explain benefits and programs in plain language, and flag concerns before they turned into bigger problems.</li>
-        <li>Known for giving leaders options they could use, not just “yes/no” answers, and for keeping decisions fair to employees and workable for operations.</li>
-      </ul>
-    </div>
-
-    <div class="key-points">
-      <div class="section-kicker">Contact &amp; roles</div>
-      <strong>What I’m looking for right now</strong>
-      <p style="margin:0.4rem 0 0.35rem;font-size:0.86rem;">
-        I’m based in Edmonton, AB and open to relocating within Canada for the right role, especially in frontline or multi‑site operations such as retail, hospitality, healthcare, or logistics.
-</p>
+      </p>
       <p class="hero-body">
         I supported 8 District Directors and about 130 Store Managers across Canada on employee relations and investigations, performance conversations, leaves and accommodations, and making sure policy fit how stores actually ran.
-      <p style="margin:0 0 0.35rem;font-size:0.86rem;">
-        I’m a good fit for HR Advisor, People &amp; Culture Advisor, HR Generalist, or Employee Relations roles where HR is close to the floor: on‑site with leaders and teams, handling employee‑facing issues and working directly in stores and field environments.
-</p>
+      </p>
       <p class="hero-body">
         On visits, I walked the floor, talked with whoever was on shift, and asked how work felt in practice; I used what I heard, along with engagement results and active cases, to help leaders make decisions that were fair to people and defensible for the company.
-      <p style="margin:0;font-size:0.86rem;">
-        You can reach me at <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a> or on LinkedIn at
-        <a href="https://www.linkedin.com/in/tannerw" target="_blank" rel="noopener">linkedin.com/in/tannerw</a>.
-</p>
+      </p>
 
       <div class="key-points">
         <div class="section-kicker">Snapshot</div>
@@ -77,15 +580,13 @@
           I’m a good fit for HR Advisor, People &amp; Culture Advisor, HR Generalist, or Employee Relations roles where HR is close to the floor: on‑site with leaders and teams, handling employee‑facing issues and working directly in stores and field environments.
         </p>
         <p style="margin:0;font-size:0.86rem;">
-          You can reach me at <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a> or on LinkedIn at
+          You can reach me at <a href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a> or on LinkedIn at
           <a href="https://www.linkedin.com/in/tannerw" target="_blank" rel="noopener">linkedin.com/in/tannerw</a>.
         </p>
       </div>
-</div>
-  </div>
+    </div>
 
     <div class="hero-right">
-      <!-- Profile card -->
       <div class="profile-card" id="who-i-am">
         <div class="profile-photo">
           <img src="profile.jpg" alt="Profile photo of Tanner Waldo">
@@ -98,23 +599,9 @@
             <span class="pill">Store culture &amp; engagement</span>
             <span class="pill">Leaves, accommodations &amp; RTW</span>
           </div>
-  <div class="hero-right">
-    <div class="profile-card" id="who-i-am">
-      <div class="profile-photo">
-        <img src="profile.jpg" alt="Profile photo of Tanner Waldo">
+        </div>
       </div>
-      <div class="profile-meta">
-        <strong>Who I am in 20 seconds</strong>
-        <div>People &amp; Culture advisor with deep field HR and store leadership experience, now looking for my next role supporting frontline and multi‑site teams.</div>
-        <div class="profile-meta-row">
-          <span class="pill">Employee issues &amp; investigations</span>
-          <span class="pill">Store culture &amp; engagement</span>
-          <span class="pill">Leaves, accommodations &amp; RTW</span>
-</div>
-</div>
-    </div>
 
-      <!-- Resume card -->
       <div class="articles-widget">
         <div class="articles-widget-inner">
           <h3>Resume</h3>
@@ -125,19 +612,8 @@
             Download Resume (PDF)
           </a>
         </div>
-    <div class="articles-widget">
-      <div class="articles-widget-inner">
-        <h3>Resume</h3>
-        <p style="margin-bottom:0.6rem;">
-          For a concise overview of my people &amp; culture work, education, and frontline operations background, you can download my resume as a PDF.
-        </p>
-        <a class="btn btn-primary" href="Tanner_Waldo_Resume.pdf" target="_blank" rel="noopener">
-          Download Resume (PDF)
-        </a>
-</div>
-    </div>
+      </div>
 
-      <!-- Recent writing widget -->
       <div class="articles-widget">
         <div class="articles-widget-inner">
           <h3>Recent Articles</h3>
@@ -147,65 +623,402 @@
           <script src="https://elfsightcdn.com/platform.js" async></script>
           <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
         </div>
-    <div class="articles-widget">
-      <div class="articles-widget-inner">
-        <h3>Recent Articles</h3>
-        <p>
-          Selected posts and articles where I break down people &amp; culture and employee relations issues for leaders in clear, practical language.
-        </p>
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-0dd058ca-909d-4f1c-9cfe-5e1009a4cc94" data-elfsight-app-lazy></div>
-</div>
-</div>
+      </div>
+    </div>
   </section>
-  </div>
-</section>
 
-<!-- Core Skills -->
-<section id="skills">
-@@ -925,8 +921,8 @@ <h2>How I approach HR and People &amp; Culture problems</h2>
-<!-- Learning -->
-<section id="learning">
-<div class="section-card">
-      <div class="section-kicker">Learning</div>
-      <h2>Learning, Credentials &amp; Professional Development</h2>
-      <div class="section-kicker">Education and Development</div>
-      <h2>Education, Credentials &amp; Professional Development</h2>
-<div class="edu-grid">
-<div>
-<div class="edu-item">
-@@ -965,33 +961,7 @@ <h2>Learning, Credentials &amp; Professional Development</h2>
-</div>
-</section>
-
-  <!-- Contact -->
-  <section id="contact">
+  <!-- Core Skills -->
+  <section id="skills">
     <div class="section-card">
-      <div class="section-kicker">Contact &amp; roles</div>
-      <h2>Where I’m a good fit</h2>
-      <div class="contact-grid">
-        <div>
+      <div class="section-kicker">Core Skills</div>
+      <h2>Wide‑ranging HR and People &amp; Culture experience from the field</h2>
+      <p>
+        Most of my time was spent helping leaders sort out people problems in active stores: performance, behaviour, leaves, and “how do we handle this?” situations. While I was there, I also listened to the team, closed the loop on feedback, and looked for small, practical changes that made work feel a bit better.
+      </p>
+      <div class="skills-grid">
+        <div class="skill-cluster">
+          <div class="skill-label">Employee relations &amp; investigations</div>
           <p>
-            I’m based in Edmonton, AB and actively looking for my next People &amp; Culture / HR role. I’m open to roles across Canada and have personal ties to Vancouver Island, the Lower Mainland, Winnipeg, and Ottawa, so relocation is on the table.
+            I handled sensitive cases in a way that was fair, well‑documented, and defensible, while still trying to keep trust with employees and leaders where I could.
           </p>
           <p>
-            Roles where I’m usually a good fit:
+            Examples included harassment and conduct complaints, safety violations, falsified records, and accommodation disputes; I coached leaders on documentation, progressive discipline, and performance management, pushed back on weak or premature terminations, and helped build stronger, more defensible cases when a termination was the right next step.
           </p>
-          <ul class="contact-list">
-            <li>HR Advisor / People &amp; Culture Advisor roles supporting frontline or multi‑site operations (retail, hospitality, healthcare, logistics, etc.).</li>
-            <li>HR Generalist roles where employee relations, engagement, and leader coaching are a big part of the portfolio.</li>
-            <li>Employee Relations / Disability &amp; Leave Specialist roles that value both compliance and a humane, plain‑language approach.</li>
-          </ul>
         </div>
-        <div>
+
+        <div class="skill-cluster">
+          <div class="skill-label">Leaves, accommodations &amp; return to work</div>
           <p>
-            You can reach me at <a href="mailto:twaldo@gmail.com">twaldo@gmail.com</a> or on LinkedIn at <a href="https://www.linkedin.com/in/tannerw" target="_blank" rel="noopener">linkedin.com/in/tannerw</a>. I’m happy to share a full resume, talk through the kinds of cases I’ve handled, or walk you through how I’d approach the people challenges your leaders are dealing with right now.
+            I managed complex disability and leave files with leaders, third‑party administrators, and Legal, aiming for solutions that met our obligations and still felt humane to the people involved.
+          </p>
+          <p>
+            I carried 20–30 leave and accommodation files at a time, explained ideas like undue hardship and frustration of contract in plain language, and partnered on staged return‑to‑work plans that the employee, the team, and the store could actually run.
+          </p>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-label">Engagement &amp; culture</div>
+          <p>
+            I used engagement data, in‑store conversations, and benefits and recognition programs to help leaders improve the day‑to‑day experience for frontline teams.
+          </p>
+          <p>
+            Before visits, I reviewed engagement results and comments, then used them to shape 1:1 and small‑group conversations in the store; I highlighted benefits and programs in ways that made sense to hourly staff and helped leaders pick a small number of visible actions that showed they were listening and following through.
+          </p>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-label">Policy interpretation &amp; practical compliance</div>
+          <p>
+            I closed gaps between written policy and what was actually happening in stores and explained rules in plain language so leaders and frontline teams knew what was expected.
+          </p>
+          <p>
+            This included spotting and correcting a nationwide misapplication of a leave‑of‑absence policy (60 days used in practice vs. a written six‑month entitlement) and creating simple tools, like a one‑page co‑op tracking form, so compliance felt doable instead of bureaucratic.
+          </p>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-label">Frontline leadership &amp; change</div>
+          <p>
+            Before moving into Field HR, I spent more than ten years in store leadership, and that experience shaped how I supported leaders later.
+          </p>
+          <p>
+            I ran high‑volume stores with up to 50 employees and about $7.5M in annual sales and designed 1‑ to 4‑week training programs for new and promoted leaders; that background made me a realistic thought‑partner because I understood what could and could not work in a busy store on a Tuesday night.
+          </p>
+        </div>
+
+        <div class="skill-cluster">
+          <div class="skill-label">Compensation, data &amp; evidence‑based HR</div>
+          <p>
+            I worked on basic compensation and benefits questions, HRIS cleanup, and simple people data so HR decisions relied less on anecdotes.
+          </p>
+          <p>
+            I cleaned up more than 300 HRIS address exceptions in two weeks so T4s could go out on time for roughly 3,000 employees and then helped adjust the onboarding steps that were causing the errors; I also completed an entry‑level compensation and benefits certificate and began data analytics training to support more evidence‑based HR work.
           </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-card">
+      <div class="section-kicker">Experience</div>
+      <h2>Experience</h2>
+      <div class="experience-layout">
+        <div>
+          <p>
+            I learned HR by running stores first. I spent more than ten years in store‑level leadership roles at Michaels, including Store Manager in high‑volume locations, where I owned staffing, scheduling, KPIs, performance, and health and safety.
+          </p>
+          <p>
+            From there, I moved into a Field HR / People &amp; Culture Specialist role, supporting 8 District Directors and about 130 Store Managers across Canada on employee relations, investigations, leaves and accommodations, engagement, and policy questions.
+          </p>
+          <p>
+            With that mix plus my BHRLR degree, I could sit down with a district leader or store manager, understand the details of their operation, and still give advice that lined up with employment standards, human rights, internal policy, and what their teams were telling us.
+          </p>
+        </div>
+        <div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-role">Field HR / People &amp; Culture Specialist (Canada)</div>
+              <div>Michaels Stores, Inc. · Remote</div>
+              <div>Advised 8 District Directors and ~130 Store Managers on employee relations, leaves, accommodations, investigations, engagement, and policy.</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-role">Store Manager</div>
+              <div>Michaels Stores, Inc.</div>
+              <div>Led a high‑volume store with up to 50 team members and ~$7.5M in annual sales, serving as district training manager for new leaders.</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-role">Earlier Supervisory &amp; Assistant Manager Roles</div>
+              <div>Rogers, London Drugs, Home Outfitters</div>
+              <div>Built a frontline leadership foundation in operations, people management, and training across multiple retail environments.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Modal overlay + templates -->
-<div id="case-modal-overlay" class="case-modal-overlay" hidden>
+  <!-- Approach -->
+  <section id="approach">
+    <div class="section-card">
+      <div class="section-kicker">How I work</div>
+      <h2>How I approach HR and People &amp; Culture problems</h2>
+      <p>
+        I started with what was happening in the store right then, then pulled in the policies, laws, past cases, and data that actually mattered for that situation. The cases below show how I thought through real people and culture problems instead of jumping straight to a standard answer.
+      </p>
+      <div class="scenario-grid">
+
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Spotting a co‑op gap and fixing it</div>
+          <p>
+            On a store visit, a manager introduced two co‑op students. I realised I hadn’t seen any paperwork for them, even though there was supposed to be a standard process, so I asked the manager to complete the forms right away so the students were properly covered.
+          </p>
+          <p>
+            After that visit, I sent a short check‑in to all stores asking who had co‑op students and whether documents were on file. Once we confirmed multiple placements with missing paperwork in a single semester, I set up a simple Microsoft Forms/Excel tracker owned by HR and walked District leaders through the new process and the risk; that gave us visibility and better compliance without adding a heavy new system.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="coop-modal">Read the full case</a>
+          </p>
+        </div>
+
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Handling falsified safety records in a retail store</div>
+          <p>
+            During a store visit, a team member told me their signature was being forged on joint health and safety committee minutes. I thanked them for speaking up, explained what I could and couldn’t share about any investigation, and asked if they were comfortable being contacted again so we could follow up properly.
+          </p>
+          <p>
+            From there, I quietly reviewed the safety binder, looked for patterns, and identified who should have been on the committee but might not be attending; I then looped in the District leader and investigations team so the case was handled formally. My focus was on protecting the reporter, getting clear facts, and recommending a response that treated the behaviour as a serious integrity issue, not just a paperwork mistake.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="safety-modal">Read the full case</a>
+          </p>
+        </div>
+
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Resetting attendance expectations in an early‑morning team</div>
+          <p>
+            Before I moved into HR, I took over a store where the early‑morning team was arriving anywhere from 5 to 45 minutes late, and the prior manager had not held anyone accountable. There was no specific tardiness policy, only a general expectation that staff arrived on time and that managers monitored timecards, which gave me room to design a fair approach.
+          </p>
+          <p>
+            I made a plan to address tardiness with the team that was fair and consistent, applied it to everyone on the shift, and followed through on the conversations and documentation each week; it led to a clear drop in late arrivals and made it easier for the opening manager to plan work. Later, as an HR partner, this became the kind of structured approach I coached Store Managers to use in their own teams.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="availability-modal">Read the full case</a>
+          </p>
+        </div>
+
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Performance issues in a busy store</div>
+          <p>
+            A Store Manager wanted to terminate an underperforming team member quickly, but there was little documentation and only broad complaints. Moving straight to termination would have created risk and damaged trust with the rest of the team.
+          </p>
+          <p>
+            I helped the leader slow down long enough to clarify expectations, gather specific recent examples, and set a realistic improvement plan where it made sense; we built a fair, well‑documented process that gave the employee a real chance to improve and gave the company a defensible file if termination later became necessary.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="pip-modal">Read the full case</a>
+          </p>
+        </div>
+
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Low engagement and low trust in leadership</div>
+          <p>
+            Engagement survey results flagged low trust in leadership and low scores on communication in a high‑volume store. Leaders were worried about turnover and morale but weren’t sure where to start without making big promises they couldn’t keep.
+          </p>
+          <p>
+            I reviewed survey comments, then visited the store to walk the floor with the leader and speak with every on‑shift team member I could; I used what I heard to help the leader choose two or three visible, realistic changes—better huddles, clearer follow‑through on issues, and targeted recognition—and we set a check‑in to review impact. The focus was on rebuilding trust through consistent actions, not launching a big new program.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="engagement-modal">Read the full case</a>
+          </p>
+        </div>
+
+        <div class="scenario-card">
+          <div class="scenario-badge">Case Example</div>
+          <div class="scenario-title">Clearing long‑term leave and LTD backlogs</div>
+          <p>
+            Over time, a backlog of long‑term medical leave and LTD files had built up. Some team members had been off for years with no recent documentation or clear plan to return, and leaders weren’t sure what, if anything, they could do next.
+          </p>
+          <p>
+            I took my share of these older files end to end: contacting employees, requesting updated medical information where appropriate, and either supporting a return to work or partnering with Legal on possible frustration of contract and final entitlements; the goal was to move each file to a clear, defensible outcome instead of leaving it in limbo.
+          </p>
+          <p>
+            <a href="javascript:void(0)" class="scenario-open" data-modal="leaves-backlog-modal">Read the full case</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & development -->
+  <section id="learning">
+    <div class="section-card">
+      <div class="section-kicker">Education &amp; development</div>
+      <h2>Education, credentials &amp; professional development</h2>
+      <div class="edu-grid">
+        <div>
+          <div class="edu-item">
+            <div class="edu-title">Bachelor of Human Resources and Labour Relations</div>
+            <div>Athabasca University</div>
+            <div>Covers labour law, collective agreements, collective bargaining, grievance arbitration, employment standards, and human rights, providing a strong labour relations foundation.</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">CPHR designation (in progress)</div>
+            <div>CPHR Alberta · Registered to write the National Knowledge Exam, with ongoing exam prep and monthly roundtable participation.</div>
+          </div>
+        </div>
+        <div>
+          <div class="edu-item">
+            <div class="edu-title">ADP Entry‑Level Compensation and Benefits Analyst Certificate</div>
+            <div>Introduced core concepts in compensation and benefits, supporting a growing interest in data‑informed people &amp; culture decision‑making.</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Google Data Analytics Professional Certificate (in progress)</div>
+            <div>Building comfort with data analysis, spreadsheets, and evidence‑based problem‑solving that can be applied to people &amp; culture questions.</div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-title">Selected professional development</div>
+            <div class="tag-row">
+              <span class="tag">Workplace investigations (Getting it Right)</span>
+              <span class="tag">Generative AI for HR Professionals (IBM)</span>
+              <span class="tag">Autism &amp; neurodiversity in the workplace</span>
+              <span class="tag">CPHR roundtables and NKE prep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:0.8rem;font-size:0.88rem;">
+        The formal learning kept me up to date on HR and labour relations. The store and field work kept me honest about what actually worked in a busy operation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Modal overlay -->
+  <div id="case-modal-overlay" class="case-modal-overlay" hidden>
+    <div class="case-modal">
+      <button type="button" class="case-modal-close" aria-label="Close case">&times;</button>
+      <div id="case-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Case templates -->
+  <template id="coop-modal">
+    <h2>Turning an undocumented co‑op placement into a simple tracking system</h2>
+    <p><strong>What I noticed</strong><br>
+    On a routine store visit, a manager introduced me to “our co‑op students.” I hadn’t seen any paperwork for them, even though we had a basic co‑op process. If HR didn’t know who was in the building or what agreements existed, it was hard to manage risk if something went wrong; that was my cue to look closer.</p>
+    <p><strong>Fixing the immediate problem</strong><br>
+    I started with the students in front of us. I asked the manager for any agreements they had and, where there were gaps, I walked them through what needed to be completed right away. I tried to keep it straightforward and practical so the students were properly covered and the school relationship stayed onside.</p>
+    <p><strong>Checking if it was a one‑off</strong><br>
+    Once that was under control, I wanted to know if this was happening anywhere else. I put together a short survey for all stores:</p>
+    <ul>
+      <li>Do you have co‑op students right now?</li>
+      <li>How many?</li>
+      <li>Do you have the required forms on file?</li>
+    </ul>
+    <p>The answers showed multiple undocumented placements in one semester. That told me this wasn’t just one manager missing a step; the gap was built into how we were handling co‑op placements overall.</p>
+    <p><strong>Creating a simple way to track students</strong><br>
+    Because co‑op students weren’t set up in our HR system like regular employees, any fix had to live outside that system. I created a one‑page Microsoft Forms/Excel tracker that managers could fill out when a new co‑op placement started.</p>
+    <p><strong>Rolling it out so people would actually use it</strong><br>
+    To make sure the process stuck, I used a train‑the‑trainer approach. I met with District leaders, explained the risk in plain language, and walked them through the form step by step. They then reviewed it with their Store Managers on regular district calls, using examples from their own stores.</p>
+  </template>
+
+  <template id="safety-modal">
+    <h2>Investigating falsified safety committee records in a store</h2>
+    <p><strong>How the concern came up</strong><br>
+    On a visit to one store, a team member pulled me aside and said their signature was being forged on joint health and safety committee minutes. They were nervous about speaking up but also uncomfortable seeing their name on documents for meetings they hadn’t attended.</p>
+    <p><strong>Protecting the reporter and clarifying the details</strong><br>
+    I asked if they were willing to be contacted again by me or by our investigations team and made sure they knew we would take their information seriously. Then I asked simple, grounded questions about what they had seen.</p>
+    <p><strong>Reviewing the records</strong><br>
+    I reviewed several months of committee minutes, noted who was listed as attending, and checked whether the signatures looked genuine or seemed to be written by the same hand.</p>
+    <p><strong>Escalating for a formal investigation</strong><br>
+    Because safety documentation ties into legal and regulatory obligations, I looped in the District leader and HR/investigations team, summarized what the employee reported, and shared what I had seen in the documents.</p>
+  </template>
+
+  <template id="availability-modal">
+    <h2>Resetting attendance expectations in an early‑morning team</h2>
+    <p><strong>How the problem showed up</strong><br>
+    Before I moved into HR, I took over a store where the early‑morning team was routinely late; some people were arriving 5 to 45 minutes after their scheduled start, and the previous manager had not addressed it.</p>
+    <p><strong>Defining fair and clear expectations</strong><br>
+    I decided that 7 minutes after the scheduled start would count as “late” for this team and set thresholds for when late arrivals would result in a verbal or written warning.</p>
+    <p><strong>Looking at the actual data</strong><br>
+    I pulled eight weeks of timecards for the entire early‑morning team and counted how many late arrivals each person had under the new threshold.</p>
+    <p><strong>Talking to people one‑on‑one</strong><br>
+    I met with each team member individually, showed them their timecard history, and explained the expectations going forward.</p>
+    <p><strong>How this informed my HR work</strong><br>
+    Later, in Field HR, I used this experience when coaching Store Managers through attendance and availability issues: define a fair standard, use real data, apply it consistently, and follow through every week.</p>
+  </template>
+
+  <template id="pip-modal">
+    <h2>Designing a defensible performance plan for a long‑tenured manager</h2>
+    <p><strong>Starting point</strong><br>
+    A Store Manager wanted to terminate a long‑service Assistant Store Manager with very little documentation and only broad complaints.</p>
+    <p><strong>Clarifying expectations</strong><br>
+    I worked with the manager to describe what “good” looked like in the role and turned that into specific, observable expectations.</p>
+    <p><strong>Rewriting the plan</strong><br>
+    We rewrote a vague PIP into concrete items the ASM could either meet or not meet, and set up 30/60/90‑day check‑ins with documented coaching and support.</p>
+  </template>
+
+  <template id="engagement-modal">
+    <h2>Low engagement and low trust in leadership</h2>
+    <p><strong>Situation</strong><br>
+    Engagement results flagged low trust in leadership and communication in a high‑volume store.</p>
+    <p><strong>What I did</strong><br>
+    I reviewed comments, visited the store, spoke with on‑shift team members, and then helped the leader pick a few visible, realistic changes: better huddles, clearer follow‑through, and more timely recognition.</p>
+  </template>
+
+  <template id="leaves-backlog-modal">
+    <h2>Resolving long‑term leave and LTD backlogs in a retail business</h2>
+    <p><strong>How the backlog showed up</strong><br>
+    Several long‑term medical leave and LTD files had stalled for years, with no clear plan to return or end employment.</p>
+    <p><strong>My role</strong><br>
+    I took my share of the backlog end to end: reaching out to employees, obtaining updated medical information, supporting returns where possible, and partnering with Legal where frustration of contract might apply.</p>
+  </template>
+</main>
+
+<footer>
+  <span>© <span id="year"></span> Tanner Waldo</span>
+  <span>Contact: <a href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a></span>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    var overlay = document.getElementById('case-modal-overlay');
+    var contentBox = document.getElementById('case-modal-content');
+    var closeBtn = overlay ? overlay.querySelector('.case-modal-close') : null;
+
+    if (!overlay || !contentBox || !closeBtn) {
+      return;
+    }
+
+    function openCaseModal(templateId) {
+      var tpl = document.getElementById(templateId);
+      if (!tpl || !tpl.content) return;
+      contentBox.innerHTML = '';
+      contentBox.appendChild(tpl.content.cloneNode(true));
+      overlay.removeAttribute('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCaseModal() {
+      overlay.setAttribute('hidden', '');
+      contentBox.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    var links = document.querySelectorAll('.scenario-open');
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        var id = link.getAttribute('data-modal');
+        openCaseModal(id);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeCaseModal);
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) {
+        closeCaseModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) {
+        closeCaseModal();
+      }
+    });
+  });
+</script>
+</body>
+</html>
