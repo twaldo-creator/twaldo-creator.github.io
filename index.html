@@ -877,10 +877,18 @@
   </div>
 
   <!-- Case templates -->
+  <!-- Modal overlay + templates -->
+  <div id="case-modal-overlay" class="case-modal-overlay" hidden>
+    <div class="case-modal">
+      <button type="button" class="case-modal-close" aria-label="Close case">&times;</button>
+      <div id="case-modal-content"></div>
+    </div>
+  </div>
+
   <template id="coop-modal">
     <h2>Turning an undocumented co‑op placement into a simple tracking system</h2>
     <p><strong>What I noticed</strong><br>
-    On a routine store visit, a manager introduced me to “our co‑op students.” I hadn’t seen any paperwork for them, even though we had a basic co‑op process. If HR didn’t know who was in the building or what agreements existed, it was hard to manage risk if something went wrong; that was my cue to look closer.</p>
+    On a routine store visit, a manager introduced me to “our co‑op students.” I hadn’t seen any paperwork for them, even though we had a basic co‑op process. If HR doesn’t know who is in the building or what agreements exist, it’s hard to manage risk if something goes wrong; that was my cue to look closer.</p>
     <p><strong>Fixing the immediate problem</strong><br>
     I started with the students in front of us. I asked the manager for any agreements they had and, where there were gaps, I walked them through what needed to be completed right away. I tried to keep it straightforward and practical so the students were properly covered and the school relationship stayed onside.</p>
     <p><strong>Checking if it was a one‑off</strong><br>
@@ -892,61 +900,85 @@
     </ul>
     <p>The answers showed multiple undocumented placements in one semester. That told me this wasn’t just one manager missing a step; the gap was built into how we were handling co‑op placements overall.</p>
     <p><strong>Creating a simple way to track students</strong><br>
-    Because co‑op students weren’t set up in our HR system like regular employees, any fix had to live outside that system. I created a one‑page Microsoft Forms/Excel tracker that managers could fill out when a new co‑op placement started.</p>
+    Because co‑op students weren’t set up in our HR system like regular employees, any fix had to live outside that system. I created a one‑page Microsoft Forms/Excel tracker that managers could fill out when a new co‑op placement started. The information went straight into a spreadsheet owned by HR and captured the basics: student name, store, school, supervisor, dates, and whether the paperwork was complete. Managers didn’t need new logins or training on a big tool; they just needed the link.</p>
     <p><strong>Rolling it out so people would actually use it</strong><br>
-    To make sure the process stuck, I used a train‑the‑trainer approach. I met with District leaders, explained the risk in plain language, and walked them through the form step by step. They then reviewed it with their Store Managers on regular district calls, using examples from their own stores.</p>
+    To make sure the process stuck, I used a train‑the‑trainer approach. I met with District leaders, explained the risk in plain language, and walked them through the form step by step. They then reviewed it with their Store Managers on regular district calls, using examples from their own stores. Over time, we added a simple reminder to existing checklists so it became part of normal planning rather than “one more extra thing.”</p>
+    <p><strong>Why this matters</strong><br>
+    A quick question in one store turned into a clearer way to manage every co‑op placement. HR could see who was in the business and whether they were properly documented, and managers had an easy way to do the right thing. The company reduced its risk in audits or incidents without investing in a large new system; this is the kind of practical fix I like to build when I notice a gap between how work actually happens and what the policy expects.</p>
   </template>
 
   <template id="safety-modal">
     <h2>Investigating falsified safety committee records in a store</h2>
     <p><strong>How the concern came up</strong><br>
-    On a visit to one store, a team member pulled me aside and said their signature was being forged on joint health and safety committee minutes. They were nervous about speaking up but also uncomfortable seeing their name on documents for meetings they hadn’t attended.</p>
+    On a visit to one store, a team member pulled me aside and said their signature was being forged on joint health and safety committee minutes. They were nervous about speaking up but also uncomfortable seeing their name on documents for meetings they hadn’t attended. When someone brings me that kind of concern, I thank them, explain what the next steps might look like, and flag that I probably won’t be able to share the final outcome with them; that sets expectations without shutting them down.</p>
     <p><strong>Protecting the reporter and clarifying the details</strong><br>
-    I asked if they were willing to be contacted again by me or by our investigations team and made sure they knew we would take their information seriously. Then I asked simple, grounded questions about what they had seen.</p>
-    <p><strong>Reviewing the records</strong><br>
-    I reviewed several months of committee minutes, noted who was listed as attending, and checked whether the signatures looked genuine or seemed to be written by the same hand.</p>
+    I asked if they were willing to be contacted again by me or by our investigations team and made sure they knew we would take their information seriously. Then I asked simple, grounded questions: which forms they had seen, how they knew the signatures were not genuine, and whether anyone else might be in the same position. At this stage I am careful not to promise specific outcomes; my goal is to understand the facts well enough to recommend the right next step.</p>
+    <p><strong>Quiet fact‑finding in the store</strong><br>
+    Before escalating, I did some quiet checking in the store. I reviewed the safety binder and recent committee minutes, looking for patterns in signatures, meeting dates, and attendance records. I noted who was listed as committee members and compared that against who was actually in the building at those times. This helped me separate a single forged signature from a broader pattern of not holding real meetings but signing paperwork as if we were.</p>
     <p><strong>Escalating for a formal investigation</strong><br>
-    Because safety documentation ties into legal and regulatory obligations, I looped in the District leader and HR/investigations team, summarized what the employee reported, and shared what I had seen in the documents.</p>
+    Given the potential seriousness—both from a safety and integrity standpoint—I summarized what I had heard and observed and escalated the case to the District leader and our investigations team. I framed it not as a minor paperwork issue but as a concern that safety governance itself might be misrepresented. From there, the investigations team could take formal statements, pull broader records, and decide on appropriate outcomes while I stayed available for context from the field side.</p>
+    <p><strong>Supporting safer practices going forward</strong><br>
+    While the formal investigation moved ahead, I worked with the District leader to make sure other stores understood what proper safety committee work looked like. That meant reinforcing expectations around real meetings, accurate minutes, and who should be on the committee, rather than simply telling people “don’t falsify forms.” The aim was both to address the specific integrity issue and to prevent similar problems elsewhere.</p>
+    <p><strong>Why this matters</strong><br>
+    Falsified safety records undermine trust in both safety programs and leadership. By taking the concern seriously, escalating it appropriately, and using it as a moment to shore up practices in other stores, we treated it as a real integrity and risk issue, not just an administrative mistake. For me, that balance—protecting the reporter, getting clear facts, and improving the system—is what good employee relations work looks like.</p>
   </template>
 
   <template id="availability-modal">
     <h2>Resetting attendance expectations in an early‑morning team</h2>
-    <p><strong>How the problem showed up</strong><br>
-    Before I moved into HR, I took over a store where the early‑morning team was routinely late; some people were arriving 5 to 45 minutes after their scheduled start, and the previous manager had not addressed it.</p>
-    <p><strong>Defining fair and clear expectations</strong><br>
-    I decided that 7 minutes after the scheduled start would count as “late” for this team and set thresholds for when late arrivals would result in a verbal or written warning.</p>
-    <p><strong>Looking at the actual data</strong><br>
-    I pulled eight weeks of timecards for the entire early‑morning team and counted how many late arrivals each person had under the new threshold.</p>
-    <p><strong>Talking to people one‑on‑one</strong><br>
-    I met with each team member individually, showed them their timecard history, and explained the expectations going forward.</p>
-    <p><strong>How this informed my HR work</strong><br>
-    Later, in Field HR, I used this experience when coaching Store Managers through attendance and availability issues: define a fair standard, use real data, apply it consistently, and follow through every week.</p>
+    <p><strong>What I walked into</strong><br>
+    Before I moved into HR, I took over a store where the early‑morning freight and replenishment team had very loose habits around start times. People arrived anywhere from 5 to 45 minutes late, but the previous manager had not held anyone accountable. There was no specific “three strikes” tardiness policy, only a general expectation that staff arrived on time and that managers monitored their timecards, which meant I had to design something fair and consistent from that starting point.</p>
+    <p><strong>Clarifying expectations in plain language</strong><br>
+    I started by reviewing the existing handbook and any guidance we had on attendance so I understood where my discretion began and ended. Then I met with the team as a group and was direct: the shift had a clear start time, it affected truck unloads and store readiness for opening, and going forward we would be treating late arrivals more consistently. I kept the message simple and tied it to the work, not to moral judgments about being “good” or “bad” employees.</p>
+    <p><strong>Designing a fair structure</strong><br>
+    With no rigid tardiness grid in policy, I created a basic structure I could explain and apply to everyone on that shift. That included documenting late arrivals, giving specific coaching when patterns emerged, and escalating to written conversations when coaching did not lead to change. I made sure people understood what would trigger each step so it didn’t feel arbitrary.</p>
+    <p><strong>Following through week after week</strong><br>
+    The real work was in the follow‑through. Each week, I reviewed the timecards for that team, had quick 1:1s with anyone whose lateness stood out, and documented those conversations. When someone improved, I acknowledged it; when patterns continued, I moved to the next formal step. Over time, this shifted late arrivals from being “normal” to being the exception that required a conversation.</p>
+    <p><strong>Impact and what I carried forward into HR</strong><br>
+    Within a reasonable period, late arrivals dropped and the opening manager could plan work with more confidence. The structure I built—clear expectations, consistent documentation, and stepped responses—became something I later drew on as an HR partner. When Store Managers asked how to handle attendance issues in their own teams, I could walk them through this real example and help them adapt the same approach in a way that fit our policies and their store.</p>
   </template>
 
   <template id="pip-modal">
-    <h2>Designing a defensible performance plan for a long‑tenured manager</h2>
-    <p><strong>Starting point</strong><br>
-    A Store Manager wanted to terminate a long‑service Assistant Store Manager with very little documentation and only broad complaints.</p>
-    <p><strong>Clarifying expectations</strong><br>
-    I worked with the manager to describe what “good” looked like in the role and turned that into specific, observable expectations.</p>
-    <p><strong>Rewriting the plan</strong><br>
-    We rewrote a vague PIP into concrete items the ASM could either meet or not meet, and set up 30/60/90‑day check‑ins with documented coaching and support.</p>
+    <h2>Handling performance concerns without rushing to termination</h2>
+    <p><strong>The initial request</strong><br>
+    A Store Manager reached out wanting to terminate an underperforming team member quickly. Their frustration was real: they described missed tasks, poor follow‑through, and impact on the rest of the team. But when I asked for documentation and recent specific examples, what we had were broad complaints and a history of informal conversations that hadn’t been written down.</p>
+    <p><strong>Slowing things down just enough</strong><br>
+    Moving straight to termination in that situation would have created risk and likely felt unfair to the employee and the rest of the team. I asked the leader to pause long enough for us to build either a genuine improvement plan or, if needed, a defensible termination file. That meant shifting from “they’re just not working out” to “here are the concrete expectations and where they’re not being met.”</p>
+    <p><strong>Clarifying expectations and evidence</strong><br>
+    Together, we listed the core duties of the role and the behaviours that were causing concern. I pushed for recency and specifics: dates, shifts, tasks left incomplete, and how that showed up on the floor. We then turned that into a short, clear document the leader could use in a performance conversation so the employee understood exactly what needed to change.</p>
+    <p><strong>Building a realistic improvement plan</strong><br>
+    We set up an improvement plan that included concrete goals, support from the leader, and a reasonable timeline. I coached the manager to check in regularly, document each meeting, and note both improvements and ongoing gaps. The emphasis was on giving the employee a fair chance to succeed while also being honest about what would happen if things did not change.</p>
+    <p><strong>Outcomes and learning</strong><br>
+    In some cases like this, employees turn things around; in others, the plan confirms that change is not happening and termination becomes appropriate. Either way, the process matters. By helping the leader slow down, document properly, and follow a structured plan, we reduced legal and reputational risk and showed the rest of the team that decisions about people were thoughtful and fair, not just reactions to frustration.</p>
   </template>
 
   <template id="engagement-modal">
-    <h2>Low engagement and low trust in leadership</h2>
-    <p><strong>Situation</strong><br>
-    Engagement results flagged low trust in leadership and communication in a high‑volume store.</p>
-    <p><strong>What I did</strong><br>
-    I reviewed comments, visited the store, spoke with on‑shift team members, and then helped the leader pick a few visible, realistic changes: better huddles, clearer follow‑through, and more timely recognition.</p>
+    <h2>Addressing low engagement and low trust in leadership</h2>
+    <p><strong>What the survey showed</strong><br>
+    In one high‑volume store, engagement survey results came in with clear warning signs: low trust in leadership, low scores on communication, and comments that suggested employees did not feel heard. The Store Manager and District leader were concerned about turnover and morale but were hesitant to make big promises they might not be able to keep, especially given business pressures.</p>
+    <p><strong>Digging into comments and context</strong><br>
+    I started by reading every comment for that store, looking for patterns rather than isolated complaints. Then I visited the store, walked the floor with the leader, and spoke informally with as many on‑shift team members as I could. I asked simple questions about what was working, what wasn’t, and how they experienced communication from their leaders day to day.</p>
+    <p><strong>Choosing a small number of visible actions</strong><br>
+    Instead of suggesting a big engagement “program,” I helped the Store Manager pick two or three specific, visible changes tied directly to what employees had raised. In this case, that meant tightening up pre‑shift huddles so they were consistent and useful, improving follow‑through on issues that employees raised, and being more intentional with recognition so it didn’t only go to the same few people.</p>
+    <p><strong>Making the link explicit for the team</strong><br>
+    I encouraged the leader to tell the team where the changes were coming from: “Here’s what we heard in the survey and conversations, and here’s what we’re doing differently because of it.” Making that link explicit helped employees see that their feedback was not just going into a survey report but actually shaping what leadership focused on.</p>
+    <p><strong>Reviewing impact and adjusting</strong><br>
+    We set a follow‑up check‑in to look at how these changes were landing: Did huddles feel more useful? Were issues being closed out more reliably? Were more people being recognized? The goal was not to fix trust overnight but to build it back through a series of consistent actions that matched what employees had said mattered most.</p>
   </template>
 
   <template id="leaves-backlog-modal">
     <h2>Resolving long‑term leave and LTD backlogs in a retail business</h2>
     <p><strong>How the backlog showed up</strong><br>
-    Several long‑term medical leave and LTD files had stalled for years, with no clear plan to return or end employment.</p>
-    <p><strong>My role</strong><br>
-    I took my share of the backlog end to end: reaching out to employees, obtaining updated medical information, supporting returns where possible, and partnering with Legal where frustration of contract might apply.</p>
+    Over several years, a set of medical leave and long‑term disability files had become stagnant. Some team members had been off work for five or more years, or had leave claims denied by a third‑party administrator but never actually returned to work; the files were technically open, but no one was sure what the path forward was.</p>
+    <p><strong>Taking ownership of my share</strong><br>
+    The backlog was divided evenly among three HR partners so it felt manageable. For my share of the files, I owned the process end to end: reviewing what was on record, making a reasonable effort to reconnect with each employee, and working with our leave and Legal partners to decide what needed to happen next. That structure kept responsibility clear and avoided files bouncing between people.</p>
+    <p><strong>Re‑establishing contact and expectations</strong><br>
+    I started by checking basic details in each file and confirming the last point of contact. Where contact information was current, I reached out directly; when it wasn’t, I followed our standard steps to update it. From there, I sent clear written notices explaining that we needed up‑to‑date medical information to understand whether there was a reasonably foreseeable return to work, an ongoing need for accommodation, or a different outcome.</p>
+    <p><strong>Clarifying medical status and options</strong><br>
+    When employees or their doctors provided updated information, I focused on what it meant in practice. If a return to work was possible, I worked with the leader to design a realistic plan based on any restrictions or limitations. If the information suggested there was no reasonable prospect of returning, or if there was no response after reasonable attempts to reconnect, I partnered with Legal to assess whether frustration of contract might apply; the intent was to match the legal framework to the actual facts of each case, not to force a single answer.</p>
+    <p><strong>Working through endings and entitlements</strong><br>
+    In cases where the employment relationship was ending, I collaborated with Legal to confirm the right approach and calculate statutory or contractual entitlements. That included pay in lieu of notice and, where applicable, severance, so we could close the file in a way that aligned with employment standards and internal practice. I made sure letters and documentation were clear, respectful, and consistent, so even difficult news was delivered in a grounded way.</p>
+    <p><strong>Why this matters</strong><br>
+    Long‑running leave files can quietly create risk and uncertainty for everyone involved. By working through my share of the backlog in a structured way, I helped move employees out of limbo, gave leaders clarity on staffing, and reduced the chance of surprises later. For me, this kind of work is about balancing legal obligations, humane communication, and operational reality so each file reaches a clear, defensible endpoint.</p>
   </template>
 </main>
 
