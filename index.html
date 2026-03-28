@@ -138,15 +138,20 @@
       font-weight: 600;
     }
 
-    /* Hero */
+   /* Hero */
 
-    .hero {
-      margin-top: 1.5rem;
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
-      gap: 1.75rem;
-      align-items: flex-start;
-    }
+.hero {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.hero-left,
+.hero-right {
+  height: 100%;
+}
 
     .hero-left {
       background: var(--bg-alt);
