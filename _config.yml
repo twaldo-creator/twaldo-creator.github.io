@@ -1,0 +1,7 @@
+title: Tanner Waldo | People & Culture Advisor  # Your site title
+description: People & Culture Advisor for frontline organizations.
+
+collections:
+  articles:    # Defines a new "articles" collection
+    output: true   # Generates HTML pages for each article
+permalink: /articles/:title/   # URLs like /articles/my-first-article/
