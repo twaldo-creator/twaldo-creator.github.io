@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Myth of the Unpaid Tryout | Tanner Waldo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Unpaid trial shifts still show up in Alberta, especially in small service businesses. A 2025 Employment Standards appeal makes the rule plain: if they're doing real work under your direction, that time is paid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18; --ink-soft: #3d3d38; --cream: #f7f5ef; --warm-white: #fdfcf8;
+    --gold: #c9a84c; --gold-light: #e8d5a3; --rust: #b5461e; --blue-dark: #3d3936;
+    --text-muted: #666660; --border: rgba(26,26,24,0.12);
+    --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--warm-white); color: var(--ink); line-height: 1.6; font-size: 16px; }
+  a { color: inherit; text-decoration: none; }
+  .nav { position: sticky; top: 0; z-index: 100; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-brand { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.01em; color: #fff; }
+  .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+  .nav-links a { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); padding: 0.4rem 0.75rem; border-radius: 3px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #fff; }
+  .article-header { background: var(--ink); color: #fff; padding: 4rem 2.5rem 5rem; position: relative; overflow: hidden; }
+  .article-header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 480px; height: 480px; border: 1px solid rgba(201,168,76,0.12); border-radius: 50%; pointer-events: none; }
+  .article-header-inner { max-width: 760px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--gold); }
+  .back-link::before { content: '←'; }
+  .article-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
+  .article-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; }
+  .article-title em { font-style: italic; color: var(--gold); }
+  .article-lede { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 640px; }
+  .article-body-wrap { padding: 4rem 2.5rem 6rem; }
+  .article-body { max-width: 680px; margin: 0 auto; }
+  .article-body p { font-size: 1rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.4rem; }
+  .article-body h2 { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 1rem; line-height: 1.25; }
+  .article-body h3 { font-family: var(--sans); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); margin: 2rem 0 0.75rem; }
+  .article-body ul { list-style: none; margin: 0 0 1.4rem; padding: 0; }
+  .article-body ul li { font-size: 1rem; color: var(--ink-soft); line-height: 1.8; padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
+  .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  .article-body strong { font-weight: 500; color: var(--ink); }
+  .article-body a { color: var(--rust); border-bottom: 1px solid rgba(181,70,30,0.3); transition: border-color 0.2s; }
+  .article-body a:hover { border-color: var(--rust); }
+  .pull-quote { border-left: 3px solid var(--gold); padding: 0.75rem 0 0.75rem 1.5rem; margin: 2rem 0; }
+  .pull-quote p { font-family: var(--serif); font-size: 1.15rem !important; color: var(--ink) !important; line-height: 1.55 !important; font-style: italic; margin: 0 !important; }
+  .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .disclaimer { background: var(--cream); border: 1px solid var(--border); padding: 1.25rem 1.5rem; margin-top: 3rem; font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
+  .notes-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+  .notes-section h3 { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; font-family: var(--sans); font-weight: 500; }
+  .notes-section ol { list-style: none; counter-reset: notes; padding: 0; }
+  .notes-section ol li { counter-increment: notes; font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; padding-left: 1.5rem; position: relative; margin-bottom: 0.6rem; }
+  .notes-section ol li::before { content: counter(notes); position: absolute; left: 0; top: 0; font-size: 0.75rem; color: var(--gold); font-weight: 500; }
+  .notes-section ol li a { color: var(--text-muted); border-bottom: 1px solid var(--border); word-break: break-all; }
+  .more-articles { background: var(--cream); padding: 4rem 2.5rem; border-top: 1px solid var(--border); }
+  .more-inner { max-width: 1100px; margin: 0 auto; }
+  .more-label { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
+  .more-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .more-card { background: var(--warm-white); border: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .more-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,26,24,0.07); }
+  .more-card-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); }
+  .more-card-title { font-family: var(--serif); font-size: 0.95rem; font-weight: 400; line-height: 1.3; color: var(--ink); }
+  .more-card-read { font-size: 0.8rem; color: var(--gold); margin-top: auto; padding-top: 0.5rem; }
+  footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; }
+  footer a { color: rgba(255,255,255,0.4); }
+  footer a:hover { color: rgba(255,255,255,0.75); }
+  @media (max-width: 900px) { .article-header { padding: 3rem 1.5rem 4rem; } .article-body-wrap { padding: 3rem 1.5rem 5rem; } .more-grid { grid-template-columns: 1fr 1fr; } .nav { padding: 0 1.25rem; } .nav-links { display: none; } .more-articles { padding: 3rem 1.5rem; } }
+  @media (max-width: 600px) { .more-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="/" class="nav-brand">Tanner Waldo</a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/#about">Profile</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#cases">Case Studies</a></li>
+      <li><a href="/articles.html" class="active">Articles</a></li>
+    </ul>
+  </nav>
+</header>
+
+<header class="article-header">
+  <div class="article-header-inner">
+    <a class="back-link" href="/articles.html">All articles</a>
+    <div class="article-tag">Employment Law</div>
+    <h1 class="article-title">The Myth of the Unpaid Tryout: Lessons from <em>Papa Murphy's v. Kaur</em></h1>
+    <p class="article-lede">Unpaid "trial" shifts still show up in Alberta, especially in small service businesses. A 2025 Employment Standards appeal makes the rule plain: if they're doing real work under your direction, that time is paid.</p>
+  </div>
+</header>
+
+<div class="article-body-wrap">
+  <article class="article-body">
+
+    <p>The unpaid trial shift is one of those practices that persists because it sounds reasonable on its face — "we just want to see how you do" — and because it rarely gets challenged. A 2025 decision of the Alberta Employment Standards Appeal Board is a useful reminder that the law doesn't share the employer's casual attitude toward it.<sup>1</sup></p>
+
+    <h2>The core story</h2>
+
+    <p>Manmeet Kaur started working at a Papa Murphy's franchise in May 2024. She did typical restaurant tasks: preparing dough and ingredients, making pizzas, taking orders, serving customers.<sup>2</sup> She later filed a complaint claiming unpaid wages, overtime, and vacation pay for roughly 96 hours.</p>
+
+    <p>The employer appealed and argued she was never an employee — that she had agreed to "volunteer" during an unpaid trial period because she lacked restaurant experience, and that she only worked a couple of shifts.<sup>2</sup> Ms. Kaur accepted there was a trial period, but denied she had agreed to work for free and said she should be paid for all shifts she worked.</p>
+
+    <p>The Board rejected the "volunteer" story. It found that throughout her time with the restaurant, she was an employee who had performed "work" and was entitled to wages, overtime, and vacation pay under the Employment Standards Code.<sup>2,3</sup></p>
+
+    <h2>Why this was not volunteering</h2>
+
+    <p>The Board's reasoning starts from a few simple points. An "employee" is someone "employed to do work who receives or is entitled to wages," and "work" includes providing a service.<sup>3</sup> Employers and employees cannot agree to waive minimum standards like minimum wage, overtime, or vacation pay — any such agreement is void.<sup>3</sup> And employment standards law is interpreted broadly in favour of the employee.<sup>2</sup></p>
+
+    <p>From there, the facts weren't close. The business is a for-profit pizza restaurant, filling a departing staff member's role.<sup>2</sup> Ms. Kaur did core business tasks from her first shift and was trained the same way any employee would be trained.<sup>2</sup> Text and WhatsApp messages showed the employer directing when she should work — "Come today around afternoon"; "Friday shift from 4pm to closing, Saturday 5pm to closing."<sup>2</sup></p>
+
+    <div class="pull-quote">
+      <p>The Board concluded her work was "not volunteer work, but rather, disguised employment" — an arrangement that should properly have been characterized as her probationary period.<sup>2</sup></p>
+    </div>
+
+    <p>The plain language version: if a person is scheduled, trained like everyone else, and doing the same core tasks as paid staff, they are an employee.</p>
+
+    <h2>Unpaid tryouts vs. paid probation</h2>
+
+    <p>The compliance lesson is simple. An employer cannot turn paid work into unpaid "volunteering" by calling it a trial, training, or tryout.<sup>3</sup> A "trial period" that looks like regular work is just the start of employment — and it attracts all normal Employment Standards obligations from day one.<sup>2,3</sup></p>
+
+    <p>This lines up with general Alberta guidance: if the work is productive and benefits the business, it must be paid at or above minimum wage.<sup>3</sup> The fact that the employer framed it as a trial doesn't change that analysis.</p>
+
+    <h2>The exception: real co-op placements</h2>
+
+    <p>There is a narrow exception for unpaid roles: formal student co-ops and specific work-experience programs set up or recognized in legislation or regulation.<sup>6</sup> Those situations usually involve a formal educational program with clear learning outcomes and a written agreement setting out hours, duties, supervision, and objectives.<sup>6,7</sup></p>
+
+    <p>Ms. Kaur's role was nothing like that — it was a for-profit restaurant filling a vacancy, with the worker scheduled into normal operations.<sup>2</sup> That's why unpaid co-ops are best understood as the exception that proves the rule: outside structured educational placements, unpaid "trial" work will almost always be treated as employment.</p>
+
+    <h2>What HR and managers should do instead</h2>
+
+    <p>If you want to see how someone performs before committing to them, you have options that respect the law:</p>
+
+    <ul>
+      <li>Use a paid probationary period and be clear about expectations and what feedback will look like.</li>
+      <li>Use short, paid trial shifts with clear start and end times and proper records.</li>
+      <li>Use non-productive simulations — role plays, tests, sample exercises — that don't involve serving real customers or producing saleable goods.</li>
+      <li>Keep clean records of time worked from day one. If your records are weak, decision-makers are more likely to accept the employee's version of events.<sup>2,3,4</sup></li>
+    </ul>
+
+    <p>The simple rule hasn't changed: if they're doing real work under your direction, that time is paid.</p>
+
+    <hr class="article-divider">
+
+    <div class="disclaimer">
+      <strong>Note:</strong> I am not a lawyer, just an HR professional with a passion for this stuff. This article is intended for general informational purposes only and does not constitute legal advice. Employment laws vary by province and jurisdiction. Consult a qualified employment lawyer or your HR partner for guidance specific to your situation.
+    </div>
+
+    <div class="notes-section">
+      <h3>Notes</h3>
+      <ol>
+        <li>Stewart Sharma Harsanyi, "Are Unpaid Trial Shifts Legal in the Restaurant Industry?," ST Lawyers Blog, November 13, 2023. <a href="https://stlawyers.ca/blog-news/unpaid-trial-shifts-legal-restaurant-industry/" target="_blank">stlawyers.ca</a></li>
+        <li>2409433 Alberta Inc. o/a Papa Murphy's v. Kaur, 2025 ABESAB 16 (Employment Standards Appeal Board), October 8, 2025. <a href="https://www.canlii.org/en/ab/abesab/doc/2025/2025abesab16/2025abesab16.html" target="_blank">canlii.org</a></li>
+        <li>Alberta, Employment Standards Code, RSA 2000, c. E-9. <a href="https://www.canada.ca/content/dam/canada/employment-social-development/migration/documents/documents/Acts/e09.pdf" target="_blank">canada.ca</a></li>
+        <li>Bow River Law LLP, "Employees Should Record Work Hours in Case Employers Don't," December 7, 2025. <a href="https://bowriveremploymentlaw.com/employees-should-record-work-hours-in-case-employers-dont/" target="_blank">bowriveremploymentlaw.com</a></li>
+        <li>Teamsters Local 987, "Can My Employer Make Me Take Unpaid Training in Alberta?," May 19, 2025. <a href="https://teamsters987.com/training-without-pay/" target="_blank">teamsters987.com</a></li>
+        <li>Alberta, Employment Standards Regulation, Alta Reg 14/1997. <a href="https://open.alberta.ca/publications/1997_014" target="_blank">open.alberta.ca</a></li>
+        <li>Gowling WLG, "Are Unpaid Internships Legal in Canada?," January 31, 2014. <a href="https://gowlingwlg.com/en-ca/insights-resources/articles/2014/are-unpaid-internships-legal-in-canada/" target="_blank">gowlingwlg.com</a></li>
+      </ol>
+    </div>
+
+  </article>
+</div>
+
+<section class="more-articles">
+  <div class="more-inner">
+    <div class="more-label">More articles</div>
+    <div class="more-grid">
+      <a class="more-card" href="/articles/pip-problem.html">
+        <span class="more-card-tag">Performance Management</span>
+        <span class="more-card-title">The PIP Problem: Are We Actually Trying to Help?</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+      <a class="more-card" href="/articles/good-intentions.html">
+        <span class="more-card-tag">Employee Relations</span>
+        <span class="more-card-title">Good Intentions Don't Erase Discrimination</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+      <a class="more-card" href="/articles/ten-cases.html">
+        <span class="more-card-tag">Employment Law</span>
+        <span class="more-card-title">Ten Canadian Legal Cases Every New Manager Needs to Know</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="yr"></span> Tanner Waldo · People &amp; Culture Advisor</span>
+  <span><a href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a> · <a href="https://www.linkedin.com/in/tannerw" target="_blank">linkedin.com/in/tannerw</a></span>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

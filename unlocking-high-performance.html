@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Review: Unlocking High Performance by Jason Lauritsen | Tanner Waldo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lauritsen argues performance is a relationship, not a form. He's right. The question is whether the book says anything a strong frontline manager doesn't already know — and where it earns its place anyway.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18; --ink-soft: #3d3d38; --cream: #f7f5ef; --warm-white: #fdfcf8;
+    --gold: #c9a84c; --gold-light: #e8d5a3; --rust: #b5461e; --blue-dark: #3d3936;
+    --text-muted: #666660; --border: rgba(26,26,24,0.12);
+    --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--warm-white); color: var(--ink); line-height: 1.6; font-size: 16px; }
+  a { color: inherit; text-decoration: none; }
+  .nav { position: sticky; top: 0; z-index: 100; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-brand { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.01em; color: #fff; }
+  .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+  .nav-links a { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); padding: 0.4rem 0.75rem; border-radius: 3px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #fff; }
+  .article-header { background: var(--ink); color: #fff; padding: 4rem 2.5rem 5rem; position: relative; overflow: hidden; }
+  .article-header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 480px; height: 480px; border: 1px solid rgba(201,168,76,0.12); border-radius: 50%; pointer-events: none; }
+  .article-header-inner { max-width: 760px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--gold); }
+  .back-link::before { content: '←'; }
+  .article-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
+  .article-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; }
+  .article-title em { font-style: italic; color: var(--gold); }
+  .article-lede { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 640px; }
+  .article-body-wrap { padding: 4rem 2.5rem 6rem; }
+  .article-body { max-width: 680px; margin: 0 auto; }
+  .article-body p { font-size: 1rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.4rem; }
+  .article-body h2 { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 1rem; line-height: 1.25; }
+  .article-body ul { list-style: none; margin: 0 0 1.4rem; padding: 0; }
+  .article-body ul li { font-size: 1rem; color: var(--ink-soft); line-height: 1.8; padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
+  .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  .article-body strong { font-weight: 500; color: var(--ink); }
+  .article-body a { color: var(--rust); border-bottom: 1px solid rgba(181,70,30,0.3); transition: border-color 0.2s; }
+  .article-body a:hover { border-color: var(--rust); }
+  .pull-quote { border-left: 3px solid var(--gold); padding: 0.75rem 0 0.75rem 1.5rem; margin: 2rem 0; }
+  .pull-quote p { font-family: var(--serif); font-size: 1.15rem !important; color: var(--ink) !important; line-height: 1.55 !important; font-style: italic; margin: 0 !important; }
+  .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .disclaimer { background: var(--cream); border: 1px solid var(--border); padding: 1.25rem 1.5rem; margin-top: 3rem; font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
+  .more-articles { background: var(--cream); padding: 4rem 2.5rem; border-top: 1px solid var(--border); }
+  .more-inner { max-width: 1100px; margin: 0 auto; }
+  .more-label { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
+  .more-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .more-card { background: var(--warm-white); border: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .more-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,26,24,0.07); }
+  .more-card-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); }
+  .more-card-title { font-family: var(--serif); font-size: 0.95rem; font-weight: 400; line-height: 1.3; color: var(--ink); }
+  .more-card-read { font-size: 0.8rem; color: var(--gold); margin-top: auto; padding-top: 0.5rem; }
+  footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; }
+  footer a { color: rgba(255,255,255,0.4); }
+  footer a:hover { color: rgba(255,255,255,0.75); }
+  @media (max-width: 900px) { .article-header { padding: 3rem 1.5rem 4rem; } .article-body-wrap { padding: 3rem 1.5rem 5rem; } .more-grid { grid-template-columns: 1fr 1fr; } .nav { padding: 0 1.25rem; } .nav-links { display: none; } .more-articles { padding: 3rem 1.5rem; } }
+  @media (max-width: 600px) { .more-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="/" class="nav-brand">Tanner Waldo</a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/#about">Profile</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#cases">Case Studies</a></li>
+      <li><a href="/articles.html" class="active">Articles</a></li>
+    </ul>
+  </nav>
+</header>
+
+<header class="article-header">
+  <div class="article-header-inner">
+    <a class="back-link" href="/articles.html">All articles</a>
+    <div class="article-tag">Book Reviews</div>
+    <h1 class="article-title">Book Review: <em>Unlocking High Performance</em> by Jason Lauritsen</h1>
+    <p class="article-lede">Lauritsen argues performance is a relationship, not a form. He's right. The question is whether the book says anything a strong frontline manager doesn't already know — and where it earns its place anyway.</p>
+  </div>
+</header>
+
+<div class="article-body-wrap">
+  <article class="article-body">
+
+    <p>As someone who spent years managing retail stores before moving into HR for frontline teams, I read Jason Lauritsen's <em>Unlocking High Performance</em> with interest. On one hand, the book does something I believe in deeply: it treats performance as a relationship, not just a form to be filled out. On the other hand, many of the "big ideas" it presents formalize what strong frontline managers already do intuitively. Where Lauritsen adds real value is in tying those everyday behaviours to research and case studies that show why this approach works — how a better employee experience leads to higher engagement and, in turn, stronger performance.</p>
+
+    <h2>The ham story: why we keep doing what we've always done</h2>
+
+    <p>One of the things that stuck with me after reading this book is a simple anecdote. A young woman is making a ham for dinner. Before she puts it in the oven, she cuts the ends off and throws them away. Her husband asks why. She says, "Because that's how my mom always did it." Curious, they call her mom. Same answer. Finally they call the grandmother, who laughs and says, "Oh, I only cut the ends off because my pan was too small."</p>
+
+    <p>That will feel familiar to anyone who has worked in a large organization. Yes, relying on policies and tribal knowledge is understandable, and helps us organize work efficiently when we face similar challenges year after year. At the same time, it never hurts to pause and ask whether what we are doing is truly the best way. From a team performance perspective, Lauritsen offers that we keep doing annual reviews because that's what we've always done. We inherit tools built for a different time and a different kind of workplace, and we rarely stop to ask: does any of this still make sense for the people working in our stores, warehouses, or contact centres today?</p>
+
+    <p>Lauritsen's book is, at its best, an invitation to stop cutting the ends off the ham.</p>
+
+    <h2>Engagement is craved and still elusive</h2>
+
+    <p>Early in the book, Lauritsen writes that we now live in an era where employee engagement is craved and yet continually elusive. If you work in retail or any frontline environment, you probably feel this. We talk about engagement at town halls, conduct engagement surveys, coach managers to become leaders. For the person stocking shelves at 6 a.m. or working a closing shift alone at the front end, though, the word "engagement" doesn't mean anything. What matters is whether their manager says hello, whether the schedule respects their life, and whether anyone notices when they do something right.</p>
+
+    <p>Lauritsen argues that you cannot "manage" engagement through measures alone — it grows out of the daily experience of work. His framing: experience drives engagement, and engagement drives performance. If the work experience is poor, engagement will be low. If engagement is low, performance will suffer. If performance suffers, most organizations respond by tightening control, which usually makes the experience even worse.</p>
+
+    <h2>Work as a relationship, not a contract</h2>
+
+    <p>The frame Lauritsen uses — that "work is a relationship, not a contract" — is the part of the book that feels most useful for frontline leaders. He lists several aspects of successful relationships: taking interest in each other, acceptance and respect, positive regard (assuming good intent), meeting basic needs, solving problems together, rupture and repair, and never being completely one-sided.</p>
+
+    <p>Reading it, I found myself asking: if we say work is a relationship, do our behaviours as store managers, supervisors, and HR partners actually match those characteristics?</p>
+
+    <div class="pull-quote">
+      <p>A store manager who never spoke to a team member in two months wasn't cultivating anything. They were hoping performance would happen by itself while they focused elsewhere.</p>
+    </div>
+
+    <p>I came across a story on Reddit from a retail worker who had a new store manager. Two months into the manager's tenure, the worker stated that the manager had never spoken to them. No "how's it going," no "thank you," not even a basic introduction. After twenty years in stores and following retail worker communities on social media, I get the sense that this happens too often. When Lauritsen talks about cultivating performance through regular conversations and support, this is exactly what he's pushing against.</p>
+
+    <h2>The three parts of performance</h2>
+
+    <p>The practical framework in <em>Unlocking High Performance</em> is simple: planning (setting clear expectations and goals up front), cultivation (ongoing support, feedback, and coaching), and accountability (holding people responsible once the first two pieces are in place). I tried to live this in my own career as a store manager long before I ever picked up this book. What Lauritsen does is connect the behaviour to engagement research and case studies — helpful especially for leaders working in more compliance-based organizations where "because it works for people" sometimes needs a footnote.</p>
+
+    <h2>Humanizing, not revolutionizing</h2>
+
+    <p>This is where my praise and my criticism of the book come together. I admire the way Lauritsen speaks about people. He insists that performance management should feel more like coaching than like building a case against someone. He argues that forms and rating scales matter less than trust, clarity, and frequent honest conversations. Is the book as innovative as the marketing suggests? From my frontline perspective, not really.</p>
+
+    <p>Many strong retail and frontline managers already do this. They hold regular check-ins instead of saving everything for annual reviews. They explain the "why" behind goals, not just the "what." They treat their team with basic human respect, even while demanding high standards. These managers may never have read a book on performance management. They just know that when you treat people like people, they usually do better work. What the book does well is give those behaviours language, structure, and evidence that can help you explain and defend them inside more traditional systems.</p>
+
+    <h2>You don't have to blow up your whole system</h2>
+
+    <p>In section five, Lauritsen argues that "stopping the process" is often the best way to improve performance management. Read one way, that sounds like you need to scrap annual reviews, drop ratings, and start fresh. For most of us — whether we're a key holder supervising a handful of cashiers or an HR partner advising at a higher level — that kind of change is usually out of reach.</p>
+
+    <p>For those who don't have the power to simply "stop the process," or who prefer a more conservative approach anyway, Lauritsen offers practical ways to "hack your current processes": shifting the focus of review meetings, changing the questions you ask in check-ins, using existing forms as prompts for better conversations. Through these changes, we can make performance management more human without changing the full framework. The final chapters are written more for senior leaders and HR executives who do have authority to redesign systems from the top down — useful reading, but for frontline managers and many HR partners they will feel a bit out of reach.</p>
+
+    <p>For most of us, the most helpful way to read this book is as a guide to working within the systems we've been given — using clarity, conversation, and support to make work more human for people and, in doing so, helping their best work come more naturally.</p>
+
+    <p>In the end, I see <em>Unlocking High Performance</em> as a good pick for anyone who leads or supports frontline teams and wants to improve the performance process or the team member experience. It won't hand you a brand new philosophy, but it will give you clear language, practical tools, and a well-researched case for treating performance as an ongoing relationship rather than a yearly event. If you are already trying to manage this way, it will feel like validation and a toolkit. If you are not, it is a great place to start.</p>
+
+    <hr class="article-divider">
+
+    <div class="disclaimer">
+      <strong>Note:</strong> I am not a lawyer, just an HR professional with a passion for this stuff. This article is intended for general informational purposes only and does not constitute legal advice. Employment laws vary by province and jurisdiction. Consult a qualified employment lawyer or your HR partner for guidance specific to your situation.
+    </div>
+
+  </article>
+</div>
+
+<section class="more-articles">
+  <div class="more-inner">
+    <div class="more-label">More articles</div>
+    <div class="more-grid">
+      <a class="more-card" href="/articles/pip-problem.html">
+        <span class="more-card-tag">Performance Management</span>
+        <span class="more-card-title">The PIP Problem: Are We Actually Trying to Help?</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+      <a class="more-card" href="/articles/good-intentions.html">
+        <span class="more-card-tag">Employee Relations</span>
+        <span class="more-card-title">Good Intentions Don't Erase Discrimination</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+      <a class="more-card" href="/articles/ten-cases.html">
+        <span class="more-card-tag">Employment Law</span>
+        <span class="more-card-title">Ten Canadian Legal Cases Every New Manager Needs to Know</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="yr"></span> Tanner Waldo · People &amp; Culture Advisor</span>
+  <span><a href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a> · <a href="https://www.linkedin.com/in/tannerw" target="_blank">linkedin.com/in/tannerw</a></span>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ten Canadian Legal Cases Every New Manager Needs to Know | Tanner Waldo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="There's a good chance the HR policy you're expected to enforce traces back to one of these decisions. You don't need to memorize the case names — but understanding the pattern they create changes how you manage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a18; --ink-soft: #3d3d38; --cream: #f7f5ef; --warm-white: #fdfcf8;
+    --gold: #c9a84c; --gold-light: #e8d5a3; --rust: #b5461e; --blue-dark: #3d3936;
+    --text-muted: #666660; --border: rgba(26,26,24,0.12);
+    --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--warm-white); color: var(--ink); line-height: 1.6; font-size: 16px; }
+  a { color: inherit; text-decoration: none; }
+  .nav { position: sticky; top: 0; z-index: 100; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-brand { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.01em; color: #fff; }
+  .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+  .nav-links a { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); padding: 0.4rem 0.75rem; border-radius: 3px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #fff; }
+  .article-header { background: var(--ink); color: #fff; padding: 4rem 2.5rem 5rem; position: relative; overflow: hidden; }
+  .article-header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 480px; height: 480px; border: 1px solid rgba(201,168,76,0.12); border-radius: 50%; pointer-events: none; }
+  .article-header-inner { max-width: 760px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--gold); }
+  .back-link::before { content: '←'; }
+  .article-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
+  .article-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; }
+  .article-lede { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 640px; }
+
+  /* TOC */
+  .toc-wrap { background: var(--cream); border-bottom: 1px solid var(--border); padding: 2rem 2.5rem; }
+  .toc-inner { max-width: 680px; margin: 0 auto; }
+  .toc-label { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; font-weight: 500; }
+  .toc-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .toc-list li { display: flex; align-items: baseline; gap: 0.6rem; }
+  .toc-num { font-size: 0.76rem; color: var(--gold); font-weight: 500; min-width: 1.2rem; }
+  .toc-list a { font-size: 0.88rem; color: var(--ink-soft); border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s; line-height: 1.4; }
+  .toc-list a:hover { color: var(--rust); border-color: rgba(181,70,30,0.3); }
+
+  .article-body-wrap { padding: 4rem 2.5rem 6rem; }
+  .article-body { max-width: 680px; margin: 0 auto; }
+  .article-body p { font-size: 1rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.4rem; }
+  .article-body h2 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--ink); margin: 3rem 0 1rem; line-height: 1.25; }
+  .article-body ul { list-style: none; margin: 0 0 1.4rem; padding: 0; }
+  .article-body ul li { font-size: 1rem; color: var(--ink-soft); line-height: 1.8; padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
+  .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  .article-body strong { font-weight: 500; color: var(--ink); }
+  .article-body a { color: var(--rust); border-bottom: 1px solid rgba(181,70,30,0.3); transition: border-color 0.2s; }
+  .article-body a:hover { border-color: var(--rust); }
+
+  /* Case block */
+  .case-block { border-left: 3px solid var(--gold); padding: 0 0 0 1.5rem; margin: 0 0 1rem; }
+  .case-number { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.3rem; }
+  .case-name { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); font-weight: 400; line-height: 1.3; }
+
+  /* Takeaway box */
+  .takeaway { background: var(--cream); border: 1px solid var(--border); padding: 1.1rem 1.4rem; margin: 1.25rem 0 2rem; }
+  .takeaway-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); font-weight: 500; margin-bottom: 0.4rem; }
+  .takeaway p { font-size: 0.9rem !important; color: var(--ink-soft) !important; line-height: 1.7 !important; margin: 0 !important; }
+
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .disclaimer { background: var(--cream); border: 1px solid var(--border); padding: 1.25rem 1.5rem; margin-top: 3rem; font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
+  .notes-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+  .notes-section h3 { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; font-family: var(--sans); font-weight: 500; }
+  .notes-section ol { list-style: none; counter-reset: notes; padding: 0; }
+  .notes-section ol li { counter-increment: notes; font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; padding-left: 1.5rem; position: relative; margin-bottom: 0.6rem; }
+  .notes-section ol li::before { content: counter(notes); position: absolute; left: 0; top: 0; font-size: 0.75rem; color: var(--gold); font-weight: 500; }
+  .notes-section ol li a { color: var(--text-muted); border-bottom: 1px solid var(--border); word-break: break-all; }
+  .more-articles { background: var(--cream); padding: 4rem 2.5rem; border-top: 1px solid var(--border); }
+  .more-inner { max-width: 1100px; margin: 0 auto; }
+  .more-label { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
+  .more-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .more-card { background: var(--warm-white); border: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .more-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,26,24,0.07); }
+  .more-card-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); }
+  .more-card-title { font-family: var(--serif); font-size: 0.95rem; font-weight: 400; line-height: 1.3; color: var(--ink); }
+  .more-card-read { font-size: 0.8rem; color: var(--gold); margin-top: auto; padding-top: 0.5rem; }
+  footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; }
+  footer a { color: rgba(255,255,255,0.4); }
+  footer a:hover { color: rgba(255,255,255,0.75); }
+  @media (max-width: 900px) { .article-header { padding: 3rem 1.5rem 4rem; } .article-body-wrap { padding: 3rem 1.5rem 5rem; } .toc-wrap { padding: 1.5rem; } .more-grid { grid-template-columns: 1fr 1fr; } .nav { padding: 0 1.25rem; } .nav-links { display: none; } .more-articles { padding: 3rem 1.5rem; } }
+  @media (max-width: 600px) { .more-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="/" class="nav-brand">Tanner Waldo</a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/#about">Profile</a></li>
+      <li><a href="/#skills">Skills</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#cases">Case Studies</a></li>
+      <li><a href="/articles.html" class="active">Articles</a></li>
+    </ul>
+  </nav>
+</header>
+
+<header class="article-header">
+  <div class="article-header-inner">
+    <a class="back-link" href="/articles.html">All articles</a>
+    <div class="article-tag">Employment Law</div>
+    <h1 class="article-title">Ten Canadian Legal Cases Every New Manager Needs to Know</h1>
+    <p class="article-lede">There's a good chance the HR policy you're expected to enforce traces back to one of these decisions. You don't need to memorize the case names — but understanding the pattern they create changes how you manage.</p>
+  </div>
+</header>
+
+<div class="toc-wrap">
+  <div class="toc-inner">
+    <div class="toc-label">In this article</div>
+    <ol class="toc-list">
+      <li><span class="toc-num">1</span><a href="#rizzo">The floor is higher than you think</a></li>
+      <li><span class="toc-num">2</span><a href="#brake">Demotion can be dismissal</a></li>
+      <li><span class="toc-num">3</span><a href="#hritchuk">You can be held criminally liable for safety</a></li>
+      <li><span class="toc-num">4</span><a href="#wallace">How you fire someone matters</a></li>
+      <li><span class="toc-num">5</span><a href="#mckinley">Just cause is a high bar</a></li>
+      <li><span class="toc-num">6</span><a href="#potter">Silence and "parking" someone can be constructive dismissal</a></li>
+      <li><span class="toc-num">7</span><a href="#gordon">The union knock is coming</a></li>
+      <li><span class="toc-num">8</span><a href="#mcgregor">Interview questions can be discrimination</a></li>
+      <li><span class="toc-num">9</span><a href="#meiorin">Accommodation isn't optional</a></li>
+      <li><span class="toc-num">10</span><a href="#robichaud">"Just joking" still counts as harassment</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="article-body-wrap">
+  <article class="article-body">
+
+    <p>Some organizations do an excellent job training managers on HR policies, and some don't — but even where training is strong, the "why" behind the rules is often missing. These ten cases are ones employment lawyers and HR people refer to consistently. They're not the only important decisions in Canadian employment law, but if you understand these, you're ahead of most managers.</p>
+
+    <p>This article is for general informational purposes only and is not legal advice. When in doubt, talk to an employment lawyer or your HR team.</p>
+
+    <hr class="section-divider">
+
+    <h2 id="rizzo"><div class="case-block"><div class="case-number">Case 1</div><div class="case-name">Re Rizzo &amp; Rizzo Shoes Ltd., [1998] 1 SCR 27</div></div></h2>
+
+    <p>When Rizzo &amp; Rizzo Shoes went bankrupt, the trustee argued employees weren't owed termination pay because technically no one had been "terminated" — the bankruptcy simply ended things. The Supreme Court of Canada said no: employment standards legislation had to be read in a way that protected employees, not in a narrow, technical way.<sup>1</sup></p>
+
+    <p>The case confirmed that employment standards must be interpreted broadly and in favour of employees.<sup>2</sup> That employee-protective lens shows up again and again in employment and labour decisions. Geoffrey England's <em>Individual Employment Law</em> puts it plainly — most employment relationships have a power imbalance, and that imbalance is exactly what employment standards legislation exists to correct.<sup>3</sup></p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>Don't treat statutory minimums as loopholes to work around. Courts assume there's a power imbalance between employers and employees, and they read the law to correct it. If you're taking a creative route around basic rights, assume it will not go well.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="brake"><div class="case-block"><div class="case-number">Case 2</div><div class="case-name">Brake v. PJ-M2R Restaurant Inc., 2017 ONCA 402</div></div></h2>
+
+    <p>Esther Brake managed McDonald's franchise locations for 25 years. She was put on a performance improvement plan that the trial judge later described as designed to fail: shifting goals, moving targets, and documentation for a decision that had already been made.<sup>4</sup> When she didn't meet the targets, she was told: accept a demotion or leave.</p>
+
+    <p>She left. The Court of Appeal found she had been constructively dismissed — meaning fired without calling it a firing. A significant demotion in role, status, or pay wasn't a "choice"; it was equal to a termination.<sup>5</sup> The employer also argued she should have accepted the demotion to reduce her damages. The court rejected that — employees don't have to mitigate by working in conditions of humiliation or serious loss of status.<sup>6</sup></p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>Changing someone's role, pay, or reporting structure without their agreement can amount to a dismissal. Performance plans shouldn't be treated as a formality with a pre-determined conclusion. Ask yourself how a major demotion or hours cut would look if a judge read the story later.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="hritchuk"><div class="case-block"><div class="case-number">Case 3</div><div class="case-name">R v. Hritchuk, 2012 QCCS 4525</div></div></h2>
+
+    <p>At a Quebec auto repair shop, a service manager let workers use an improvised fuel pump. Two employees were badly burned. The manager — not just the company — was charged under the Criminal Code.<sup>7</sup></p>
+
+    <p>After the Westray mine disaster, Parliament added a provision that anyone who "directs the work of another person" has a personal legal duty to take reasonable steps to prevent bodily harm.<sup>8</sup> In serious cases that can mean criminal charges for the individual manager, not just the organization. Prosecutors reserve Criminal Code charges for the most serious situations, and most safety issues will be handled under provincial occupational health and safety laws — which can also impose fines and, in some circumstances, personal liability on supervisors.<sup>9</sup></p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>Safety is not the job of HR or the Safety Officer alone. If you direct work, you personally own a duty to take reasonable steps to keep people safe. Follow safety procedures precisely, and if something looks unsafe, stop the work and escalate it.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="wallace"><div class="case-block"><div class="case-number">Case 4</div><div class="case-name">Wallace v. United Grain Growers Ltd., [1997] 3 SCR 701 &amp; Honda Canada Inc. v. Keays, 2008 SCC 39</div></div></h2>
+
+    <p>Jack Wallace was a top salesperson with 14 years of service who was let go badly: false allegations of cause, damaging rumours, and a process designed to humiliate. The Supreme Court extended his notice period specifically because of how the termination was handled.<sup>10</sup> In <em>Honda v. Keays</em>, the Court refined how damages work — bad faith in dismissal is addressed through extended notice and, in some cases, separate damages.<sup>11</sup></p>
+
+    <p>Bad faith can include alleging cause you can't support, giving pretextual reasons, spreading or tolerating damaging rumours, or publicly humiliating the person on the way out. Malicious intent isn't required — careless disregard for someone's dignity can be enough.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>Having a legitimate reason to terminate doesn't protect you from how you do it. Be honest. Don't allege "cause" unless you can prove it. Don't weaponize rumours or embarrassment. Poor process can translate directly into more money owed.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="mckinley"><div class="case-block"><div class="case-number">Case 5</div><div class="case-name">McKinley v. BC Tel, [2001] 2 SCR 161</div></div></h2>
+
+    <p>Martin McKinley took a leave of absence from BC Tel. Upon returning, he indicated his doctor had advised him to return to a less stressful position. His employer discovered the doctor had actually cleared him to return to his original duties. BC Tel dismissed him without notice, arguing that any dishonesty of any kind was enough to amount to just cause. The Supreme Court disagreed.<sup>12</sup></p>
+
+    <p>The case clarifies that "just cause" requires a full contextual analysis: the nature and seriousness of the misconduct, the employee's role, and the entire employment history. The question is whether the misconduct damages the employment relationship so badly that continuing it is impossible.<sup>13</sup> The same act might justify termination for a new employee in a sensitive role, but not for a 20-year veteran with a strong record whose misstep is out of character. "Zero-tolerance" language in policy doesn't override that contextual approach.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>Firing someone for cause — with no notice or severance — is legally hard to justify. Most situations that feel like "obvious cause" in the moment don't meet the actual standard. Involve HR early for concerns around performance or conduct.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="potter"><div class="case-block"><div class="case-number">Case 6</div><div class="case-name">Potter v. New Brunswick Legal Aid Services Commission, 2015 SCC 10</div></div></h2>
+
+    <p>David Potter was suspended indefinitely — with pay — while his employer worked on a plan to terminate him. He was given no clear explanation, just effectively sent home. The Supreme Court found constructive dismissal.<sup>14</sup> The employer had no authority to suspend him indefinitely without a legitimate, communicated reason. Because the real motivation was being concealed, Potter could reasonably conclude his employment relationship had effectively ended.</p>
+
+    <p>Courts have applied similar reasoning when employers unilaterally remove duties, suspend employees, or leave them "on the bench" without clear communication and legitimate grounds.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>If you're removing someone's duties or significantly changing their role, communicate clearly and act within your authority. Silence is not neutral — even if the person is still being paid, leaving them without explanation can have legal consequences.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="gordon"><div class="case-block"><div class="case-number">Case 7</div><div class="case-name">Gordon Food Service Canada Ltd., 2024 BCLRB 130</div></div></h2>
+
+    <p>During a Teamsters organizing campaign at Gordon Food Service, the employer disciplined and terminated three employees. The BC Labour Relations Board found those actions were tainted by anti-union motivation.<sup>15</sup> It ordered reinstatement, back pay, and a mandatory meeting between the union and employees on company time — with management excluded.</p>
+
+    <p>During a union drive, there are clear lines you cannot cross: interrogating people about union activity, threatening consequences, promising benefits if the union loses, or disciplining anyone for exercising their right to organize.<sup>17</sup> Even the timing of discipline around union activity will be scrutinized.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>If a union drive starts, call HR or legal immediately. Keep operations normal, apply policies consistently, share only factual information, and avoid anything that could look like interference. Everything you do during a campaign will be scrutinized.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="mcgregor"><div class="case-block"><div class="case-number">Case 8</div><div class="case-name">McGregor v. Morelli and Quarterway Hotel, 2006 BCHRT 277</div></div></h2>
+
+    <p>During a job interview, Ms. McGregor was asked about her age, marital status, and whether she had children. The interview ended shortly after she answered. She was qualified. Someone else was hired. The BC Human Rights Tribunal found the employer had discriminated — not because it could prove intent, but because the questions themselves signalled that protected characteristics had entered the hiring decision.<sup>18</sup></p>
+
+    <p>BC's Human Rights Code prohibits discrimination based on protected grounds in job advertisements and interviews.<sup>19</sup> The test isn't whether the interviewer meant to discriminate. The fact that the questions were asked is enough to raise an inference that those characteristics influenced the outcome. The same rule applies across provinces.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>If your organization has provided a list of approved interview questions, follow it precisely. That list exists for a legal reason. Going off-script with questions that touch on a candidate's personal life, background, or family situation — even conversationally — can expose the organization to a human rights complaint. If you have a genuine concern about availability or ability to do the job, ask directly about the schedule or physical requirements instead.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="meiorin"><div class="case-block"><div class="case-number">Case 9</div><div class="case-name">BC Public Service Employee Relations Commission v. BCGSEU (Meiorin), [1999] 3 SCR 3</div></div></h2>
+
+    <p>Tawney Meiorin was a forest firefighter who failed a standardized aerobic fitness test and lost her job. Evidence showed the test was harder for most women to pass and wasn't clearly necessary to perform the actual firefighting work. The Supreme Court found the standard discriminatory and built what's now known as the Meiorin test.<sup>20</sup></p>
+
+    <p>Employers must design workplace standards to be inclusive where possible. A rule that adversely affects a protected group must be justified as a bona fide occupational requirement — and even then, employers must accommodate to the point of undue hardship.<sup>21</sup> This framework sits behind much of what managers experience day-to-day: modified duties, adjusted schedules, exceptions to dress codes, flexibility around attendance for disability-related reasons, or religious observances.</p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>Avoid one-size-fits-all rules on hours, duties, or physical standards, and don't say "that's just the job" without checking. When an employee raises medical, religious, or other human-rights-based needs, your job is to engage HR and look for reasonable accommodation — not to dismiss it as special treatment.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2 id="robichaud"><div class="case-block"><div class="case-number">Case 10</div><div class="case-name">Robichaud v. Canada (Treasury Board), [1987] 2 SCR 84</div></div></h2>
+
+    <p>In <em>Robichaud</em>, the Supreme Court established that employers are liable for discriminatory harassment committed by their employees in the course of employment — even if management didn't directly participate.<sup>22</sup> Doing nothing is not a defence.</p>
+
+    <p>That liability framework, combined with provincial occupational health and safety legislation, means employers have a legal duty to investigate harassment and to respond to incidents even when there's no formal written complaint — and even when the person affected says they "don't want to make a big deal out of it." Ontario's Divisional Court confirmed as recently as 2024 that the obligation to investigate is triggered the moment an employer is aware of a potential incident.<sup>23,24</sup></p>
+
+    <div class="takeaway">
+      <div class="takeaway-label">What this means</div>
+      <p>You can't ignore harassment because it seems minor, private, or "between friends." Your role is to take concerns seriously, avoid minimizing or blaming, make sure they reach HR or the right internal process, and keep a basic record of what you observed and reported. "Just joking" is not a defence.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <h2>Bringing it back to daily management</h2>
+
+    <p>You don't need to memorize these case names. What matters is the pattern they create: the legal floor is higher — and more employee-protective — than most managers assume. Demotions, suspensions, and jokes can have legal consequences just as much as formal terminations. Safety, accommodation, and harassment are your responsibilities too, not only HR's.</p>
+
+    <p>If you change roles, hours, duties, or how you treat someone on the way out, ask yourself one question: if a judge or labour board read this story later, would it look fair? If you're not sure, that's the moment to stop and call HR.</p>
+
+    <hr class="article-divider">
+
+    <div class="disclaimer">
+      <strong>Note:</strong> I am not a lawyer, just an HR professional with a passion for this stuff. This article is intended for general informational purposes only and does not constitute legal advice. Employment laws vary by province and jurisdiction. Consult a qualified employment lawyer or your HR partner for guidance specific to your situation.
+    </div>
+
+    <div class="notes-section">
+      <h3>Notes</h3>
+      <ol>
+        <li><em>Re Rizzo &amp; Rizzo Shoes Ltd.</em>, [1998] 1 SCR 27, at para 21.</li>
+        <li>Ibid., citing Elmer Driedger, <em>Construction of Statutes</em>, 2nd ed. (Toronto: Butterworths, 1983), at 87.</li>
+        <li>Geoffrey England, <em>Individual Employment Law</em>, 2nd ed. (Toronto: Irwin Law, 2008), at 3.</li>
+        <li><em>Brake v. PJ-M2R Restaurant Inc.</em>, 2016 ONSC (trial), aff'd 2017 ONCA 402, at para 18.</li>
+        <li><em>Brake v. PJ-M2R Restaurant Inc.</em>, 2017 ONCA 402, at para 67, applying <em>Potter v. New Brunswick Legal Aid Services Commission</em>, 2015 SCC 10.</li>
+        <li>Ibid., at para 90, citing <em>Evans v. Teamsters, Local 31</em>, [2008] 1 SCR 661.</li>
+        <li><em>R v. Hritchuk</em>, 2012 QCCS 4525.</li>
+        <li>Criminal Code, RSC 1985, c C-46, s 217.1, as amended by SC 2003, c 21.</li>
+        <li>Rubin Thomlinson LLP, "The 10th Anniversary of Bill C-45: Reflecting on a Decade of OHS Liability Under the Criminal Code" (January 2021).</li>
+        <li><em>Wallace v. United Grain Growers Ltd.</em>, [1997] 3 SCR 701, at para 98.</li>
+        <li><em>Honda Canada Inc. v. Keays</em>, [2008] 2 SCR 362, 2008 SCC 39, at para 59.</li>
+        <li><em>McKinley v. BC Tel</em>, [2001] 2 SCR 161, at para 48.</li>
+        <li><em>Dowling v. Ontario (Workplace Safety and Insurance Board)</em>, 2004 CanLII 43692 (ONCA), applying <em>McKinley</em>.</li>
+        <li><em>Potter v. New Brunswick Legal Aid Services Commission</em>, 2015 SCC 10, at paras 57–58.</li>
+        <li><em>Gordon Food Service Ltd.</em>, 2024 BCLRB 103 (CanLII).</li>
+        <li>Canada Industrial Relations Board, "Unfair Labour Practice" (2023).</li>
+        <li>Siskinds LLP, "Labour Law 101: Union-Organizing Campaigns" (March 2022).</li>
+        <li><em>McGregor v. Morelli and Quarterway Hotel</em>, 2006 BCHRT 277.</li>
+        <li>BC Human Rights Code, RSBC 1996, c 210, s 13.</li>
+        <li><em>BC (Public Service Employee Relations Commission) v. BCGSEU</em>, [1999] 3 SCR 3, 1999 SCC 48, at para 54.</li>
+        <li>Ibid., at para 54 (three-part Meiorin test).</li>
+        <li><em>Robichaud v. Canada (Treasury Board)</em>, [1987] 2 SCR 84.</li>
+        <li><em>Metrolinx v. Amalgamated Transit Union, Local 1587</em>, 2024 ONSC 1900.</li>
+        <li>Miller Thomson LLP, "The Duty to Investigate Workplace Harassment in the Absence of a Complaint" (September 2024).</li>
+      </ol>
+    </div>
+
+  </article>
+</div>
+
+<section class="more-articles">
+  <div class="more-inner">
+    <div class="more-label">More articles</div>
+    <div class="more-grid">
+      <a class="more-card" href="/articles/pip-problem.html">
+        <span class="more-card-tag">Performance Management</span>
+        <span class="more-card-title">The PIP Problem: Are We Actually Trying to Help?</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+      <a class="more-card" href="/articles/good-intentions.html">
+        <span class="more-card-tag">Employee Relations</span>
+        <span class="more-card-title">Good Intentions Don't Erase Discrimination</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+      <a class="more-card" href="/articles/unlocking-high-performance.html">
+        <span class="more-card-tag">Book Reviews</span>
+        <span class="more-card-title">Book Review: Unlocking High Performance by Jason Lauritsen</span>
+        <span class="more-card-read">Read →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="yr"></span> Tanner Waldo · People &amp; Culture Advisor</span>
+  <span><a href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a> · <a href="https://www.linkedin.com/in/tannerw" target="_blank">linkedin.com/in/tannerw</a></span>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
