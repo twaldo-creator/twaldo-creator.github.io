@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tanner Waldo — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: letter;
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: #fff;
+    color: #1a1a18;
+    font-size: 8.8pt;
+    line-height: 1.6;
+    width: 8.5in;
+    margin: 0 auto;
+  }
+
+  .header {
+    background: #1a1a18;
+    padding: 22px 38px 20px;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -55px; right: -55px;
+    width: 280px; height: 280px;
+    border: 0.8px solid rgba(201,168,76,0.22);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -18px; right: -18px;
+    width: 185px; height: 185px;
+    border: 0.5px solid rgba(201,168,76,0.11);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .header-eyebrow {
+    font-size: 6.2pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30pt;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header-title {
+    font-size: 8.5pt;
+    color: #c9a84c;
+    letter-spacing: 0.02em;
+    margin-bottom: 5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header-rule {
+    border: none;
+    border-top: 0.6px solid #c9a84c;
+    margin: 6px 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .header-contact {
+    font-size: 7.2pt;
+    color: #cccccc;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .body {
+    padding: 0 38px 32px;
+  }
+
+  .section {
+    margin-top: 13px;
+    margin-bottom: 5px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10.5pt;
+    font-weight: 400;
+    color: #1a1a18;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 0.6px solid #c9a84c;
+    margin-bottom: 8px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .summary {
+    font-size: 8.8pt;
+    line-height: 1.75;
+    color: #1a1a18;
+  }
+
+  .competencies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px 8px;
+  }
+
+  .competency-item {
+    font-size: 8.2pt;
+    color: #1a1a18;
+    padding: 2px 0;
+  }
+
+  .job {
+    margin-bottom: 9px;
+  }
+
+  .job-title {
+    font-weight: 500;
+    font-size: 9.2pt;
+    color: #1a1a18;
+    margin-bottom: 1px;
+  }
+
+  .job-meta {
+    font-size: 7.8pt;
+    color: #666660;
+    letter-spacing: 0.03em;
+    margin-bottom: 5px;
+  }
+
+  .job ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .job ul li {
+    font-size: 8.5pt;
+    color: #1a1a18;
+    line-height: 1.65;
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 2.5px;
+  }
+
+  .job ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #1a1a18;
+  }
+
+  .edu-item {
+    margin-bottom: 8px;
+  }
+
+  .edu-degree {
+    font-weight: 500;
+    font-size: 8.8pt;
+    color: #1a1a18;
+    margin-bottom: 1px;
+  }
+
+  .edu-school {
+    font-size: 7.6pt;
+    color: #666660;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .edu-detail {
+    font-size: 7.8pt;
+    color: #666660;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-eyebrow">People &amp; Culture &nbsp;·&nbsp; Employee Relations &nbsp;·&nbsp; Talent Acquisition</div>
+    <div class="header-name">Tanner Waldo</div>
+    <div class="header-title">People &amp; Culture Advisor &nbsp;|&nbsp; HR Generalist</div>
+    <hr class="header-rule">
+    <div class="header-contact">
+      (604) 300-0760 &nbsp;·&nbsp; hello@tannerwaldo.com &nbsp;·&nbsp; tannerwaldo.com &nbsp;·&nbsp; linkedin.com/in/tannerw &nbsp;·&nbsp; Open to remote, hybrid, or on-site roles across Canada
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section">
+      <div class="section-title">Summary</div>
+      <hr class="section-rule">
+    </div>
+    <p class="summary">HR generalist with two years of national field HR experience supporting approximately 130 retail locations and 3,000 employees across Canada, backed by over a decade in frontline store leadership. Experienced across the full generalist range: employee relations investigations, leave and disability management, policy interpretation, recruitment, and stakeholder advisory work.</p>
+
+    <div class="section">
+      <div class="section-title">Core Competencies</div>
+      <hr class="section-rule">
+    </div>
+    <div class="competencies">
+      <div class="competency-item">Employee Relations &amp; HR Advisory</div>
+      <div class="competency-item">Recruitment &amp; Selection</div>
+      <div class="competency-item">Multi-Site Operations Leadership</div>
+      <div class="competency-item">Leave &amp; Disability Management</div>
+      <div class="competency-item">HRIS &amp; Systems Support (Workday)</div>
+      <div class="competency-item">Training Delivery &amp; Coordination</div>
+      <div class="competency-item">Policy &amp; Legislation Interpretation</div>
+      <div class="competency-item">Plain Language Communication</div>
+      <div class="competency-item">Stakeholder Communication</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <hr class="section-rule">
+    </div>
+
+    <div class="job">
+      <div class="job-title">Field Human Resources Specialist</div>
+      <div class="job-meta">MICHAELS &nbsp;·&nbsp; Remote &nbsp;·&nbsp; March 2024 – February 2026 &nbsp;·&nbsp; Position eliminated in company-wide restructuring.</div>
+      <ul>
+        <li>Part of a three-person HR team supporting eight District Directors, approximately 130 Store Managers, and 3,000 team members across Canada. Regularly took on files and responsibilities beyond formal scope.</li>
+        <li>Conducted one to two ER investigations per month — harassment, safety, falsified records, accommodation disputes, and complex addiction-related cases — from intake through outcome recommendations to HR leadership and Legal.</li>
+        <li>Managed a national leave and accommodation portfolio of 30–50 open files; served as primary liaison between field leaders, the third-party LOA administrator, insurer, Payroll, and Benefits. Guided managers through undue hardship analysis, graduated return-to-work plans, and denial decisions.</li>
+        <li>Served as point of contact for store and district leaders across Canada on policy, employment legislation, and HR procedures; advised by phone, email, and in person — often under time pressure and always in plain language.</li>
+        <li>Reduced compliance risk by designing and delivering a national co-op student registration program from scratch; surveyed all locations, partnered with Legal, built a Microsoft Forms and Excel tracker, and trained eight District Directors via train-the-trainer for rollout to approximately 130 managers.</li>
+        <li>Resolved 300+ Workday address exceptions blocking T4 issuance for 3,000 employees in two weeks; identified root-cause ATS configuration gaps and partnered with HRIS to prevent recurrence.</li>
+        <li>Conducted six to twelve store visits per month, documenting observations and providing written recommendations to District Directors on team experience, compliance, and operational concerns.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Store Manager</div>
+      <div class="job-meta">MICHAELS &nbsp;·&nbsp; Vancouver, BC &nbsp;·&nbsp; August 2021 – March 2024</div>
+      <ul>
+        <li>Led store operations for up to 50 employees with approximately $7.5M in annual sales; led the district in comparable sales growth in 2023.</li>
+        <li>Handpicked to stabilize a struggling high-volume location following leadership turnover; rebuilt routines and improved team and operational results.</li>
+        <li>Designated district Centre of Excellence training store; ran one to four week onboarding programs for every newly hired or promoted salaried and hourly manager.</li>
+        <li>Selected as 2023 High-Potential Store Manager; completed a formal leadership development program before transitioning into the field HR role.</li>
+        <li>Coached a high-potential ASM over one year on leadership fundamentals; she was promoted to Store Manager shortly after my move into HR.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Assistant Store Manager</div>
+      <div class="job-meta">MICHAELS &nbsp;·&nbsp; Richmond, BC &nbsp;·&nbsp; February 2014 – August 2021</div>
+      <ul>
+        <li>Led teams of 30–40 across multiple locations over seven years; assigned to the Centre of Excellence store as the district training site for new management hires.</li>
+        <li>Represented the district at two off-site job fairs, interviewing candidates on the spot and routing them to store managers with written notes and recommendations.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education &amp; Development</div>
+      <hr class="section-rule">
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor of Human Resources and Labour Relations</div>
+      <div class="edu-school">Athabasca University</div>
+      <div class="edu-detail">Employment law, human rights, labour relations, collective bargaining, grievance and arbitration, Canada Labour Code, and employment standards.</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">CPHR Designation (In Progress)</div>
+      <div class="edu-school">CPHR Alberta</div>
+      <div class="edu-detail">Registered to write the National Knowledge Exam, November 2026. Monthly roundtable attendance.</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">ADP Entry-Level Compensation and Benefits Analyst Certificate</div>
+      <div class="edu-school">ADP Learning Academy, 2026</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">IBM Generative AI for HR Professionals Specialization</div>
+      <div class="edu-school">Coursera, March 2026</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
