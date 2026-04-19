@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tanner Waldo | People & Culture Advisor</title>
+<title>Tanner Waldo | People &amp; Culture Advisor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="People & Culture Advisor for frontline organizations. Field HR experience supporting 130+ store managers across Canada.">
+<meta name="description" content="People &amp; Culture Advisor for frontline organizations. Field HR experience supporting 130+ store managers across Canada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -155,6 +155,23 @@
   .edu-school { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
   .edu-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
 
+  .featured-articles { padding: 6rem 2.5rem; background: var(--cream); }
+  .featured-inner { max-width: 1100px; margin: 0 auto; }
+  .featured-header { margin-bottom: 3rem; }
+  .featured-kicker { font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .featured-kicker::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .featured-title { font-family: var(--serif); font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 400; line-height: 1.15; color: var(--ink); }
+  .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+  .featured-card { background: var(--warm-white); border: 1px solid var(--border); padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .featured-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(26,26,24,0.08); }
+  .featured-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); font-weight: 500; }
+  .featured-card-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; line-height: 1.3; color: var(--ink); }
+  .featured-excerpt { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+  .featured-read { font-size: 0.82rem; color: var(--gold); font-weight: 500; letter-spacing: 0.04em; }
+  .featured-cta { text-align: center; }
+  .featured-cta a { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border: 1px solid var(--border); border-radius: 2px; transition: all 0.2s; }
+  .featured-cta a:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
   .contact-cta { background: var(--ink); color: #fff; text-align: center; padding: 6rem 2.5rem; }
   .cta-label { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
   .cta-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; margin-bottom: 1rem; line-height: 1.15; }
@@ -186,6 +203,7 @@
     .experience-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .cases-grid { grid-template-columns: repeat(2, 1fr); }
     .cases-header { flex-direction: column; align-items: flex-start; }
+    .featured-grid { grid-template-columns: repeat(2, 1fr); }
     .education-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .nav-links { display: none; }
     .hero-stats { grid-template-columns: repeat(2, 1fr); }
@@ -194,7 +212,8 @@
   @media (max-width: 600px) {
     .skills-grid { grid-template-columns: 1fr; }
     .cases-grid { grid-template-columns: 1fr; }
-    .skills-section, .experience, .cases, .education, .contact-cta { padding: 4rem 1.25rem; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .skills-section, .experience, .cases, .education, .featured-articles, .contact-cta { padding: 4rem 1.25rem; }
     .nav { padding: 0 1.25rem; }
   }
 </style>
@@ -209,8 +228,9 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#cases">Case Studies</a></li>
-      <li><a href="#education">Education</a></li>
-          <li><a href="articles.html"><b>Articles</b></a></li>
+      <li><a href="#scenarios">Scenarios</a></li>
+      <li><a href="/resume.html">Resume</a></li>
+      <li><a href="/articles.html">Articles</a></li>
     </ul>
   </nav>
 </header>
@@ -279,11 +299,11 @@
 <section class="about" id="about">
   <div class="about-left">
     <div class="section-kicker">Who I Am</div>
-    <h2 class="section-title">The title was Specialist. The work was <em>advisory.</em></h2>
+    <h2 class="section-title">People &amp; Culture advisor for frontline teams, where the work <em>meets the customer.</em></h2>
     <div class="about-body">
-      <p>I was part of a three-person HR team supporting eight District Directors and roughly 130 Store Managers across Canada on employee relations, investigations, leaves and accommodations, and policy. In practice, work was distributed by relationship and expertise — and I regularly found myself advising at a level above my title — on complex ER cases, accommodation decisions, and situations where the policy didn't give a clear answer.</p>
+      <p>I have experience supporting the HR function for a nationwide retail team with over 3,000 employees across 130 stores. I regularly found myself advising at a level above my title — on complex ER cases, accommodation decisions, and situations where the policy didn't give a clear answer.</p>
       <p>On visits, I walked the floor, talked with whoever was on shift, and asked how work felt in practice. I used what I heard, along with engagement results and active cases, to help leaders make decisions that were fair to people and defensible for the company.</p>
-      <p>I've spent my career in roles where you often have to laugh for a minute, then roll up your sleeves and tackle the problem. That's the kind of culture I want to be part of.</p>
+      <p>I'm looking for my next opportunity to contribute to a frontline team — retail, hospitality, healthcare, cultural institutions, financial services. I'm especially drawn to organizations where the mission is visible in the day-to-day work, and where it's important for the people on the floor to have a strong connection to the company culture.</p>
     </div>
   </div>
   <div class="about-right">
@@ -312,7 +332,6 @@
 <section class="skills-section" id="skills">
   <div class="skills-header">
     <div class="section-kicker">Core Skills</div>
-    <!-- CHANGE 1: Replaced generic header with specific, voice-driven copy -->
     <h2 class="section-title" style="font-size: clamp(1.8rem, 2.5vw, 2.4rem); text-align: center;">Managing my own frontline teams first meant I wasn't asking managers to trust theory. I was asking them to trust someone who'd been there.</h2>
   </div>
   <div class="skills-grid">
@@ -344,7 +363,7 @@
     <div class="skill-card">
       <div class="skill-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
       <div class="skill-name">Compensation, Data &amp; HRIS</div>
-      <div class="skill-desc">Basic compensation and benefits questions, HRIS cleanup, and people data projects. Resolved 300+ address exceptions under deadline pressure, then fixed the onboarding process causing them. Entry-level compensation certificate; Google Data Analytics in progress.</div>
+      <div class="skill-desc">Basic compensation and benefits questions, HRIS cleanup, and people data projects. Resolved 300+ address exceptions under deadline pressure, then fixed the onboarding process causing them. Entry-level compensation certificate completed 2026.</div>
     </div>
 
     <div class="skill-card">
@@ -361,7 +380,6 @@
     <div class="experience-left">
       <div class="section-kicker" style="color: var(--gold);">Experience</div>
       <h2 class="section-title" style="color: #fff; font-size: clamp(1.8rem, 2.8vw, 2.8rem);">I learned HR by <em>living</em> the operations side first.</h2>
-      <!-- CHANGE 2: Replaced abstract competence summary with specific, grounded copy -->
       <p class="section-body">Most of the leaders I supported had been doing this longer than I'd been in HR. The operations background meant I wasn't starting from scratch every conversation — and it meant they knew it.</p>
     </div>
     <div class="timeline">
@@ -472,11 +490,6 @@
         <div class="edu-desc">Core compensation and benefits concepts supporting data-informed people &amp; culture decisions.</div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">Google Data Analytics Professional Certificate (in progress)</div>
-        <div class="edu-school">Google / Coursera</div>
-        <div class="edu-desc">Data analysis, spreadsheets, and evidence-based problem-solving for HR contexts.</div>
-      </div>
-      <div class="edu-item">
         <div class="edu-degree">Selected Professional Development</div>
         <div class="edu-school">Various</div>
         <div class="edu-desc">Workplace investigations (Getting It Right) · Generative AI for HR Professionals (IBM) · Autism &amp; Neurodiversity in the Workplace · CPHR exam prep</div>
@@ -485,7 +498,57 @@
   </div>
 </section>
 
-<!-- CHANGES 3 & 4: Updated CTA headline and body copy -->
+<section class="cases" id="scenarios">
+  <div class="cases-inner">
+    <div class="cases-header">
+      <div>
+        <div class="section-kicker">How I Think</div>
+        <h2 class="section-title" style="font-size: clamp(1.8rem, 2.5vw, 2.4rem);">Real situations. <em>Real reasoning.</em></h2>
+      </div>
+      <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 340px; line-height: 1.7; flex-shrink: 0;">These scenarios from real job interviews show how I approach common HR problems — from investigations and compliance to payroll and performance management.</p>
+    </div>
+    <div class="cases-grid">
+
+      <a href="/scenarios/abrasive-trainer.html" class="case-card" style="text-decoration: none; color: inherit;">
+        <span class="case-tag">Employee Relations</span>
+        <h3 class="case-title">Addressing Abrasive Behavior in Training</h3>
+        <p class="case-preview">A long-term, high-performing employee is training new hires but exhibiting dismissive and impatient behavior. How to investigate, address, and support everyone involved.</p>
+        <span class="case-read">Read scenario →</span>
+      </a>
+
+      <a href="/scenarios/early-departure.html" class="case-card" style="text-decoration: none; color: inherit;">
+        <span class="case-tag">Compliance · Integrity</span>
+        <h3 class="case-title">When a Widespread Practice Becomes a Problem</h3>
+        <p class="case-preview">A new employee discovers that leaving job sites early while being paid for a full day is common practice. How to investigate, assess the risk, and reset expectations.</p>
+        <span class="case-read">Read scenario →</span>
+      </a>
+
+      <a href="/scenarios/payroll-error.html" class="case-card" style="text-decoration: none; color: inherit;">
+        <span class="case-tag">Payroll · Communication</span>
+        <h3 class="case-title">Discovering and Correcting a Systematic Underpayment Error</h3>
+        <p class="case-preview">A routine audit reveals that 3,000 employees have been underpaid overtime for three months due to a system configuration error. How to respond, communicate, and prevent recurrence.</p>
+        <span class="case-read">Read scenario →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="featured-articles">
+  <div class="featured-inner">
+    <div class="featured-header">
+      <div class="featured-kicker">Featured Writing</div>
+      <h2 class="featured-title">Recent thinking on HR and frontline teams</h2>
+    </div>
+    <div id="featured-cards" class="featured-grid">
+      <!-- Cards populate here -->
+    </div>
+    <div class="featured-cta">
+      <a href="/articles.html">See all articles →</a>
+    </div>
+  </div>
+</section>
+
 <section class="contact-cta">
   <p class="cta-label">Get in touch</p>
   <h2 class="cta-title">Have People &amp; Culture questions about your frontline team? Let's talk.</h2>
@@ -493,7 +556,7 @@
   <div class="cta-links">
     <a class="btn-primary" href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a>
     <a class="btn-outline" href="https://www.linkedin.com/in/tannerw" target="_blank">LinkedIn Profile</a>
-    <a class="btn-outline" href="Tanner_Waldo_Resume.pdf" target="_blank">Download Resume</a>
+    <a class="btn-outline" href="/resume.html">View Resume</a>
   </div>
 </section>
 
@@ -512,61 +575,61 @@
 <template id="coop-modal">
   <span class="modal-tag">Case Example · Compliance &amp; Process</span>
   <h2>Turning an undocumented Co-op placement into a simple tracking system</h2>
-  <p><strong>Context</strong>In my HR role supporting a large retail network, risk often showed up in small gaps between policy and day-to-day practice. Co-op students were one of those areas.</p>
-  <p><strong>Challenge</strong>On a store visit, a manager introduced me to "our Co-op students" — but I had no paperwork for them. Students were already working without required waivers or insurance in place. I needed to close the immediate risk, then figure out if this was a pattern.</p>
-  <p><strong>What I did</strong>I completed the missing documents with that store, then sent a short three-question check-in to all stores. All stores replied. We found about fifteen undocumented placements in a single semester. I partnered with Legal to confirm the requirements were sound, then built a simple Microsoft Forms tracker feeding into a shared Excel file. District leaders walked their store managers through it on regular calls — making Co-op tracking part of normal planning rather than a separate task.</p>
-  <p><strong>Result</strong>Immediate documentation gaps closed. HR had a single view of Co-op placements and status. Leaders had a simple, repeatable process that took almost no extra effort to maintain.</p>
-  <p><strong>What I took from it</strong>If one store has a gap, it's worth checking whether the process is setting everyone up to miss the same step. The best compliance solutions are the shortest ones.</p>
+  <p><strong>Context</strong> In my HR role supporting a large retail network, risk often showed up in small gaps between policy and day-to-day practice. Co-op students were one of those areas.</p>
+  <p><strong>Challenge</strong> On a store visit, a manager introduced me to "our Co-op students" — but I had no paperwork for them. Students were already working without required waivers or insurance in place. I needed to close the immediate risk, then figure out if this was a pattern.</p>
+  <p><strong>What I did</strong> I completed the missing documents with that store, then sent a short three-question check-in to all stores. All stores replied. We found about fifteen undocumented placements in a single semester. I partnered with Legal to confirm the requirements were sound, then built a simple Microsoft Forms tracker feeding into a shared Excel file. District leaders walked their store managers through it on regular calls — making Co-op tracking part of normal planning rather than a separate task.</p>
+  <p><strong>Result</strong> Immediate documentation gaps closed. HR had a single view of Co-op placements and status. Leaders had a simple, repeatable process that took almost no extra effort to maintain.</p>
+  <p><strong>What I took from it</strong> If one store has a gap, it's worth checking whether the process is setting everyone up to miss the same step. The best compliance solutions are the shortest ones.</p>
 </template>
 
 <template id="safety-modal">
   <span class="modal-tag">Case Example · Investigation &amp; Integrity</span>
   <h2>Looking into falsified safety records raised by a team member</h2>
-  <p><strong>Context</strong>Part of my work was to listen when people raised concerns that didn't fit neatly into a form. Health and safety concerns were especially important because they touched both legal risk and day-to-day trust.</p>
-  <p><strong>Challenge</strong>A team member pulled me aside on a store visit and told me their name was appearing on safety committee minutes for meetings they hadn't attended. They were uncomfortable but worried about speaking up.</p>
-  <p><strong>What I did</strong>I thanked them, set honest expectations about what I could share with them about outcomes, and asked factual questions: which records, how they knew, whether others were in the same position. I then quietly reviewed the safety binder and recent minutes — comparing dates, names, and attendance against who was actually in the building on those days. Based on what I found, I escalated to the appropriate leader and investigations partners, framing it as a potential integrity and safety risk rather than just a paperwork problem.</p>
-  <p><strong>Result</strong>The concern was taken seriously, escalated to the right people, and treated as more than a clerical issue. The team member saw that raising a concern with HR led to a real response.</p>
-  <p><strong>What I took from it</strong>My role wasn't to run the entire investigation — it was to make sure the concern was heard, documented, and escalated appropriately.</p>
+  <p><strong>Context</strong> Part of my work was to listen when people raised concerns that didn't fit neatly into a form. Health and safety concerns were especially important because they touched both legal risk and day-to-day trust.</p>
+  <p><strong>Challenge</strong> A team member pulled me aside on a store visit and told me their name was appearing on safety committee minutes for meetings they hadn't attended. They were uncomfortable but worried about speaking up.</p>
+  <p><strong>What I did</strong> I thanked them, set honest expectations about what I could share with them about outcomes, and asked factual questions: which records, how they knew, whether others were in the same position. I then quietly reviewed the safety binder and recent minutes — comparing dates, names, and attendance against who was actually in the building on those days. Based on what I found, I escalated to the appropriate leader and investigations partners, framing it as a potential integrity and safety risk rather than just a paperwork problem.</p>
+  <p><strong>Result</strong> The concern was taken seriously, escalated to the right people, and treated as more than a clerical issue. The team member saw that raising a concern with HR led to a real response.</p>
+  <p><strong>What I took from it</strong> My role wasn't to run the entire investigation — it was to make sure the concern was heard, documented, and escalated appropriately.</p>
 </template>
 
 <template id="availability-modal">
   <span class="modal-tag">Case Example · Performance &amp; Attendance</span>
   <h2>Resetting attendance expectations in an early morning team</h2>
-  <p><strong>Context</strong>Before moving into HR, I spent several years as a store manager. This case was an early morning freight team I inherited where lateness had become the norm.</p>
-  <p><strong>Challenge</strong>About six of fifteen people were regularly late. There was only a general expectation to arrive on time and no clear structure for handling patterns.</p>
-  <p><strong>What I did</strong>I reviewed the handbook, then met with the team as a group. I was direct: start times existed for a reason, they affected truck unloads and opening prep, and we were going to treat lateness more consistently from that point on. I built a simple structure — tracking on timecards, specific conversations when patterns appeared, written conversations if coaching didn't lead to change — and explained each step so it didn't feel arbitrary. Then I followed through every week.</p>
-  <p><strong>Result</strong>Late arrivals dropped sharply within three to four weeks. The opening manager could plan the work with confidence. This case became a practical example I used often when advising leaders on attendance issues in HR.</p>
-  <p><strong>What I took from it</strong>Clear expectations in plain language, a basic structure people can understand, and consistent follow-through. That's the whole formula.</p>
+  <p><strong>Context</strong> Before moving into HR, I spent several years as a store manager. This case was an early morning freight team I inherited where lateness had become the norm.</p>
+  <p><strong>Challenge</strong> About six of fifteen people were regularly late. There was only a general expectation to arrive on time and no clear structure for handling patterns.</p>
+  <p><strong>What I did</strong> I reviewed the handbook, then met with the team as a group. I was direct: start times existed for a reason, they affected truck unloads and opening prep, and we were going to treat lateness more consistently from that point on. I built a simple structure — tracking on timecards, specific conversations when patterns appeared, written conversations if coaching didn't lead to change — and explained each step so it didn't feel arbitrary. Then I followed through every week.</p>
+  <p><strong>Result</strong> Late arrivals dropped sharply within three to four weeks. The opening manager could plan the work with confidence. This case became a practical example I used often when advising leaders on attendance issues in HR.</p>
+  <p><strong>What I took from it</strong> Clear expectations in plain language, a basic structure people can understand, and consistent follow-through. That's the whole formula.</p>
 </template>
 
 <template id="pip-modal">
   <span class="modal-tag">Case Example · Performance Management</span>
   <h2>Supporting a manager through a complex performance improvement plan</h2>
-  <p><strong>Context</strong>A senior leader directed a store manager to put an assistant manager on a performance plan. The first draft was too vague to support real improvement or a defensible termination.</p>
-  <p><strong>Challenge</strong>I reviewed several versions and kept pushing for specific examples, clearer expectations, and better support commitments. The manager was frustrated. But the document still wasn't right.</p>
-  <p><strong>What I did</strong>When written feedback alone wasn't enough, I built a short slide deck explaining what a strong plan needed: specific behaviours and results, realistic timelines, concrete support from the manager. I scheduled a 30-minute call and walked him through it. After that conversation, he revised the plan — this time clearly, specifically, and aligned with policy. I stayed close to the case, checking in on how meetings were going and encouraging documentation of both improvements and ongoing issues.</p>
-  <p><strong>Result</strong>The assistant manager improved and successfully completed the plan. The manager learned what a solid plan looked like and how to play an active role in it — which carried into future performance conversations.</p>
-  <p><strong>What I took from it</strong>My job isn't only to protect the company from weak documentation. It's to make sure performance processes are fair and meaningful.</p>
+  <p><strong>Context</strong> A senior leader directed a store manager to put an assistant manager on a performance plan. The first draft was too vague to support real improvement or a defensible termination.</p>
+  <p><strong>Challenge</strong> I reviewed several versions and kept pushing for specific examples, clearer expectations, and better support commitments. The manager was frustrated. But the document still wasn't right.</p>
+  <p><strong>What I did</strong> When written feedback alone wasn't enough, I built a short slide deck explaining what a strong plan needed: specific behaviours and results, realistic timelines, concrete support from the manager. I scheduled a 30-minute call and walked him through it. After that conversation, he revised the plan — this time clearly, specifically, and aligned with policy. I stayed close to the case, checking in on how meetings were going and encouraging documentation of both improvements and ongoing issues.</p>
+  <p><strong>Result</strong> The assistant manager improved and successfully completed the plan. The manager learned what a solid plan looked like and how to play an active role in it — which carried into future performance conversations.</p>
+  <p><strong>What I took from it</strong> My job isn't only to protect the company from weak documentation. It's to make sure performance processes are fair and meaningful.</p>
 </template>
 
 <template id="hris-modal">
   <span class="modal-tag">Case Example · HRIS &amp; Operations</span>
   <h2>Fixing 300+ HRIS address errors so T4s could go out on time</h2>
-  <p><strong>Context</strong>HR work often sits at the intersection of systems, operations, and field practice. This one surfaced under deadline pressure.</p>
-  <p><strong>Challenge</strong>Payroll flagged more than 300 address exceptions blocking T4 uploads for roughly 3,000 employees, with a tight deadline. Fix the data, then figure out why it happened.</p>
-  <p><strong>What I did</strong>I worked through the exceptions case by case over about two weeks. As I worked, I tracked where errors were coming from — postal codes weren't a required field in the applicant tracking system, and some stores weren't completing onboarding steps consistently. Once T4 processing was secure, I partnered with HRIS to tighten how address data was captured and to generate a weekly onboarding status report.</p>
-  <p><strong>Result</strong>T4s went out on time. The root cause was addressed upstream, reducing the chance of the same issue next year.</p>
-  <p><strong>What I took from it</strong>Operational work in HR is often a chance to do advisory work at the same time. Fixing the records was necessary — stopping there would have meant cleaning up the same problem again the following year.</p>
+  <p><strong>Context</strong> HR work often sits at the intersection of systems, operations, and field practice. This one surfaced under deadline pressure.</p>
+  <p><strong>Challenge</strong> Payroll flagged more than 300 address exceptions blocking T4 uploads for roughly 3,000 employees, with a tight deadline. Fix the data, then figure out why it happened.</p>
+  <p><strong>What I did</strong> I worked through the exceptions case by case over about two weeks. As I worked, I tracked where errors were coming from — postal codes weren't a required field in the applicant tracking system, and some stores weren't completing onboarding steps consistently. Once T4 processing was secure, I partnered with HRIS to tighten how address data was captured and to generate a weekly onboarding status report.</p>
+  <p><strong>Result</strong> T4s went out on time. The root cause was addressed upstream, reducing the chance of the same issue next year.</p>
+  <p><strong>What I took from it</strong> Operational work in HR is often a chance to do advisory work at the same time. Fixing the records was necessary — stopping there would have meant cleaning up the same problem again the following year.</p>
 </template>
 
 <template id="leaves-modal">
   <span class="modal-tag">Case Example · Leaves, LTD &amp; RTW</span>
   <h2>Working through long-term leave and LTD backlogs</h2>
-  <p><strong>Context</strong>Medical leave and disability files had built up over several years with no clear next steps. Some employees had been away for years. The files were open but inactive.</p>
-  <p><strong>Challenge</strong>Uncertainty for everyone: employees in limbo, leaders unsure whether to treat roles as vacant or filled, HR carrying risk without a clear plan.</p>
-  <p><strong>What I did</strong>For each file: reviewed documentation, updated contact information, and reached out with clear written notices explaining that updated medical information was needed. When information came in, I focused on what it meant in practice — working with leaders on realistic return plans if possible, or working with Legal to assess frustration of contract when it wasn't. I made sure letters were clear and respectful, even when the news was difficult.</p>
-  <p><strong>Result</strong>Employees moved out of long-standing uncertainty. Leaders gained staffing clarity. Each file had a documented path and a clear endpoint.</p>
-  <p><strong>What I took from it</strong>Being fair to employees, practical with leaders, and careful to match legal frameworks to actual facts — rather than forcing one standard answer onto every case — is what makes the difference.</p>
+  <p><strong>Context</strong> Medical leave and disability files had built up over several years with no clear next steps. Some employees had been away for years. The files were open but inactive.</p>
+  <p><strong>Challenge</strong> Uncertainty for everyone: employees in limbo, leaders unsure whether to treat roles as vacant or filled, HR carrying risk without a clear plan.</p>
+  <p><strong>What I did</strong> For each file: reviewed documentation, updated contact information, and reached out with clear written notices explaining that updated medical information was needed. When information came in, I focused on what it meant in practice — working with leaders on realistic return plans if possible, or working with Legal to assess frustration of contract when it wasn't. I made sure letters were clear and respectful, even when the news was difficult.</p>
+  <p><strong>Result</strong> Employees moved out of long-standing uncertainty. Leaders gained staffing clarity. Each file had a documented path and a clear endpoint.</p>
+  <p><strong>What I took from it</strong> Being fair to employees, practical with leaders, and careful to match legal frameworks to actual facts — rather than forcing one standard answer onto every case — is what makes the difference.</p>
 </template>
 
 <script>
@@ -598,6 +661,32 @@
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal(); });
+
+  // Featured articles random display
+  const articlesData = [
+    { title: "The PIP Problem: Are We Actually Trying to Help?", tag: "Performance Management", excerpt: "Performance improvement plans have a near-zero success rate at many organizations. Before asking whether the paperwork is clean, it's worth asking whether anyone actually meant for them to work.", url: "/articles/pip-problem.html" },
+    { title: "The Myth of the Unpaid Tryout: Lessons from Papa Murphy's v. Kaur", tag: "Employment Law", excerpt: "Unpaid 'trial' shifts still show up in Alberta, especially in small service businesses. A 2025 Employment Standards appeal makes the rule plain: if they're doing real work under your direction, that time is paid.", url: "/articles/unpaid-tryout.html" },
+    { title: "Good Intentions Don't Erase Discrimination", tag: "Employee Relations", excerpt: "A BC Human Rights Tribunal decision involving a young worker with disabilities and a family-run convenience store — and what it means when 'we were just trying to help' isn't a defence.", url: "/articles/good-intentions.html" },
+    { title: "Ten Canadian Legal Cases Every New Manager Needs to Know", tag: "Employment Law", excerpt: "There's a good chance the HR policy you're expected to enforce traces back to one of these decisions. You don't need to memorize the case names — but understanding the pattern they create changes how you manage.", url: "/articles/ten-cases.html" },
+    { title: "Book Review: Unlocking High Performance by Jason Lauritsen", tag: "Book Reviews", excerpt: "Lauritsen argues performance is a relationship, not a form. He's right. The question is whether the book says anything a strong frontline manager doesn't already know — and where it earns its place anyway.", url: "/articles/unlocking-high-performance.html" }
+  ];
+
+  function shuffleAndDisplay() {
+    const shuffled = [...articlesData].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 3);
+    const container = document.getElementById('featured-cards');
+    
+    container.innerHTML = selected.map(article => `
+      <a href="${article.url}" class="featured-card">
+        <span class="featured-tag">${article.tag}</span>
+        <h3 class="featured-card-title">${article.title}</h3>
+        <p class="featured-excerpt">${article.excerpt}</p>
+        <span class="featured-read">Read article →</span>
+      </a>
+    `).join('');
+  }
+
+  document.addEventListener('DOMContentLoaded', shuffleAndDisplay);
 </script>
 </body>
 </html>
