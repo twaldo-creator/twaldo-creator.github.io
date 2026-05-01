@@ -6,7 +6,7 @@ window.ARTICLES = [
     title: 'Ten Canadian Legal Cases Every New Manager Needs to Know',
     deck: "There's a good chance the HR policy you're expected to enforce traces back to one of these decisions. You don't need to memorize the case names. Understanding the pattern they create changes how you manage.",
     blurb: 'A tour of the decisions that quietly shape your handbook, from constructive dismissal to the duty to accommodate.',
-    category: 'Employment Law',
+    category: 'Compliance & Human Rights',
     categorySlug: 'employment-law',
     image: 'assets/images/article-ten-cases.jpg',
     readTime: 12,
@@ -39,7 +39,7 @@ window.ARTICLES = [
     title: 'The Myth of the Unpaid Tryout',
     deck: 'Unpaid trial shifts still show up across Canadian small businesses. A 2025 Employment Standards appeal makes the rule plain: real work under your direction is paid work.',
     blurb: 'A 2025 Employment Standards appeal on trial shifts and what counts as paid work.',
-    category: 'Employment Law',
+    category: 'Compliance & Human Rights',
     categorySlug: 'employment-law',
     image: 'assets/images/article-unpaid-tryout.jpg',
     readTime: 5,
@@ -55,6 +55,17 @@ window.ARTICLES = [
     image: 'assets/images/article-unlocking.jpg',
     readTime: 7,
     url: 'articles/unlocking-high-performance.html'
+  },
+  {
+    slug: 'what-trust-is-made-of',
+    title: 'What Trust Is Made Of',
+    deck: "The research calls it belonging. The plain word for what employees feel when they have it is trust. Three things have to be working at once for any workplace to produce either — and the instinct to fix the wrong one is what costs companies the most.",
+    blurb: "Three things have to be working at once for a workplace to produce trust, and the instinct to fix the wrong one is what costs companies the most.",
+    category: 'Strategy & Wellbeing',
+    categorySlug: 'strategy',
+    image: 'assets/images/article-trust.jpg',
+    readTime: 11,
+    url: 'articles/what-trust-is-made-of.html'
   }
 ];
 

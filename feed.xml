@@ -4,7 +4,7 @@
     <title>Tanner Waldo</title>
     <link>https://tannerwaldo.com/</link>
     <atom:link href="https://tannerwaldo.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Writing on HR, employment law, and frontline management.</description>
+    <description>Writing on the structure, culture, and leadership that make work worth doing.</description>
     <language>en-ca</language>
     <lastBuildDate>Fri, 01 May 2026 18:27:12 +0000</lastBuildDate>
     <item>
@@ -12,7 +12,7 @@
       <link>https://tannerwaldo.com/articles/ten-cases.html</link>
       <guid isPermaLink="true">https://tannerwaldo.com/articles/ten-cases.html</guid>
       <description>A tour of the decisions that quietly shape your handbook, from constructive dismissal to the duty to accommodate.</description>
-      <category>Employment Law</category>
+      <category>Compliance &amp; Human Rights</category>
       <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
     </item>
     <item>
@@ -36,7 +36,7 @@
       <link>https://tannerwaldo.com/articles/unpaid-tryout.html</link>
       <guid isPermaLink="true">https://tannerwaldo.com/articles/unpaid-tryout.html</guid>
       <description>A 2025 Employment Standards appeal on trial shifts and what counts as paid work.</description>
-      <category>Employment Law</category>
+      <category>Compliance &amp; Human Rights</category>
       <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
     </item>
     <item>
@@ -46,6 +46,14 @@
       <description>A frontline-HR read of Lauritsen's argument that performance is a relationship, not a form.</description>
       <category>Book Reviews</category>
       <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>What Trust Is Made Of</title>
+      <link>https://tannerwaldo.com/articles/what-trust-is-made-of.html</link>
+      <guid isPermaLink="true">https://tannerwaldo.com/articles/what-trust-is-made-of.html</guid>
+      <description>Three things have to be working at once for a workplace to produce trust, and the instinct to fix the wrong one is what costs companies the most.</description>
+      <category>Strategy &amp; Wellbeing</category>
+      <pubDate>Fri, 01 May 2026 22:15:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

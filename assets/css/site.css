@@ -65,7 +65,7 @@ img { max-width: 100%; display: block; }
   color: var(--white);
 }
 .topnav-inner {
-  max-width: 1240px;
+  max-width: 1340px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -75,8 +75,10 @@ img { max-width: 100%; display: block; }
 }
 .nav-cats {
   display: flex;
-  gap: 1.75rem;
+  gap: 1.4rem;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .nav-cats a {
   font-size: 0.78rem;
@@ -1060,6 +1062,11 @@ footer {
 /* ============================================
    RESPONSIVE
    ============================================ */
+@media (max-width: 1340px) {
+  /* Hide utility links once primary nav gets tight; About/RSS remain reachable in footer */
+  .nav-utility { display: none; }
+  .nav-cats { gap: 1.1rem; }
+}
 @media (max-width: 960px) {
   .lead { grid-template-columns: 1fr; gap: 2rem; }
   .lead-side { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 2rem; }
@@ -1067,7 +1074,9 @@ footer {
   .about-inner { grid-template-columns: 1fr; }
   .about-photo { width: 160px; height: 160px; }
   .foot-inner { grid-template-columns: 1fr 1fr; }
-  .nav-cats { gap: 1rem; overflow-x: auto; flex-wrap: nowrap; }
+  .nav-cats { gap: 1rem; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav-cats::-webkit-scrollbar { display: none; }
+  .topnav-inner { padding-right: 1rem; }
   .more-grid { grid-template-columns: 1fr 1fr; }
   .cat-article { grid-template-columns: 1fr; }
   .cat-article-image { aspect-ratio: 16/9; max-width: 100%; }
