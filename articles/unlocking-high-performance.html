@@ -2,92 +2,63 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Book Review: Unlocking High Performance by Jason Lauritsen | Tanner Waldo</title>
+<title>Unlocking High Performance — Jason Lauritsen — Tanner Waldo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lauritsen argues performance is a relationship, not a form. He's right. The question is whether the book says anything a strong frontline manager doesn't already know — and where it earns its place anyway.">
+<meta name="description" content="A frontline-HR read of Lauritsen's argument that performance is a relationship, not a form. What works, what's missing, and where the book lands for managers and HR practitioners.">
+<meta property="og:title" content="Unlocking High Performance — Jason Lauritsen">
+<meta property="og:description" content="A frontline-HR read of Lauritsen's argument that performance is a relationship, not a form. What works, what's missing, and where the book lands for managers and HR practitioners.">
+<meta property="og:image" content="https://tannerwaldo.com/assets/images/article-unlocking.jpg">
+<meta property="og:type" content="article">
+<link rel="alternate" type="application/rss+xml" title="Tanner Waldo — RSS" href="../feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #1a1a18; --ink-soft: #3d3d38; --cream: #f7f5ef; --warm-white: #fdfcf8;
-    --gold: #c9a84c; --gold-light: #e8d5a3; --rust: #b5461e; --blue-dark: #3d3936;
-    --text-muted: #666660; --border: rgba(26,26,24,0.12);
-    --serif: 'Playfair Display', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); background: var(--warm-white); color: var(--ink); line-height: 1.6; font-size: 16px; }
-  a { color: inherit; text-decoration: none; }
-  .nav { position: sticky; top: 0; z-index: 100; background: var(--ink); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .nav-brand { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.01em; color: #fff; }
-  .nav-links { display: flex; gap: 0.25rem; list-style: none; }
-  .nav-links a { font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.6); padding: 0.4rem 0.75rem; border-radius: 3px; transition: color 0.2s; }
-  .nav-links a:hover, .nav-links a.active { color: #fff; }
-  .article-header { background: var(--ink); color: #fff; padding: 4rem 2.5rem 5rem; position: relative; overflow: hidden; }
-  .article-header::before { content: ''; position: absolute; top: -80px; right: -80px; width: 480px; height: 480px; border: 1px solid rgba(201,168,76,0.12); border-radius: 50%; pointer-events: none; }
-  .article-header-inner { max-width: 760px; margin: 0 auto; }
-  .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 2rem; transition: color 0.2s; }
-  .back-link:hover { color: var(--gold); }
-  .back-link::before { content: '←'; }
-  .article-tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
-  .article-title { font-family: var(--serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.25rem; }
-  .article-title em { font-style: italic; color: var(--gold); }
-  .article-lede { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.75; max-width: 640px; }
-  .article-body-wrap { padding: 4rem 2.5rem 6rem; }
-  .article-body { max-width: 680px; margin: 0 auto; }
-  .article-body p { font-size: 1rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.4rem; }
-  .article-body h2 { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 1rem; line-height: 1.25; }
-  .article-body ul { list-style: none; margin: 0 0 1.4rem; padding: 0; }
-  .article-body ul li { font-size: 1rem; color: var(--ink-soft); line-height: 1.8; padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
-  .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
-  .article-body strong { font-weight: 500; color: var(--ink); }
-  .article-body a { color: var(--rust); border-bottom: 1px solid rgba(181,70,30,0.3); transition: border-color 0.2s; }
-  .article-body a:hover { border-color: var(--rust); }
-  .pull-quote { border-left: 3px solid var(--gold); padding: 0.75rem 0 0.75rem 1.5rem; margin: 2rem 0; }
-  .pull-quote p { font-family: var(--serif); font-size: 1.15rem !important; color: var(--ink) !important; line-height: 1.55 !important; font-style: italic; margin: 0 !important; }
-  .article-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
-  .disclaimer { background: var(--cream); border: 1px solid var(--border); padding: 1.25rem 1.5rem; margin-top: 3rem; font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
-  .more-articles { background: var(--cream); padding: 4rem 2.5rem; border-top: 1px solid var(--border); }
-  .more-inner { max-width: 1100px; margin: 0 auto; }
-  .more-label { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
-  .more-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-  .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .more-card { background: var(--warm-white); border: 1px solid var(--border); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
-  .more-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,26,24,0.07); }
-  .more-card-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rust); }
-  .more-card-title { font-family: var(--serif); font-size: 0.95rem; font-weight: 400; line-height: 1.3; color: var(--ink); }
-  .more-card-read { font-size: 0.8rem; color: var(--gold); margin-top: auto; padding-top: 0.5rem; }
-  footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 1.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; }
-  footer a { color: rgba(255,255,255,0.4); }
-  footer a:hover { color: rgba(255,255,255,0.75); }
-  @media (max-width: 900px) { .article-header { padding: 3rem 1.5rem 4rem; } .article-body-wrap { padding: 3rem 1.5rem 5rem; } .more-grid { grid-template-columns: 1fr 1fr; } .nav { padding: 0 1.25rem; } .nav-links { display: none; } .more-articles { padding: 3rem 1.5rem; } }
-  @media (max-width: 600px) { .more-grid { grid-template-columns: 1fr; } }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body>
 
-<header class="nav">
-  <a href="/" class="nav-brand">Tanner Waldo</a>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="/#about">Profile</a></li>
-      <li><a href="/#skills">Skills</a></li>
-      <li><a href="/#experience">Experience</a></li>
-      <li><a href="/#cases">Case Studies</a></li>
-      <li><a href="/articles.html" class="active">Articles</a></li>
-    </ul>
+<header class="masthead">
+  <div class="masthead-top">
+    <a href="../"><div class="wordmark">Tanner Waldo</div></a>
+    <div class="wordmark-sub">Writing on HR, employment law, and frontline management</div>
+  </div>
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <ul class="nav-cats">
+        <li><a href="../">Home</a></li>
+        <li><a href="../category/employment-law.html">Employment Law</a></li>
+        <li><a href="../category/performance.html">Performance &amp; Development</a></li>
+        <li><a href="../category/employee-relations.html">Employee Relations</a></li>
+        <li><a href="../category/book-reviews.html" class="active">Book Reviews</a></li>
+        <li><a href="../category/strategy.html">Strategy &amp; Wellbeing</a></li>
+      </ul>
+      <div class="nav-utility">
+        <a href="../about.html">About</a>
+        <a href="../feed.xml" title="RSS feed">RSS</a>
+      </div>
+    </div>
   </nav>
 </header>
 
-<header class="article-header">
-  <div class="article-header-inner">
-    <a class="back-link" href="/articles.html">All articles</a>
-    <div class="article-tag">Book Reviews</div>
-    <h1 class="article-title">Book Review: <em>Unlocking High Performance</em> by Jason Lauritsen</h1>
-    <p class="article-lede">Lauritsen argues performance is a relationship, not a form. He's right. The question is whether the book says anything a strong frontline manager doesn't already know — and where it earns its place anyway.</p>
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="../">Home</a><span class="sep">›</span><a href="../category/book-reviews.html">Book Reviews</a>
+    </div>
+    <h1 class="article-title">Unlocking High Performance — Jason Lauritsen</h1>
+    <p class="article-deck">A frontline-HR read of Lauritsen's argument that performance is a relationship, not a form. What works, what's missing, and where the book lands for managers and HR practitioners.</p>
+    <div class="article-meta">
+      <span class="category-tag"><a href="../category/book-reviews.html">Book Reviews</a></span>
+      <span class="dot">·</span>
+      <span>7 min read</span>
+    </div>
   </div>
-</header>
+</section>
+
+<figure class="article-figure">
+  <img src="../assets/images/article-unlocking.jpg" alt="" loading="lazy">
+  <figcaption class="caption">Cover: Kogan Page (used under fair dealing for review)</figcaption>
+</figure>
 
 <div class="article-body-wrap">
   <article class="article-body">
@@ -147,35 +118,411 @@
     </div>
 
   </article>
+
+  <div class="share-row">
+    <span class="label">Share</span>
+    <div class="share-buttons">
+      <a class="share-btn" data-network="linkedin" aria-label="Share on LinkedIn" href="#"><svg viewBox="0 0 24 24"><path d="M19 0H5C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V8h3v11zM6.5 6.7c-1 0-1.7-.7-1.7-1.6s.8-1.6 1.7-1.6 1.7.7 1.7 1.6-.7 1.6-1.7 1.6zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg></a>
+      <a class="share-btn" data-network="x" aria-label="Share on X" href="#"><svg viewBox="0 0 24 24"><path d="M18.244 2H21l-6.55 7.486L22 22h-6.69l-4.78-6.18L4.84 22H2.08l7.005-8.005L1.5 2h6.86l4.32 5.71L18.244 2zm-1.18 18h1.86L7.04 4H5.07l11.994 16z"/></svg></a>
+      <a class="share-btn" data-network="facebook" aria-label="Share on Facebook" href="#"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12S0 5.446 0 12.073c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+      <a class="share-btn" data-network="email" aria-label="Share via email" href="#"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+      <a class="share-btn" data-network="copy" aria-label="Copy link" href="#"><svg viewBox="0 0 24 24"><path d="M16 1H4C2.9 1 2 1.9 2 3v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></a>
+    </div>
+  </div>
+
+  <div class="author-card">
+    <div class="photo" style="background-image:url('../assets/images/profile.jpg');"></div>
+    <div>
+      <h5>Tanner Waldo</h5>
+      <p>Writes on HR, employment law, and frontline management. Background in retail operations before moving into HR. Based in the Fraser Valley. <a href="../about.html">More about Tanner</a></p>
+    </div>
+  </div>
+
 </div>
 
 <section class="more-articles">
   <div class="more-inner">
-    <div class="more-label">More articles</div>
+    <h3 class="more-head">More writing</h3>
     <div class="more-grid">
-      <a class="more-card" href="/articles/pip-problem.html">
-        <span class="more-card-tag">Performance Management</span>
-        <span class="more-card-title">The PIP Problem: Are We Actually Trying to Help?</span>
-        <span class="more-card-read">Read →</span>
+      <a class="more-card" href="../articles/ten-cases.html">
+        <div class="more-kicker">Employment Law</div>
+        <h6>Ten Canadian Legal Cases Every New Manager Needs to Know</h6>
+        <span class="more-time">12 min read</span>
       </a>
-      <a class="more-card" href="/articles/good-intentions.html">
-        <span class="more-card-tag">Employee Relations</span>
-        <span class="more-card-title">Good Intentions Don't Erase Discrimination</span>
-        <span class="more-card-read">Read →</span>
+      <a class="more-card" href="../articles/pip-problem.html">
+        <div class="more-kicker">Performance & Development</div>
+        <h6>The PIP Problem: Are We Actually Trying to Help?</h6>
+        <span class="more-time">8 min read</span>
       </a>
-      <a class="more-card" href="/articles/ten-cases.html">
-        <span class="more-card-tag">Employment Law</span>
-        <span class="more-card-title">Ten Canadian Legal Cases Every New Manager Needs to Know</span>
-        <span class="more-card-read">Read →</span>
+      <a class="more-card" href="../articles/good-intentions.html">
+        <div class="more-kicker">Employee Relations</div>
+        <h6>Good Intentions Don't Erase Discrimination</h6>
+        <span class="more-time">5 min read</span>
       </a>
     </div>
   </div>
 </section>
 
 <footer>
-  <span>© <span id="yr"></span> Tanner Waldo · People &amp; Culture Advisor</span>
-  <span><a href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a> · <a href="https://www.linkedin.com/in/tannerw" target="_blank">linkedin.com/in/tannerw</a></span>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <h5>Tanner Waldo</h5>
+      <p>Writing on HR, employment law, and frontline management. Based in the Fraser Valley.</p>
+    </div>
+    <div class="foot-col">
+      <h6>Topics</h6>
+      <ul>
+        <li><a href="../category/employment-law.html">Employment Law</a></li>
+        <li><a href="../category/performance.html">Performance &amp; Development</a></li>
+        <li><a href="../category/employee-relations.html">Employee Relations</a></li>
+        <li><a href="../category/book-reviews.html">Book Reviews</a></li>
+        <li><a href="../category/strategy.html">Strategy &amp; Wellbeing</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h6>Elsewhere</h6>
+      <ul>
+        <li><a href="mailto:hello@tannerwaldo.com">hello@tannerwaldo.com</a></li>
+        <li><a href="https://linkedin.com/in/tannerw">LinkedIn</a></li>
+        <li><a href="../feed.xml">RSS feed</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Tanner Waldo. All articles are the author's own opinion and do not constitute legal advice.</span>
+    <span>Hosted on GitHub Pages.</span>
+  </div>
 </footer>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
-</body>
+
+<script src="../assets/js/share.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="transform:translate(-${scrollX}px,-${scrollY}px);transform-origin:top left">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
 </html>

@@ -1,7 +1,21 @@
-title: Tanner Waldo | People & Culture Advisor  # Your site title
-description: People & Culture Advisor for frontline organizations.
+# Minimal Jekyll config for tannerwaldo.com
+# Site is plain HTML/CSS/JS; this just sets metadata and tells Jekyll to leave assets alone.
 
-collections:
-  articles:    # Defines a new "articles" collection
-    output: true   # Generates HTML pages for each article
-permalink: /articles/:title/   # URLs like /articles/my-first-article/
+title: Tanner Waldo
+description: Writing on HR, employment law, and frontline management.
+url: https://tannerwaldo.com
+
+# Don't process these as Jekyll templates
+include:
+  - _redirects
+
+# Plugins (none required)
+plugins: []
+
+# Exclude build files from output
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

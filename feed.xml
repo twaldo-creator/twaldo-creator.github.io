@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tanner Waldo</title>
+    <link>https://tannerwaldo.com/</link>
+    <atom:link href="https://tannerwaldo.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Writing on HR, employment law, and frontline management.</description>
+    <language>en-ca</language>
+    <lastBuildDate>Fri, 01 May 2026 18:27:12 +0000</lastBuildDate>
+    <item>
+      <title>Ten Canadian Legal Cases Every New Manager Needs to Know</title>
+      <link>https://tannerwaldo.com/articles/ten-cases.html</link>
+      <guid isPermaLink="true">https://tannerwaldo.com/articles/ten-cases.html</guid>
+      <description>A tour of the decisions that quietly shape your handbook, from constructive dismissal to the duty to accommodate.</description>
+      <category>Employment Law</category>
+      <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>The PIP Problem: Are We Actually Trying to Help?</title>
+      <link>https://tannerwaldo.com/articles/pip-problem.html</link>
+      <guid isPermaLink="true">https://tannerwaldo.com/articles/pip-problem.html</guid>
+      <description>Why most performance improvement plans fail before the first check-in, and what an honest one looks like.</description>
+      <category>Performance &amp; Development</category>
+      <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Good Intentions Don't Erase Discrimination</title>
+      <link>https://tannerwaldo.com/articles/good-intentions.html</link>
+      <guid isPermaLink="true">https://tannerwaldo.com/articles/good-intentions.html</guid>
+      <description>A small-business human rights case and the limits of the "we were trying to help" defence.</description>
+      <category>Employee Relations</category>
+      <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Myth of the Unpaid Tryout</title>
+      <link>https://tannerwaldo.com/articles/unpaid-tryout.html</link>
+      <guid isPermaLink="true">https://tannerwaldo.com/articles/unpaid-tryout.html</guid>
+      <description>A 2025 Employment Standards appeal on trial shifts and what counts as paid work.</description>
+      <category>Employment Law</category>
+      <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Unlocking High Performance — Jason Lauritsen</title>
+      <link>https://tannerwaldo.com/articles/unlocking-high-performance.html</link>
+      <guid isPermaLink="true">https://tannerwaldo.com/articles/unlocking-high-performance.html</guid>
+      <description>A frontline-HR read of Lauritsen's argument that performance is a relationship, not a form.</description>
+      <category>Book Reviews</category>
+      <pubDate>Fri, 01 May 2026 18:27:12 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
