@@ -1,0 +1,21 @@
+# Minimal Jekyll config for tannerwaldo.com
+# Site is plain HTML/CSS/JS; this just sets metadata and tells Jekyll to leave assets alone.
+
+title: Tanner Waldo
+description: Writing on HR, employment law, and frontline management.
+url: https://tannerwaldo.com
+
+# Don't process these as Jekyll templates
+include:
+  - _redirects
+
+# Plugins (none required)
+plugins: []
+
+# Exclude build files from output
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
