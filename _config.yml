@@ -2,7 +2,7 @@
 # Site is plain HTML/CSS/JS; this just sets metadata and tells Jekyll to leave assets alone.
 
 title: Tanner Waldo
-description: Writing on HR, employment law, and frontline management.
+description: Thoughts on people management, for frontline managers and the HR teams who support them.
 url: https://tannerwaldo.com
 
 # Don't process these as Jekyll templates

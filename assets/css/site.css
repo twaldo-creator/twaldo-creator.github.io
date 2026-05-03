@@ -743,9 +743,6 @@ footer {
   letter-spacing: -0.01em;
   display: block;
 }
-.article-body h2 {
-  /* When h2 contains a case-block, suppress its default styles */
-}
 .article-body h2:has(.case-block) {
   margin: 2.5rem 0 1.2rem;
   padding: 0;
@@ -1063,7 +1060,6 @@ footer {
    RESPONSIVE
    ============================================ */
 @media (max-width: 1340px) {
-  /* Hide utility links once primary nav gets tight; About/RSS remain reachable in footer */
   .nav-utility { display: none; }
   .nav-cats { gap: 1.1rem; }
 }
