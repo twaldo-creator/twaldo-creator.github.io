@@ -3,17 +3,17 @@
    ============================================ */
 
 :root {
-  --navy: #1B2A41;
+  --navy: #133853;
   --navy-soft: #2C3E5C;
   --gold: #B08D3F;
   --gold-soft: #D4B97A;
-  --paper: #FBFAF7;
-  --paper-warm: #F4F1EA;
+  --paper: #F0ECEB;
+  --paper-warm: #EAE4E3;
   --white: #FFFFFF;
   --ink: #1A1F2C;
   --ink-soft: #4A5163;
   --muted: #7A8194;
-  --rule: #E5E1D8;
+  --rule: #D9D2D1;
   --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -138,7 +138,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.65rem;
   color: rgba(255,255,255,0.85);
   letter-spacing: 0.04em;
-  background: rgba(27,42,65,0.55);
+  background: rgba(19,56,83,0.55);
   padding: 0.25rem 0.55rem;
   border-radius: 2px;
 }
