@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
 
+  <!-- Social Preview -->
+  <meta property="og:title" content="Shop | Tanner Waldo" />
+  <meta property="og:description" content="Where to buy Every Light in Every Window, Every Tooth in Every Mouth." />
+  <meta property="og:image" content="https://tannerwaldo.com/social-preview.png" />
+  <meta property="og:url" content="https://tannerwaldo.com/store.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
     /* Layout */
     .store-wrap {
@@ -18,23 +25,20 @@
     #store.section { padding-top: 16px; padding-bottom: 40px; }
     .store-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
       margin-top: 24px;
       align-items: stretch;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Support note under H2 */
-    .support-note {
+    .store-intro {
       margin-top: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      color: var(--navy-2);
-      background: #eef3fb;
-      border: 1px solid #e0e8f7;
-      padding: 10px 14px;
-      border-radius: 10px;
-      display: inline-block;
+      font-family: 'Open Sans', sans-serif;
+      color: #2b3653;
+      max-width: 720px;
     }
 
     /* Product cards */
@@ -59,40 +63,8 @@
       display:block;
     }
 
-    .price { margin:6px 0 8px; color:#263247; font-size:0.95rem; }
+    .format-note { margin:6px 0 12px; color:#475066; font-size:0.95rem; }
     .btn-row { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
-
-    /* eBook link underline effect */
-    .underline-pink {
-      position: relative;
-      display: inline-block;
-      text-decoration: none;
-    }
-    .underline-pink::after {
-      content:""; position:absolute; left:0; right:0; bottom:-2px; height:3px;
-      background: var(--accent); border-radius:2px;
-      transform: scaleX(0); transform-origin:left;
-      transition: transform .18s ease-out;
-    }
-    .underline-pink:hover::after,
-    .underline-pink:focus-visible::after { transform: scaleX(1); }
-
-    .store-links {
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      margin-top:8px;
-      align-items:center;
-    }
-    .store-links a.btn.secondary {
-      background: transparent;
-      border: none;
-      padding: 0;
-      font-weight: 700;
-      font-family: 'Poppins', sans-serif;
-      color: #1a2b6b;
-    }
-    .store-links a.btn.secondary:hover { background: transparent; }
 
     @media (max-width: 520px){
       .product-img { max-height: 360px; }
@@ -119,58 +91,48 @@
   <section id="store" class="section">
     <div class="store-wrap">
       <h2>Buy the Book</h2>
-      <div class="support-note">Purchasing directly ensures more of your support reaches the author.</div>
+      <p class="store-intro">
+        <em>Every Light in Every Window, Every Tooth in Every Mouth</em> is available in print through Amazon and as an eBook below.
+      </p>
 
       <div class="store-grid">
-       <!-- Hardcover -->
-<div class="product-card">
-  <div>
-    <img src="cover.png" alt="Hardcover Edition" class="product-img" width="600" height="900" loading="lazy">
-    <h3>Hardcover</h3>
-    <p class="price">
-      Premium jacketed hardcover. <strong>Canada only.</strong>
-      International customers please order through Amazon or B&amp;N.
-    </p>
-  </div>
-  <div class="btn-row">
-    <a href="https://buy.stripe.com/8x2bJ175gardb0WcS93gk05"
-       class="btn preorder"
-       target="_blank" rel="noopener noreferrer">
-      Buy Hardcover
-    </a>
-  </div>
-</div>
-
-
-        <!-- Paperback -->
+        <!-- Print Edition -->
         <div class="product-card">
           <div>
-            <img src="cover.png" alt="Paperback Edition" class="product-img" width="600" height="900" loading="lazy">
-            <h3>Paperback</h3>
-            <p class="price">Trade paperback</p>
+            <img src="cover.png" alt="Print edition" class="product-img" width="600" height="900" loading="lazy">
+            <h3>Print Edition</h3>
+            <p class="format-note">Paperback, 300 pages.</p>
           </div>
           <div class="btn-row">
-            <a href="https://buy.stripe.com/dRmfZh1KWbvh6KG05n3gk01" class="btn preorder" target="_blank" rel="noopener noreferrer">
-              Buy Paperback
+            <a id="amazonLink"
+               href="https://www.amazon.ca/Every-Light-Window-Tooth-Mouth/dp/1069525200/"
+               class="btn preorder"
+               target="_blank" rel="noopener noreferrer">
+              Buy on Amazon
             </a>
           </div>
         </div>
 
-       <!-- eBook -->
-<div class="product-card">
-  <div>
-    <img src="cover.png" alt="eBook Edition" class="product-img" width="600" height="900" loading="lazy">
-    <h3>eBook</h3>
-    <p class="price">Instant digital download (EPUB)</p>
-  </div>
-  <div class="btn-row">
-    <a href="https://payhip.com/b/Pj9J0"
-       class="btn preorder"
-       target="_blank" rel="noopener noreferrer">
-       Buy eBook
-    </a>
-  </div>
-</div>
+        <!-- eBook -->
+        <div class="product-card">
+          <div>
+            <img src="cover.png" alt="eBook edition" class="product-img" width="600" height="900" loading="lazy">
+            <h3>eBook</h3>
+            <p class="format-note">
+              Instant EPUB download. Also available on <a href="https://www.kobo.com/ca/en/ebook/every-light-in-every-window-every-tooth-in-every-mouth" target="_blank" rel="noopener noreferrer">Kobo</a> and Kobo Plus.
+            </p>
+          </div>
+          <div class="btn-row">
+            <a href="https://payhip.com/b/Pj9J0"
+               class="btn preorder"
+               target="_blank" rel="noopener noreferrer">
+              Buy eBook
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Tanner Waldo · Rysavy Press · TannerWaldo.com</p>
@@ -193,6 +155,54 @@
   </div>
 
   <script>
+    // Amazon localized link by visitor country (best-effort, falls back to amazon.ca)
+    (function () {
+      var ASIN = "1069525200";
+      var slug = "Every-Light-Window-Tooth-Mouth";
+      // Country code -> Amazon marketplace host
+      var marketplaces = {
+        US: "amazon.com",
+        GB: "amazon.co.uk",
+        UK: "amazon.co.uk",
+        DE: "amazon.de",
+        FR: "amazon.fr",
+        IT: "amazon.it",
+        ES: "amazon.es",
+        NL: "amazon.nl",
+        SE: "amazon.se",
+        PL: "amazon.pl",
+        AU: "amazon.com.au",
+        JP: "amazon.co.jp",
+        IN: "amazon.in",
+        MX: "amazon.com.mx",
+        BR: "amazon.com.br",
+        SG: "amazon.sg",
+        AE: "amazon.ae",
+        SA: "amazon.sa",
+        TR: "amazon.com.tr",
+        CA: "amazon.ca"
+      };
+      var link = document.getElementById("amazonLink");
+      if (!link) return;
+
+      // Use a free, no-key geolocation endpoint. Fail silently -> keep amazon.ca default.
+      try {
+        var controller = new AbortController();
+        var t = setTimeout(function(){ controller.abort(); }, 2500);
+        fetch("https://ipapi.co/json/", { signal: controller.signal })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (data) {
+            clearTimeout(t);
+            if (!data || !data.country_code) return;
+            var host = marketplaces[data.country_code];
+            if (host && host !== "amazon.ca") {
+              link.href = "https://www." + host + "/" + slug + "/dp/" + ASIN + "/";
+            }
+          })
+          .catch(function () { /* keep default */ });
+      } catch (e) { /* keep default */ }
+    })();
+
     // Modal wiring
     const modal = document.getElementById("chapterModal");
     const openModal = document.getElementById("openModal");
