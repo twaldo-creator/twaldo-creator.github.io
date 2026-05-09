@@ -1,0 +1,266 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #0a0f1c;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #0a0f1c;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: #0a0f1c;
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #e63973;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  background: #0a0f1c;
+  color: #fff;
+  padding: 100px 20px;
+}
+
+.hero-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.hero-left img {
+  max-width: 340px;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.hero-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-right h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.book-desc {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Preorder Button */
+.cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn.preorder {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #e63973;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn.preorder:hover {
+  background: #c1275a;
+}
+
+/* About */
+.section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-photo img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 3px solid #e63973;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Contact */
+.section.dark {
+  background: #111522;
+  color: #fff;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background: #0a0f1c;
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #111522;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 6px;
+  max-width: 500px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: #fff;
+}
+
+/* Signup Form */
+.signup-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.signup-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 250px;
+}
+
+.signup-form button {
+  padding: 12px 20px;
+  background: #e63973;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup-form button:hover {
+  background: #c1275a;
+}
+.store-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+}
+
+.product-img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}

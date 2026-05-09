@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop | Tanner Waldo</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    /* Layout */
+    .store-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px 48px;
+    }
+    #store.section { padding-top: 16px; padding-bottom: 40px; }
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+      align-items: stretch;
+    }
+
+    /* Support note under H2 */
+    .support-note {
+      margin-top: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--navy-2);
+      background: #eef3fb;
+      border: 1px solid #e0e8f7;
+      padding: 10px 14px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    /* Product cards */
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:#fff;
+      border:1px solid #e9edf5;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(10,22,50,0.06);
+      padding:18px;
+      text-align:center;
+    }
+
+    .product-card h3 { margin:10px 0 6px; }
+    .product-img {
+      width:100%;
+      height:auto;
+      border-radius:8px;
+      margin-bottom:10px;
+      display:block;
+    }
+
+    .price { margin:6px 0 8px; color:#263247; font-size:0.95rem; }
+    .btn-row { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+
+    /* eBook link underline effect */
+    .underline-pink {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .underline-pink::after {
+      content:""; position:absolute; left:0; right:0; bottom:-2px; height:3px;
+      background: var(--accent); border-radius:2px;
+      transform: scaleX(0); transform-origin:left;
+      transition: transform .18s ease-out;
+    }
+    .underline-pink:hover::after,
+    .underline-pink:focus-visible::after { transform: scaleX(1); }
+
+    .store-links {
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:8px;
+      align-items:center;
+    }
+    .store-links a.btn.secondary {
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      color: #1a2b6b;
+    }
+    .store-links a.btn.secondary:hover { background: transparent; }
+
+    @media (max-width: 520px){
+      .product-img { max-height: 360px; }
+      .product-card { padding:16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Tanner Waldo</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#" id="openModal">Free Chapter</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Store section -->
+  <section id="store" class="section">
+    <div class="store-wrap">
+      <h2>Buy the Book</h2>
+      <div class="support-note">Purchasing directly ensures more of your support reaches the author.</div>
+
+      <div class="store-grid">
+       <!-- Hardcover -->
+<div class="product-card">
+  <div>
+    <img src="cover.png" alt="Hardcover Edition" class="product-img" width="600" height="900" loading="lazy">
+    <h3>Hardcover</h3>
+    <p class="price">
+      Premium jacketed hardcover. <strong>Canada only.</strong>
+      International customers please order through Amazon or B&amp;N.
+    </p>
+  </div>
+  <div class="btn-row">
+    <a href="https://buy.stripe.com/8x2bJ175gardb0WcS93gk05"
+       class="btn preorder"
+       target="_blank" rel="noopener noreferrer">
+      Buy Hardcover
+    </a>
+  </div>
+</div>
+
+
+        <!-- Paperback -->
+        <div class="product-card">
+          <div>
+            <img src="cover.png" alt="Paperback Edition" class="product-img" width="600" height="900" loading="lazy">
+            <h3>Paperback</h3>
+            <p class="price">Trade paperback</p>
+          </div>
+          <div class="btn-row">
+            <a href="https://buy.stripe.com/dRmfZh1KWbvh6KG05n3gk01" class="btn preorder" target="_blank" rel="noopener noreferrer">
+              Buy Paperback
+            </a>
+          </div>
+        </div>
+
+       <!-- eBook -->
+<div class="product-card">
+  <div>
+    <img src="cover.png" alt="eBook Edition" class="product-img" width="600" height="900" loading="lazy">
+    <h3>eBook</h3>
+    <p class="price">Instant digital download (EPUB)</p>
+  </div>
+  <div class="btn-row">
+    <a href="https://payhip.com/b/Pj9J0"
+       class="btn preorder"
+       target="_blank" rel="noopener noreferrer">
+       Buy eBook
+    </a>
+  </div>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Tanner Waldo · Rysavy Press · TannerWaldo.com</p>
+  </footer>
+
+  <!-- Free Chapter Modal -->
+  <div id="chapterModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content" tabindex="-1">
+      <button class="close" id="closeModal" aria-label="Close">&times;</button>
+      <h2 id="modalTitle">Get the First Chapter Free</h2>
+      <p>Sign up below to receive a free preview and updates about <em>Every Light in Every Window, Every Tooth in Every Mouth</em>.</p>
+      <form id="signupForm"
+            action="https://assets.mailerlite.com/jsonp/1770375/forms/164309175309960831/subscribe"
+            method="post" class="signup-form">
+        <input type="email" name="fields[email]" placeholder="Enter your email" required />
+        <button type="submit">Send Me the Chapter</button>
+      </form>
+      <noscript><p><a href="https://assets.mailerlite.com/webforms/submit/1770375/164309175309960831" rel="noopener noreferrer">Subscribe here</a></p></noscript>
+    </div>
+  </div>
+
+  <script>
+    // Modal wiring
+    const modal = document.getElementById("chapterModal");
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const modalContent = modal?.querySelector(".modal-content");
+    let lastFocused;
+
+    function openM(e){ if(e) e.preventDefault(); lastFocused = document.activeElement; modal.style.display="flex"; modal.setAttribute("aria-hidden","false"); modalContent?.focus(); }
+    function closeM(){ modal.style.display="none"; modal.setAttribute("aria-hidden","true"); lastFocused?.focus(); }
+
+    openModal?.addEventListener("click", openM);
+    closeModal?.addEventListener("click", closeM);
+    window.addEventListener("click", (e) => { if (e.target === modal) closeM(); });
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.style.display === "flex") closeM(); });
+
+    // MailerLite (modal form)
+    const signupForm = document.getElementById("signupForm");
+    if (signupForm) {
+      signupForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        fetch(signupForm.action, { method: "POST", body: new FormData(signupForm) })
+          .then(() => { signupForm.innerHTML = "<p>🎉 Thanks! Check your inbox for the free chapter.</p>"; })
+          .catch(() => { signupForm.innerHTML = "<p>⚠️ Oops, something went wrong. Please try again.</p>"; });
+      });
+    }
+  </script>
+</body>
+</html>
